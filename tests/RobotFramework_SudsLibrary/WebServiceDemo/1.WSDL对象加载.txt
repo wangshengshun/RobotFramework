@@ -1,0 +1,13 @@
+*** Settings ***
+Library           SudsLibrary
+
+*** Variables ***
+${localhost}      http://localhost:8081/MyService.asmx?wsdl
+
+*** Test Cases ***
+创建soap client-正常_011
+    [Documentation]    WSDL对象(例如：http://../Service1.asmx?wsdl)
+    #Loads a WSDL from the given URL/path and creates a Suds SOAP client.
+    Create Soap Client    ${localhost}
+    #Sets the port to use in future requests. port should be the name or the index of the port as it appears in the WSDL.
+    Set Port    MyServiceSoap

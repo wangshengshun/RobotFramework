@@ -1,0 +1,15 @@
+*** Settings ***
+
+*** Keywords ***
+系统登录
+    [Arguments]    ${url}    ${browser}    ${username}    ${password}    ${submit}
+    打开浏览器    ${url}    ${browser}
+    输入用户名    ${username}
+    输入密码    ${password}
+    点击按钮    ${submit}
+
+项目切换
+    @{projects}=    Get List Items    project_id
+    : FOR    ${project}    IN    @{projects}
+    \    Reload Page
+    \    切换项目    ${project}

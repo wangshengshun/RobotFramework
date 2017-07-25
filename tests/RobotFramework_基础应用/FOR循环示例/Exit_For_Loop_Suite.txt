@@ -1,0 +1,8 @@
+*** Test Cases ***
+testcase_Exit For Loop退出循环-001
+    #Example:    Exit For Loop
+    Log    Example:
+    @{list}    Create List    1    2    tt    yy
+    : FOR    ${i}    IN    @{list}
+    \    Run Keyword If    '${i}'=='yy'    Exit For Loop
+    \    Log    i=${i}

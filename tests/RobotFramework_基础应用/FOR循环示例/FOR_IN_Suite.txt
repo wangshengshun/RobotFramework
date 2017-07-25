@@ -1,0 +1,23 @@
+*** Test Cases ***
+testcase_单个循环变量-001
+    #Example:    IN后面为序列，例如：1，2，3
+    Log    Example:
+    : FOR    ${i}    IN    1    2    3
+    \    Log    'i'=${i}
+    #Example:    IN后面为列表
+    Log    Example:
+    @{list}    Create List    4    5    6
+    : FOR    ${j}    IN    @{list}
+    \    Log    'j'=${j}
+
+testcase_多个循环变量-002
+    #Example:    IN后面为序列，例如：1，2，3
+    Log    Example:
+    : FOR    ${i}    ${n}    IN    1    2    3
+    ...    4
+    \    Log Many    i=${i}    n=${n}
+    #Example:    IN后面为列表
+    Log    Example:
+    @{list}    Create List    4    5    6    7
+    : FOR    ${j}    ${n}    IN    @{list}
+    \    Log Many    j=${j}    n=${n}

@@ -1,0 +1,14 @@
+*** Settings ***
+Library           HttpLibrary.HTTP
+
+*** Variables ***
+${host}           127.0.0.1:8080
+
+*** Test Cases ***
+POST-正常_01
+    [Documentation]    Create Http Context
+    #Sets the HTTP host to use for future requests.
+    Create Http Context    host=${host}    scheme=http
+    #Issues a HTTP GET request.
+    POST    /home/help
+    Log Response Body    INFO

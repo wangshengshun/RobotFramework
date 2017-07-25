@@ -1,0 +1,78 @@
+*** Settings ***
+Documentation     Android AutoTest Suite!
+Suite Teardown    Close All Applications
+Test Teardown
+Library           AppiumLibrary
+
+*** Test Cases ***
+检查用户名与密码框-存在 _01
+    [Setup]
+    Comment    //检查页面元素(element)，直到加载成功，时间为00：02：05
+    Wait Until Keyword Succeeds    2min    5sec    Page Should Contain Element    id=sh.calaba.demoproject:id/textView1
+    Comment    //检查页面元素(element)，直到加载成功，时间为00：02：05
+    Wait Until Keyword Succeeds    2min    5sec    Page Should Contain Element    id=sh.calaba.demoproject:id/editText1
+
+定位用户名与密码框-正常_02
+    [Setup]
+    Comment    //定位用户名文本框
+    Click Element    id=sh.calaba.demoproject:id/editText1
+    Comment    //定位密码框
+    Click Element    id=sh.calaba.demoproject:id/editText2
+
+输入用户名与密码-正常_03
+    [Setup]
+    Comment    //输入用户名
+    Input Text    id=sh.calaba.demoproject:id/editText1    王小虎
+    Comment    //输入密码
+    Input Password    id=sh.calaba.demoproject:id/editText2    wxh1986
+
+检查用户名-存在_04
+    [Setup]
+    Comment    //检查页面元素中所输入的文本内容
+    Wait Until Keyword Succeeds    2min    5sec    Page Should Contain Text    王小虎    INFO
+
+定位邮箱地址-正常_05
+    [Setup]
+    Comment    //定位邮箱文本框
+    Click Element    id=sh.calaba.demoproject:id/editText3
+
+输入邮箱地址-正常_06
+    [Setup]
+    Comment    //输入邮箱地址
+    Input Text    id=sh.calaba.demoproject:id/editText3    wangxiaohu@163.com
+    Wait Until Keyword Succeeds    2min    5sec    Page Should Contain Text    wangxiaohu@163.com
+
+检查邮箱地址-正常_07
+    [Setup]
+    Comment    //检查页面元素中所输入的文本内容
+    Wait Until Keyword Succeeds    2min    5sec    Page Should Contain Text    说明：邮箱地址填写正确!
+    Clear Text    id=sh.calaba.demoproject:id/editText3
+    Comment    //输入错误的邮箱地址
+    Input Text    id=sh.calaba.demoproject:id/editText3    wangxiaohudy
+    Wait Until Keyword Succeeds    2min    5sec    Page Should Contain Text    说明：邮箱地址填写不正确，请按照正确地址进行填写!
+    Clear Text    id=sh.calaba.demoproject:id/editText3
+    Input Text    id=sh.calaba.demoproject:id/editText3    wangxiaohudy@126.com
+
+选择性别-正常_08
+    [Setup]
+    Comment    //定位单选按钮
+    Click Element    id=sh.calaba.demoproject:id/radioFemale
+    Wait Until Keyword Succeeds    2min    5sec    Page Should Contain Text    您的性别是：女
+
+提交表单-正常_09
+    [Setup]
+    Wait Until Keyword Succeeds    2min    5sec    Page Should Contain Element    id=sh.calaba.demoproject:id/button1
+    Comment    //单击提交表单按钮
+    Click Button    提交表单
+    Comment    //检查等待页面加载，直到加载成功，时间为00：02：05
+    Wait Until Keyword Succeeds    2min    5sec    Page Should Contain Element    id=android:id/action_bar_title
+    Wait Until Keyword Succeeds    2min    5sec    Page Should Contain Text    您的姓名：王小虎
+    Wait Until Keyword Succeeds    2min    5sec    Page Should Contain Text    您的密码：wxh1986
+    Wait Until Keyword Succeeds    2min    5sec    Page Should Contain Text    您的邮箱地址：wangxiaohudy@126.com
+    Wait Until Keyword Succeeds    2min    5sec    Page Should Contain Text    您的性别是：女
+
+返回人员信息注册页面-正常_10
+    [Setup]
+    Wait Until Keyword Succeeds    2min    5sec    Page Should Contain Element    id=sh.calaba.demoproject:id/button1
+    Click Button    返回
+    Wait Until Keyword Succeeds    2min    5sec    Page Should Contain Element    id=sh.calaba.demoproject:id/textView1

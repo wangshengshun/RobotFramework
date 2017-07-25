@@ -1,0 +1,29 @@
+*** Settings ***
+Library           RequestsLibrary
+Library           Collections
+
+*** Test Cases ***
+ITC001-根据订单id获取价格
+    ${headers}=    Create Dictionary    Content-Type    application/x-www-form-urlencoded
+    #${cookies}=    Create Dictionary    JSESSIONID    4FC7BFA3E296F6C50CEEACFC4168230E    cookies=${cookies}
+    Create Session    ddlz    http://zztruetech:8088    headers=${headers}
+    ${orderId}=    Convert To Integer    1
+    ${data}=    Create Dictionary    orderId    ${orderId}
+    ${resp}=    Get Request    ddlz    /ddlz/service/apartment/getPayPriceByOrderId    headers=${headers}    params=${data}
+    log    ${resp.content}
+    ${jsondata}=    To Json    ${resp.content}
+    Should Be Equal As Strings    ${jsondata['success']}    True
+    ${data}=    To Json    ${jsondata['data']}
+    Should Be Equal As Strings    ${data['payPrice']}    200.0
+
+ITC002-用户确认已支付
+    ${headers}=    Create Dictionary    Content-Type    application/x-www-form-urlencoded
+    #${cookies}=    Create Dictionary    JSESSIONID    4FC7BFA3E296F6C50CEEACFC4168230E    cookies=${cookies}
+    Create Session    ddlz    http://zztruetech:8088    headers=${headers}
+    ${orderId}=    Convert To Integer    1
+    ${data}=    Create Dictionary    orderId    ${orderId}
+    ${resp}=    Get Request    ddlz    /ddlz/service/apartment/apartmentPay    headers=${headers}    params=${data}
+    log    ${resp.content}
+    ${jsondata}=    To Json    ${resp.content}
+    Should Be Equal As Strings    ${jsondata['success']}    True
+    Should Be Equal As Strings    ${jsondata['data']}    success

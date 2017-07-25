@@ -1,0 +1,62 @@
+*** Settings ***
+Library           RequestsLibrary
+Library           Collections
+
+*** Test Cases ***
+ITC001-申请报价
+    ${headers}=    Create Dictionary    Content-Type    application/x-www-form-urlencoded
+    ${data}=    Create Dictionary    insureInfo    {"CarId":"95","CompanyId":"4","businessStartDate":"","CIStartDate":"","Insurance":[{"CarInsuranceType":"3","CarInsuranceSubType":"5"},{"CarInsuranceType":"4","CarInsuranceSubType":"7"},{"CarInsuranceType":"5","CarInsuranceSubType":"17"},{"CarInsuranceType":"6","CarInsuranceSubType":"19"},{"CarInsuranceType":"7","CarInsuranceSubType":"28"},{"CarInsuranceType":"8","CarInsuranceSubType":"37"},{"CarInsuranceType":"9","CarInsuranceSubType":"40"},{"CarInsuranceType":"10","CarInsuranceSubType":"42"},{"CarInsuranceType":"11","CarInsuranceSubType":"47"},{"CarInsuranceType":"12","CarInsuranceSubType":"50"},{"CarInsuranceType":"1","CarInsuranceSubType":"2"},{"CarInsuranceType":"13","CarInsuranceSubType":"52"},{"CarInsuranceType":"14","CarInsuranceSubType":"54"},{"CarInsuranceType":"15","CarInsuranceSubType":"56"},{"CarInsuranceType":"16","CarInsuranceSubType":"58"},{"CarInsuranceType":"17","CarInsuranceSubType":"60"},{"CarInsuranceType":"18","CarInsuranceSubType":"62"},{"CarInsuranceType":"19","CarInsuranceSubType":"64"},{"CarInsuranceType":"2","CarInsuranceSubType":"4"}]}
+    Create Session    ddlz    http://zztruetech:8088    headers=${headers}
+    ${resp}=    Post Request    ddlz    /ddlz/oService/carInsurance/applyQuoto    data=${data}    headers=${headers}
+    ${jsondata}=    To Json    ${resp.content}
+    Should Be Equal As Strings    ${jsondata['success']}    True
+
+ITC002-申请重新报价
+    ${headers}=    Create Dictionary    Content-Type    application/x-www-form-urlencoded
+    ${data}=    Create Dictionary    orderId    87    companyId    4
+    Create Session    ddlz    http://zztruetech:8088    headers=${headers}
+    ${resp}=    Post Request    ddlz    /ddlz/oService/carInsurance/againQuote    data=${data}    headers=${headers}
+    log    ${resp.content}
+    ${jsondata}=    To Json    ${resp.content}
+    Should Be Equal As Strings    ${jsondata['success']}    True
+
+ITC003-系统登录
+    ${headers}=    Create Dictionary    Content-Type    application/x-www-form-urlencoded
+    ${data}=    Create Dictionary    userName    wss19860323    passWord    19860323
+    Create Session    ddlz    http://zztruetech:8088    headers=${headers}
+    ${resp}=    Post Request    ddlz    /ddlz/LogSubmit    data=${data}    headers=${headers}
+    log    ${resp.content}
+    ${jsondata}=    To Json    ${resp.content}
+    log    ${jsondata['success']}
+    Should Be Equal As Strings    ${jsondata['success']}    True
+    log    ${jsondata['data']}
+    Should Be Equal As Strings    ${jsondata['data']}    用户名和密码正确
+
+ITC004-转账支付
+    [Documentation]    （1）接口说明：
+    ${headers}=    Create Dictionary    Content-Type    application/x-www-form-urlencoded
+    ${data}=    Create Dictionary    userName    wss19860323    passWord    19860323
+    Create Session    ddlz    http://zztruetech:8088    headers=${headers}
+    ${resp}=    Post Request    ddlz    /ddlz/LogSubmit    data=${data}    headers=${headers}
+    log    ${resp.content}
+    ${jsondata}=    To Json    ${resp.content}
+    log    ${jsondata['success']}
+    Should Be Equal As Strings    ${jsondata['success']}    True
+    log    ${jsondata['data']}
+    Should Be Equal As Strings    ${jsondata['data']}    用户名和密码正确
+    ${data}=    Create Dictionary    orderId    140    isUseIntegral    false    invoiceHeader
+    ...    济南真正科技有限公司    consigneePhone    15854156553    consignee    王盛顺    CIStartDate
+    ...    2017-07-15    businessStartDate    \    address    山东省济南市历城区永大颐和园
+    ${resp}=    Post Request    ddlz    /ddlz/oService/carInsurance/transferPay    data=${data}    headers=${headers}
+    log    ${resp.content}
+    ${jsondata}=    To Json    ${resp.content}
+    Should Be Equal As Strings    ${jsondata['data']}    转账成功!
+    Should Be Equal As Strings    ${jsondata['success']}    True
+
+ITC005-获取发票信息
+    [Documentation]    （1）接口说明：
+    ${headers}=    Create Dictionary    Accept    application/json,text/javascript,*/*
+    Create Session    ddlz    http://zztruetech:8088    headers=${headers}
+    ${resp}=    Get Request    ddlz    /ddlz/oService/carInsurance/getInvoiceInfos    headers=${headers}
+    log    ${resp.content}
+    ${jsondata}=    To Json    ${resp.content}

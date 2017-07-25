@@ -1,0 +1,32 @@
+*** Test Cases ***
+testcase_特殊变量运算-001
+    ${数字变量运算}    Set Variable    ${2*4}
+    ${布尔类型true运算}    Set Variable    ${true*4}
+    ${布尔类型false运算}    Set Variable    ${false*4}
+    ${space运算}    Set Variable    ${SPACE*4}
+    #检验${space运算}，看其是否包含4个${SPACE}
+    Should Contain X Times    ${space运算}    ${SPACE}    4
+
+testcase_加减乘除运算-002
+    ${var1}    Set Variable    ${2*4}
+    ${var2}    Set Variable    ${3*4}
+    #加减乘除
+    ${var1+var2}    Evaluate    ${var1}+${var2}
+    ${var1-var2}    Evaluate    ${var1}-${var2}
+    ${var1*var2}    Evaluate    ${var1}*${var2}
+    ${var1/var2}    Evaluate    ${var1}/${var2}
+
+testcase_表达式运算-003
+    ${result}    Set Variable    ${3.14}
+    #python表达式运算
+    ${status}    Evaluate    0<${result}<10
+    ${向下取整}    Evaluate    int(${result})
+    #使用python单个模块中的方法    关键字    表达式    模块名称
+    ${向上取整}    Evaluate    math.ceil(${result})    math
+    #使用python多个模块中的方法
+    ${随机数}    Evaluate    random.randint(0,sys.maxint)    random,sys
+
+testcase_生成随机数-004
+    #调用python所提供的random模块下的randint()方法
+    ${random}=    Evaluate    random.randint(1000,9999)    random
+    Log    ${random}

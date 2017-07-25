@@ -1,0 +1,41 @@
+*** Test Cases ***
+testcase_数字对比-001
+    ${var}    Set Variable    3
+    Run Keyword If    ${var}==0    Log    1
+    ...    ELSE IF    ${var}<0    Log    2
+    ...    ELSE IF    0<${var}<1    Log    3
+    ...    ELSE    Log    4
+
+testcase_字符对比-002
+    ${var}    Set Variable    same
+    Run Keyword If    "${var}"=="diff"    Log    1
+    ...    ELSE IF    "${var}"=="dis"    Log    2
+    ...    ELSE IF    "${var}"=="same"    Log    3
+    ...    ELSE    Log    4
+
+testcase_布尔类型对比-003
+    ${var}    Set Variable    ${false}
+    Run Keyword If    "${var}"=="${true}"    Log    1
+    ...    ELSE IF    "${var}"=="true"    Log    2
+    ...    ELSE    Log    4
+
+testcase_列表是否包含元素-004
+    @{varlist}    Create List    ${3}    third    ${4}
+    ${num}    Set Variable    ${4}
+    ${string}    Set Variable    third
+    Run Keyword If    ${num}in@{varlist}and"${string}"in@{varlist}    Log    1
+    ...    ELSE    Log    2
+
+testcase_列表与列表是否相等-005
+    @{varlist1}    Create List    ${3}    third    ${4}
+    @{varlist2}    Create List    ${3}    third    ${4}
+    Run Keyword If    @{varlist1}==@{varlist2}    Log    1
+    ...    ELSE    Log    2
+
+testcase_列表元素对比-006
+    @{varlist1}    Create List    ${3}    third    ${4}
+    @{varlist2}    Create List    ${3}    third    ${4}
+    Run Keyword If    @{varlist1}[0]==@{varlist2}[0]    Log    1    #两个列表元素都为数字
+    ...    ELSE    Log    2
+    Run Keyword If    @{varlist1}[0]=='@{varlist2}[1]'    Log    3    #一个列表元素为数字，一个列表元素为字符
+    ...    ELSE    Log    4

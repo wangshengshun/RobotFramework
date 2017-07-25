@@ -1,0 +1,31 @@
+*** Settings ***
+Library           SudsLibrary
+
+*** Test Cases ***
+获取姓名信息-正常_01
+    [Documentation]    验证getName()方法
+    #Creates a WSDL object of the specified type.Requested type must be defined in the WSDL.
+    ${WsdlObject_getName}=    Create Wsdl Object    getName
+    #Gets the attribute of a WSDL object.
+    ${getName_Name_AttributeValue}=    Get Wsdl Object Attribute    ${WsdlObject_getName}    Name
+    #Sets the attribute of a WSDL object.
+    Set Wsdl Object Attribute    ${WsdlObject_getName}    Name    wangxiaohu
+    #Calls the SOAP method with the given name and args.
+    Call Soap Method    getName    ${WsdlObject_getName}
+    #Gets the XML last received.
+    ${receive_xml}=    Get Last Received
+    Should Contain    ${receive_xml}    wangxiaohu
+
+获取年龄信息-正常_02
+    [Documentation]    验证getAge()方法
+    #Creates a WSDL object of the specified type.Requested type must be defined in the WSDL.
+    ${WsdlObject_getAge}=    Create Wsdl Object    getAge
+    #Gets the attribute of a WSDL object.
+    ${getName_Age_AttributeValue}=    Get Wsdl Object Attribute    ${WsdlObject_getAge}    Age
+    #Sets the attribute of a WSDL object.
+    Set Wsdl Object Attribute    ${WsdlObject_getAge}    Age    25
+    #Calls the SOAP method with the given name and args.
+    Call Soap Method    getAge    ${WsdlObject_getAge}
+    #Gets the XML last received.
+    ${receive_xml}=    Get Last Received
+    Should Contain    ${receive_xml}    25

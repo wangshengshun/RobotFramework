@@ -1,0 +1,60 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          ../../BusinessFlow/web/Web_BusinessFlow.txt
+
+*** Variables ***
+${url}            http://127.0.0.1/mantis/index.php
+${browser}        ie
+
+*** Test Cases ***
+Web-Mantis[系统登录测试]-002
+    [Setup]    Sleep    5s
+    系统登录    ${url}    ${browser}    wangshengshun    19860323    登录
+    [Teardown]    关闭浏览器
+
+Web-Mantis[系统登录测试]-001
+    [Setup]
+    Open Browser    ${url}    ${browser}
+    Input Text    username    wangshengshun
+    Input Password    password    1986
+    Click Button    登录
+    Sleep    5sec
+    Close All Browsers
+    [Teardown]
+
+Web-Mantis[系统登录测试]-003
+    [Setup]    Sleep    5s
+    系统登录    ${url}    ${browser}    \    \    登录
+    [Teardown]    关闭浏览器
+
+Web-Mantis[问题查看测试]-004
+    [Tags]    tc1
+    [Setup]
+    系统登录    ${url}    ${browser}    wangshengshun    19860323    登录
+    问题查看    查看问题
+    系统注销    注销
+    [Teardown]    关闭浏览器
+
+Web-Mantis[项目切换测试]-005
+    [Setup]    Sleep    5s
+    系统登录    ${url}    ${browser}    wangshengshun    19860323    登录
+    项目切换
+    Reload Page
+    系统注销    注销
+    [Teardown]    关闭浏览器
+
+Web-Mantis[查找问题测试]-006
+    [Setup]    Sleep    5s
+    系统登录    ${url}    ${browser}    wangshengshun    19860323    登录
+    问题查找    1262
+    页面按钮获取    修改问题
+    [Teardown]    关闭浏览器
+
+Web-Mantis[Press Key按键测试]-007
+    Open Browser    ${url}    ${browser}
+    Input Text    username    wangshengshun
+    Sleep    5
+    Press Key    username    8
+    Sleep    5
+    Input Text    username    lucy
+    Close Browser

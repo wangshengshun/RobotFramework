@@ -1,0 +1,44 @@
+*** Settings ***
+Suite Teardown    CloseDriverserver
+Library           Selenium2Library
+Resource          ../../../../BusinessFlow/web/DDLZ/public_business_layer.txt
+Library           AutoItLibrary
+Resource          ../../../../BusinessFlow/web/DDLZ/carinsuranceservices_layer.txt
+Library           DatabaseLibrary
+Resource          ../../../../Resources/ElementLayer/WebResources/基础公共关键字.txt
+
+*** Variables ***
+@{carInfo}        张琳    京A68666    # 车辆注册信息（姓名，车牌号）
+${url_login}      http://zztruetech:8088/ddlz/login
+
+*** Test Cases ***
+FTC001-添加新车辆信息
+    #初始化car数据表中的数据，将status字段设置为1,1:代表不显示，0：代表显示
+    更新数据表记录    car    status=1    status=0
+    登录系统    id=userName    id=passWord    wss19860323    19860323    id=loginbt    ${url_login}
+    进入圈服务
+    进入车险服务
+    点击添加车辆热点链接
+    注册新车辆    ${carInfo[1]}    ${carInfo[0]}
+    页面包含文本    京A68666
+    关闭浏览器
+    [Teardown]
+
+FTC002-修改车牌号、车主姓名
+    登录系统    id=userName    id=passWord    wss19860323    19860323    id=loginbt    ${url_login}
+    进入圈服务
+    进入车险服务
+    Sleep    3s
+    选择单选按钮(车辆)    name=chooseCar
+    点击修改车辆信息热点链接
+    点击修改按钮    id=changeInfo
+    设置元素焦点    id=number
+    输入车牌号    id=number    鲁A69688
+    设置元素焦点    id=name
+    输入车主姓名    id=name    王虎
+    点击修改提交按钮    id=submitAlter
+    点击确定(页面消息框)
+    点击购买车险按钮    id=gotobuy
+    页面包含文本    鲁A69688
+    关闭浏览器
+    [Teardown]

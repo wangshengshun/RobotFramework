@@ -1,0 +1,4 @@
+*** Settings ***
+Documentation     GetTicketItemWFResult(intStationId，String SBBH，IntOpBefore，IntOpAfter)方法：获取操作票防误校验结果;
+...               根据设备所属厂站、设备唯一编号、设备操作前状态、设备操作后状态获取实时防误判断结果;
+...               返回的防误校验结果信息应包括：设备所属厂站、设备唯一编号，操作前状态、操作后状态，校验结果(0：校验失败，1：校验成功)、校验结果的描述信息（如校验失败时的原因或校验通过时的警告信息）

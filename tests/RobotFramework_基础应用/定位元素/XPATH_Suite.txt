@@ -1,0 +1,15 @@
+*** Settings ***
+Library           Selenium2Library
+
+*** Test Cases ***
+testcase_绝对路径-001
+    Open Browser    http://localhost:7272/html/    ie
+    Input Text    xpath=/html/body/div/form/table/tbody/tr[1]/td[2]/input    demo
+    Input Password    xpath=/html/body/div/form/table/tbody/tr[2]/td[2]/input    mode
+    Close All Browsers
+
+testcase_相对路径-002
+    Open Browser    http://localhost:7272/html/    ie
+    Input Text    xpath=//input    demo
+    Input Password    xpath=//input[2]    mode
+    Close All Browsers

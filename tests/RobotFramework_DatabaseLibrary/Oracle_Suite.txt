@@ -1,0 +1,9 @@
+*** Settings ***
+Library           DatabaseLibrary
+
+*** Test Cases ***
+testcase_ConnectTest-001
+    Connect To Database Using Custom Params    cx_Oracle    'username','password','your TNS Name'
+    @{rs}    Query    select * from table1
+    Log Many    @{rs}
+    Disconnect From Database

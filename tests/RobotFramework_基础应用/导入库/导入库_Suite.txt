@@ -1,0 +1,14 @@
+*** Test Cases ***
+testcase_调用框架-001
+    #在python语言中可以使用import导入标准和第三方模块或框架，在Robot Framework中也提供了Import Library来完成这个事情
+    Import Library    MyTestLibrary
+    Mytest
+
+testcase_调用python文件-002
+    #导入路径：C:\RobotFramework\tests\RobotFramework_基础应用\导入库下的python文件
+    Import Library    C:/RobotFramework/tests/RobotFramework_基础应用/导入库/test.py
+    #Robot Framework 把13和17当成两个字符串，需要利用Evaluate转为为int类型
+    ${a}    Evaluate    13.23
+    ${b}    Evaluate    int(17)
+    ${add}    add    ${a}    ${b}
+    Log    ${add}

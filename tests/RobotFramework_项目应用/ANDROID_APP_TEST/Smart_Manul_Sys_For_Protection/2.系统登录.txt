@@ -1,0 +1,33 @@
+*** Settings ***
+Library           AppiumLibrary
+
+*** Test Cases ***
+检查用户名与密码框-存在 _01
+    [Setup]
+    Comment    //检查页面元素(element)，直到加载成功，时间为00：02：05
+    Wait Until Keyword Succeeds    2min    5sec    Page Should Contain Element    id=com.example.mylistview:id/user_Spinner
+    Comment    //检查页面元素(element)，直到加载成功，时间为00：02：05
+    Wait Until Keyword Succeeds    2min    5sec    Page Should Contain Element    id=com.example.mylistview:id/editText1
+
+选择用户-正常_02
+    [Setup]
+    Comment    //定位用户名文本框
+    Click Element    id=com.example.mylistview:id/user_Spinner
+    Comment    //选择用户名
+    Click Element    name=王五
+    Comment    //定位用户名文本框
+    Click Element    id=com.example.mylistview:id/user_Spinner
+    Comment    //选择用户名
+    Click Element    name=张三
+    Comment    //定位用户名文本框
+    Click Element    id=com.example.mylistview:id/user_Spinner
+    Click Element    name=李四
+
+输入密码-正常_03
+    Comment    //输入密码
+    Input Password    id=com.example.mylistview:id/editText1    wxh1986
+
+点击登录按钮-正常_04
+    Wait Until Keyword Succeeds    2min    5sec    Page Should Contain Element    id=com.example.mylistview:id/logion_Button
+    Comment    //单击登录按钮
+    Click Button    登 录

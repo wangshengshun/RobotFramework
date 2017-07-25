@@ -1,0 +1,25 @@
+*** Settings ***
+Library           RequestsLibrary
+Library           Collections
+
+*** Test Cases ***
+ITC001-生成订单
+    ${headers}=    Create Dictionary    Content-Type    application/x-www-form-urlencoded
+    Create Session    ddlz    http://zztruetech:8088    headers=${headers}
+    ${apartmentId}=    Convert To Integer    1
+    ${payPrice}=    Convert To Integer    200
+    ${hourRoom}=    Convert To Boolean    True
+    ${stayStartDate}=    Convert To String    2016-02-02 10:02
+    ${stayEndDate}=    Convert To String    2017-06-30 09:52
+    ${data}=    Create Dictionary    userName    wss19860323    passWord    19860323
+    ${resp}=    Post Request    ddlz    /ddlz/service/apartment/login    data=${data}    headers=${headers}
+    ${data}=    Create Dictionary    apartmentId    ${apartmentId}    checkInPerson    张三    hourRoom
+    ...    false    idCardPicture1    \    payPrice    ${payPrice}    phoneNumber
+    ...    123456    stayStartDate    ${stayStartDate}    stayEndDate    ${stayEndDate}
+    #${cookies}=    Create Dictionary    JSESSIONID    4FC7BFA3E296F6C50CEEACFC4168230E    cookies=${cookies}
+    ${resp}=    Post Request    ddlz    /ddlz/service/apartment/buildApartmentOrder    data=${data}    headers=${headers}
+    log    ${resp.content}
+    ${jsondata}=    To Json    ${resp.content}
+    ${data}=    To Json    ${jsondata['data']}
+    Should Be Equal As Strings    ${jsondata['success']}    True
+    Should Be Equal As Strings    ${data['priceIsEqual']}    True

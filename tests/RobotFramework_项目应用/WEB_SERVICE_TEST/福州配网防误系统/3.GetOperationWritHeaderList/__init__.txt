@@ -1,0 +1,5 @@
+*** Settings ***
+Documentation     GetOperationWritHeaderList(intStationId,intClassId)方法：获取操作票任务列表;根据厂站号、班组号获取操作票列表信息；
+...               StationId :厂站号
+...               ClassId：班组号
+...               操作票列表信息应包括：操作票唯一ID、厂站号、班组号、起始票号、页数、操作任务、操作票类型 、开票人、操作票状态、开票时间等

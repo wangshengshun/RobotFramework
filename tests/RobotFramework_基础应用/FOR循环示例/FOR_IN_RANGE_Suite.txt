@@ -1,0 +1,24 @@
+*** Test Cases ***
+testcase_IN RANGE后面为上限-001
+    #Example:    IN RANGE后面为循环上限4
+    Log    Example:
+    : FOR    ${i}    IN RANGE    4
+    \    Log    'i'=${i}
+
+testcase_IN RANGE后面为序列-002
+    #Example:    IN RANGE后面为序列2，9，3    其中2为j初始值    9为j上限值    3为循环变量j的递增变量
+    : FOR    ${j}    IN RANGE    2    9    3
+    \    Log    j=${j}
+
+testcase_IN RANGE后面为列表-003
+    #Example:    IN RANGE后面为列表    其中13为m的初始值    -13为上限    -3为循环变量m的递增量
+    @{list}    Create List    13    -13    -3
+    : FOR    ${m}    IN RANGE    @{list}
+    \    Log    m=${m}
+
+testcase_IN RANGE后面为变量-004
+    #Example:    IN RANGE后面为变量
+    Log    Example:
+    ${var}    Set Variable    2
+    : FOR    ${i}    IN RANGE    ${var}+1
+    \    Log    i=${i}

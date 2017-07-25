@@ -1,0 +1,71 @@
+*** Settings ***
+Library           RequestsLibrary
+Library           Collections
+
+*** Test Cases ***
+ITC001-民宿登录
+    ${headers}=    Create Dictionary    Content-Type    application/x-www-form-urlencoded
+    Create Session    ddlz    http://zztruetech:8088    headers=${headers}
+    ${data}=    Create Dictionary    userName    wss19860323    passWord    19860323
+    ${resp}=    Post Request    ddlz    /ddlz/service/apartment/login    data=${data}    headers=${headers}
+    log    ${resp.content}
+    ${jsondata}=    To Json    ${resp.content}
+    log    ${jsondata['success']}
+    Should Be Equal As Strings    ${jsondata['success']}    True
+    log    ${jsondata['data']}
+    Should Be Equal As Strings    ${jsondata['data']}    用户名和密码正确
+
+ITC002-获取民宿列表页
+    ${headers}=    Create Dictionary    Content-Type    application/x-www-form-urlencoded
+    #${cookies}=    Create Dictionary    JSESSIONID    4FC7BFA3E296F6C50CEEACFC4168230E    cookies=${cookies}
+    Create Session    ddlz    http://zztruetech:8088    headers=${headers}
+    ${data}=    Create Dictionary    userName    wss19860323    passWord    19860323
+    ${resp}=    Post Request    ddlz    /ddlz/service/apartment/login    data=${data}    headers=${headers}
+    ${resp}=    Get Request    ddlz    /ddlz/service/apartment/apartmentListData    headers=${headers}
+    log    ${resp.content}
+    ${jsondata}=    To Json    ${resp.content}
+    ${data}=    To Json    ${jsondata['data']}
+    ${apartmentArraydata}=    Create List    ${data['apartmentArray'][0]}
+    Should Be Equal As Strings    ${data['isLogin']}    True
+    Should Be Equal As Strings    ${apartmentArraydata[0]['id']}    1
+    Should Be Equal As Strings    ${apartmentArraydata[0]['leisure']}    True
+    Should Be Equal As Strings    ${apartmentArraydata[0]['price']}    200
+    Should Be Equal As Strings    ${apartmentArraydata[0]['name']}    公寓111
+
+ITC003-根据民宿id查看详情
+    ${headers}=    Create Dictionary    Content-Type    application/x-www-form-urlencoded
+    #${cookies}=    Create Dictionary    JSESSIONID    4FC7BFA3E296F6C50CEEACFC4168230E    cookies=${cookies}
+    Create Session    ddlz    http://zztruetech:8088    headers=${headers}
+    ${apartmentId}=    Convert To Integer    1
+    ${data}=    Create Dictionary    apartmentId    ${apartmentId}
+    ${resp}=    Get Request    ddlz    /ddlz/service/apartment/apartmentInfo    headers=${headers}    params=${data}
+    log    ${resp.content}
+    ${jsondata}=    To Json    ${resp.content}
+    Should Be Equal As Strings    ${jsondata['success']}    True
+    ${data}=    To Json    ${jsondata['data']}
+    Should Be Equal As Strings    ${data['id']}    1
+    Should Be Equal As Strings    ${data['price']}    200
+    Should Be Equal As Strings    ${data['name']}    公寓111
+    Should Be Equal As Strings    ${data['description']}    反反复复反反复复反反复复反反复复反反复复吩咐
+
+ITC004-根据时间筛选民宿
+    ${headers}=    Create Dictionary    Content-Type    application/x-www-form-urlencoded
+    #${cookies}=    Create Dictionary    JSESSIONID    4FC7BFA3E296F6C50CEEACFC4168230E    cookies=${cookies}
+    Create Session    ddlz    http://zztruetech:8088    headers=${headers}
+    ${stayStartDate}=    Convert To String    2016-02-02 10:02
+    ${stayEndDate}=    Convert To String    2017-06-30 09:52
+    ${data}=    Create Dictionary    stayStartDate    ${stayStartDate}    stayEndDate    ${stayEndDate}
+    ${resp}=    Post Request    ddlz    /ddlz/service/apartment/filtrateRoom    data=${data}    headers=${headers}
+    log    ${resp.content}
+    ${jsondata}=    To Json    ${resp.content}
+    ${data}=    To Json    ${jsondata['data']}
+    Should Be Equal As Strings    ${jsondata['success']}    True
+    Should Be Equal As Strings    ${data[0]['id']}    1
+    Should Be Equal As Strings    ${data[0]['leisure']}    False
+    Should Be Equal As Strings    ${data[0]['price']}    200
+    Should Be Equal As Strings    ${data[0]['name']}    公寓111
+    Should Be Equal As Strings    ${jsondata['success']}    True
+    Should Be Equal As Strings    ${data[1]['id']}    2
+    Should Be Equal As Strings    ${data[1]['leisure']}    True
+    Should Be Equal As Strings    ${data[1]['price']}    20
+    Should Be Equal As Strings    ${data[1]['name']}    222

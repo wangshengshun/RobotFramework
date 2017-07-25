@@ -1,0 +1,68 @@
+*** Settings ***
+Library           SudsLibrary
+Library           XML
+Library           Collections
+
+*** Variables ***
+@{OperationOpResultInfo}    建中小区2#配电室（高）613开关处于合位，禁止拉开6132刀闸！    拉开建中小区1#配电站（高）6132刀闸，将造成带负荷拉合刀闸！    建中小区1#配电站（高）622开关当前状态已是操作目的状态！    # 操作校验信息
+@{SBBHVal}        3E3CB7C436204917812FDC81A29C159581040700001    3FD96A4276714E96A38B803E61AFE84281040700001    CA5728CB9CB749839EE5100970078C0A81040500001    # 操作设备编号
+${OpBefore}       1    # 操作前状态
+${OpAfter}        0    # 操作后状态
+
+*** Test Cases ***
+获取操作票步骤校验内容-开关处于合位置，禁止拉开开关两侧刀闸-正常_001
+    [Documentation]    验证GetTicketItemWFResult()方法
+    #Creates a WSDL object of the specified type.Requested type must be defined in the WSDL.
+    ${WsdlObject_GetTicketItemWFResult}=    Create Wsdl Object    GetTicketItemWFResult
+    #Gets the attribute of a WSDL object.
+    ${StationID_AttributeValue}=    Get Wsdl Object Attribute    ${WsdlObject_GetTicketItemWFResult}    StationId
+    ${SBBH_AttributeValue}=    Get Wsdl Object Attribute    ${WsdlObject_GetTicketItemWFResult}    SBBH
+    ${OpBefore_AttributeValue}=    Get Wsdl Object Attribute    ${WsdlObject_GetTicketItemWFResult}    OpBefore
+    ${OpAfter_AttributeValue}=    Get Wsdl Object Attribute    ${WsdlObject_GetTicketItemWFResult}    OpAfter
+    #Sets the attribute of a WSDL object.
+    Set Wsdl Object Attribute    ${WsdlObject_GetTicketItemWFResult}    StationId    1
+    Set Wsdl Object Attribute    ${WsdlObject_GetTicketItemWFResult}    SBBH    ${SBBHVal[0]}
+    Set Wsdl Object Attribute    ${WsdlObject_GetTicketItemWFResult}    OpBefore    ${OpBefore}
+    Set Wsdl Object Attribute    ${WsdlObject_GetTicketItemWFResult}    OpAfter    ${OpAfter}
+    #Calls the SOAP method with the given name and args.
+    Call Soap Method    GetTicketItemWFResult    ${WsdlObject_GetTicketItemWFResult}
+    ${receive_xml}=    Get Last Received
+    Should Contain    ${receive_xml}    ${OperationOpResultInfo[0]}
+
+获取操作票步骤校验内容-带负荷拉刀闸-正常_002
+    [Documentation]    验证GetTicketItemWFResult()方法
+    #Creates a WSDL object of the specified type.Requested type must be defined in the WSDL.
+    ${WsdlObject_GetTicketItemWFResult}=    Create Wsdl Object    GetTicketItemWFResult
+    #Gets the attribute of a WSDL object.
+    ${StationID_AttributeValue}=    Get Wsdl Object Attribute    ${WsdlObject_GetTicketItemWFResult}    StationId
+    ${SBBH_AttributeValue}=    Get Wsdl Object Attribute    ${WsdlObject_GetTicketItemWFResult}    SBBH
+    ${OpBefore_AttributeValue}=    Get Wsdl Object Attribute    ${WsdlObject_GetTicketItemWFResult}    OpBefore
+    ${OpAfter_AttributeValue}=    Get Wsdl Object Attribute    ${WsdlObject_GetTicketItemWFResult}    OpAfter
+    #Sets the attribute of a WSDL object.
+    Set Wsdl Object Attribute    ${WsdlObject_GetTicketItemWFResult}    StationId    1
+    Set Wsdl Object Attribute    ${WsdlObject_GetTicketItemWFResult}    SBBH    ${SBBHVal[1]}
+    Set Wsdl Object Attribute    ${WsdlObject_GetTicketItemWFResult}    OpBefore    1
+    Set Wsdl Object Attribute    ${WsdlObject_GetTicketItemWFResult}    OpAfter    0
+    #Calls the SOAP method with the given name and args.
+    Call Soap Method    GetTicketItemWFResult    ${WsdlObject_GetTicketItemWFResult}
+    ${receive_xml}=    Get Last Received
+    Should Contain    ${receive_xml}    ${OperationOpResultInfo[1]}
+
+获取操作票步骤校验内容-当前状态已是操作目的状态-正常_003
+    [Documentation]    验证GetTicketItemWFResult()方法
+    #Creates a WSDL object of the specified type.Requested type must be defined in the WSDL.
+    ${WsdlObject_GetTicketItemWFResult}=    Create Wsdl Object    GetTicketItemWFResult
+    #Gets the attribute of a WSDL object.
+    ${StationID_AttributeValue}=    Get Wsdl Object Attribute    ${WsdlObject_GetTicketItemWFResult}    StationId
+    ${SBBH_AttributeValue}=    Get Wsdl Object Attribute    ${WsdlObject_GetTicketItemWFResult}    SBBH
+    ${OpBefore_AttributeValue}=    Get Wsdl Object Attribute    ${WsdlObject_GetTicketItemWFResult}    OpBefore
+    ${OpAfter_AttributeValue}=    Get Wsdl Object Attribute    ${WsdlObject_GetTicketItemWFResult}    OpAfter
+    #Sets the attribute of a WSDL object.
+    Set Wsdl Object Attribute    ${WsdlObject_GetTicketItemWFResult}    StationId    1
+    Set Wsdl Object Attribute    ${WsdlObject_GetTicketItemWFResult}    SBBH    ${SBBHVal[2]}
+    Set Wsdl Object Attribute    ${WsdlObject_GetTicketItemWFResult}    OpBefore    1
+    Set Wsdl Object Attribute    ${WsdlObject_GetTicketItemWFResult}    OpAfter    0
+    #Calls the SOAP method with the given name and args.
+    Call Soap Method    GetTicketItemWFResult    ${WsdlObject_GetTicketItemWFResult}
+    ${receive_xml}=    Get Last Received
+    Should Contain    ${receive_xml}    ${OperationOpResultInfo[2]}

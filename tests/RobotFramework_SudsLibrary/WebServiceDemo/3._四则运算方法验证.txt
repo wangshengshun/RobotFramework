@@ -1,0 +1,67 @@
+*** Settings ***
+Library           SudsLibrary
+
+*** Test Cases ***
+两数求和-正常_01
+    [Documentation]    验证addition()方法
+    #Creates a WSDL object of the specified type.Requested type must be defined in the WSDL.
+    ${WsdlObject_addition}=    Create Wsdl Object    addition
+    #Gets the attribute of a WSDL object.
+    ${addition_i_AttributeValue}=    Get Wsdl Object Attribute    ${WsdlObject_addition}    i
+    ${addition_j_AttributeValue}=    Get Wsdl Object Attribute    ${WsdlObject_addition}    j
+    #Sets the attribute of a WSDL object.
+    Set Wsdl Object Attribute    ${WsdlObject_addition}    i    25
+    Set Wsdl Object Attribute    ${WsdlObject_addition}    j    12
+    #Calls the SOAP method with the given name and args.
+    Call Soap Method    addition     ${WsdlObject_addition}
+    #Gets the XML last received.
+    ${receive_xml}=    Get Last Received
+    Should Contain    ${receive_xml}    37
+
+两数求商-正常_02
+    [Documentation]    验证division()方法
+    #Creates a WSDL object of the specified type.Requested type must be defined in the WSDL.
+    ${WsdlObject_division}=    Create Wsdl Object    division
+    #Gets the attribute of a WSDL object.
+    ${division_i_AttributeValue}=    Get Wsdl Object Attribute    ${WsdlObject_division}    i
+    ${division_j_AttributeValue}=    Get Wsdl Object Attribute    ${WsdlObject_division}    j
+    #Sets the attribute of a WSDL object.
+    Set Wsdl Object Attribute    ${WsdlObject_division}    i    25
+    Set Wsdl Object Attribute    ${WsdlObject_division}    j    5
+    #Calls the SOAP method with the given name and args.
+    Call Soap Method    division    ${WsdlObject_division}
+    #Gets the XML last received.
+    ${receive_xml}=    Get Last Received
+    Should Contain    ${receive_xml}    5
+
+两数求积-正常_03
+    [Documentation]    验证multiplication()方法
+    #Creates a WSDL object of the specified type.Requested type must be defined in the WSDL.
+    ${WsdlObject_multiplication}=    Create Wsdl Object    multiplication
+    #Gets the attribute of a WSDL object.
+    ${multiplication_i_AttributeValue}=    Get Wsdl Object Attribute    ${WsdlObject_multiplication}    i
+    ${multiplication_j_AttributeValue}=    Get Wsdl Object Attribute    ${WsdlObject_multiplication}    j
+    #Sets the attribute of a WSDL object.
+    Set Wsdl Object Attribute    ${WsdlObject_multiplication}    i    25
+    Set Wsdl Object Attribute    ${WsdlObject_multiplication}    j    5
+    #Calls the SOAP method with the given name and args.
+    Call Soap Method    multiplication    ${WsdlObject_multiplication}
+    #Gets the XML last received.
+    ${receive_xml}=    Get Last Received
+    Should Contain    ${receive_xml}    125
+
+两数求差-正常_04
+    [Documentation]    验证subtract()方法
+    #Creates a WSDL object of the specified type.Requested type must be defined in the WSDL.
+    ${WsdlObject_subtract}=    Create Wsdl Object    subtract
+    #Gets the attribute of a WSDL object.
+    ${subtract_i_AttributeValue}=    Get Wsdl Object Attribute    ${WsdlObject_subtract}    i
+    ${subtract_j_AttributeValue}=    Get Wsdl Object Attribute    ${WsdlObject_subtract}    j
+    #Sets the attribute of a WSDL object.
+    Set Wsdl Object Attribute    ${WsdlObject_subtract}    i    25
+    Set Wsdl Object Attribute    ${WsdlObject_subtract}    j    5
+    #Calls the SOAP method with the given name and args.
+    Call Soap Method    subtract    ${WsdlObject_subtract}
+    #Gets the XML last received.
+    ${receive_xml}=    Get Last Received
+    Should Contain    ${receive_xml}    20

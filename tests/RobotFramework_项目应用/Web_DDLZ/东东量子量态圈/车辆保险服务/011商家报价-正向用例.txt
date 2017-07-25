@@ -1,0 +1,99 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          ../../../../BusinessFlow/web/DDLZ/public_business_layer.txt
+Library           AutoItLibrary
+Resource          ../../../../BusinessFlow/web/DDLZ/carinsuranceservices_layer.txt
+Library           DatabaseLibrary
+Resource          ../../../../Resources/ElementLayer/WebResources/基础公共关键字.txt
+
+*** Variables ***
+${url_login}      http://zztruetech:8088/ddlz/login
+${sj_url_login}    http://zztruetech:8088/ddlz/company/index
+@{carInfo}        龙昊天    鲁A69666
+
+*** Test Cases ***
+FTC001-等待报价订单详情页显示
+    #初始化car数据表中的数据    ，将status字段设置为1
+    更新数据表记录    car    status=1    status=0
+    #初始化carinsuranceorder数据表中的数据    将status字段设置为6，    商家登录系统时，订单列表为空
+    更新数据表记录    carinsuranceorder    status=6    companyId=4
+    登录系统    id=userName    id=passWord    wss19860323    19860323    id=loginbt    ${url_login}
+    进入圈服务
+    进入车险服务
+    点击添加车辆热点链接
+    输入车牌号    id=number    鲁A69666
+    输入车主姓名    id=name    王虎
+    修改交强险和商业险日期    business_lastDate    2016-06-16
+    修改交强险和商业险日期    CI_lastDate    2016-06-16
+    上传附件(身份证)
+    Sleep    5s
+    上传附件(行驶证)
+    Sleep    8s    #等待所上传的附件上传完成后，再点击提交
+    点击提交按钮(注册车辆信息)
+    Sleep    2s
+    点击确定(页面消息框)
+    更新数据表记录    car    checkStatus=1    number='鲁A69666'
+    点击购买车险按钮    id=gotobuy
+    选择单选按钮(车辆)    name=chooseCar
+    选择保险公司_中国人寿
+    点击询价按钮    id=askPrice
+    点击申请报价按钮    id=apply
+    Sleep    2s
+    点击确定(页面消息框)
+    ${GetPageMessageContents}    获取页面消息框内容
+    比较字符串    ${GetPageMessageContents}    您的车险订单已申请报价，保险公司会尽快处理，请您留意短信通知，耐心等待。
+    关闭浏览器
+    登录系统    id=sj_userName    id=sj_passWord    wss1986    shun1986    id=sj_loginbt    ${sj_url_login}
+    页面包含文本    车牌号：鲁A69666
+    页面包含文本    等待报价
+    页面包含文本    已报价
+    页面包含文本    已购买
+    页面包含文本    其他
+    关闭浏览器
+
+FTC002-折扣参数
+    登录系统    id=sj_userName    id=sj_passWord    wss1986    shun1986    id=sj_loginbt    ${sj_url_login}
+    点击返利参数    id=discount
+    输入保险返利参数    id=onlyBusiness    25    #只购买商业险
+    输入保险返利参数    id=onlyCI    40    #只购买交强险
+    输入保险返利参数    id=mixBusiness    25    #交商共保商业险
+    输入保险返利参数    id=mixCI    25    #交商共保交强险
+    点击提交修改按钮(返利参数)    id=submit
+    点击确定(页面消息框)
+    关闭浏览器
+
+FTC003-报价订单填写
+    [Documentation]    前置条件：FTC001-等待报价订单详情页显示
+    登录系统    id=sj_userName    id=sj_passWord    wss1986    shun1986    id=sj_loginbt    ${sj_url_login}
+    点击车牌号热点链接
+    选择交强险生效日期    id=CIStartDate
+    Sleep    3s
+    点击确定(日期框)
+    输入金额(报价订单页面交强险)    2340.00
+    输入金额(报价订单页面车船税)    890.0
+    选择订单金额有效期    id=validDate
+    Sleep    3s
+    点击确定(日期框)
+    点击提交报价按钮    id=submitPrice
+    点击确定(页面消息框)
+    关闭浏览器
+
+FTC004-提交报价
+    [Documentation]    前置条件：FTC001-等待报价订单详情页显示
+    登录系统    id=sj_userName    id=sj_passWord    wss1986    shun1986    id=sj_loginbt    ${sj_url_login}
+    Comment    点击车牌号热点链接
+    Comment    选择交强险生效日期    id=CIStartDate
+    Comment    Sleep    3s
+    Comment    点击确定(日期框)
+    Comment    输入金额(报价订单页面交强险)    2340.00
+    Comment    输入金额(报价订单页面车船税)    890.0
+    Comment    选择订单金额有效期    id=validDate
+    Sleep    3s
+    Comment    点击确定(日期框)
+    Comment    点击提交报价按钮    id=submitPrice
+    Comment    ${GetPageMessageContents}    获取页面消息框内容
+    Comment    比较字符串    ${GetPageMessageContents}    报价成功。
+    Comment    点击确定(页面消息框)
+    点击已报价
+    ${temp}=    Get Webelements    xpath=//div[@class='con show']/ol[@class='ordersList']
+    关闭浏览器

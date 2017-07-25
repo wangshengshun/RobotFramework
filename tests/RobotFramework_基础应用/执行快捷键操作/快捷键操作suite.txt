@@ -1,0 +1,8 @@
+*** Settings ***
+Library           AutoItLibrary
+
+*** Test Cases ***
+testcase_快捷键操作-001
+    Send    {F12}    #按下F12键
+    Send    ^{t}    #按下Ctrl+T键
+    Send    ^{t 4}    #按下Ctrl+T键4次

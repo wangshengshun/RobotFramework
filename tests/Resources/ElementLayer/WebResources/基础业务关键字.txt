@@ -1,0 +1,218 @@
+*** Settings ***
+Library           Telnet    # Makes it possible to connect to Telnet servers and execute commands on the opened connections.
+Library           Dialogs    # Provides means for pausing the test execution and getting input from users.
+Library           OperatingSystem    # Enables various operating system related tasks to be performed in the system where Robot Framework is running.
+Library           String    # Library for generating, modifying and verifying strings.
+Library           XML    # Library for generating, modifying and verifying XML files.
+Library           Screenshot    # Provides keywords to capture screenshots of the desktop.
+Library           Collections    # Provides a set of keywords for handling Python lists and dictionaries.
+Library           Process    # Library for running processes in the system. New in Robot Framework 2.8.
+Library           Selenium2Library    # Web testing library that uses Selenium 2. For most parts drop-in-replacement for old SeleniumLibrary.
+Library           DatabaseLibrary
+Library           AutoItLibrary
+Resource          基础公共关键字.txt
+
+*** Variables ***
+${Sleep}          3s
+${xpath_carinsuranceservices}    xpath=//div[@class='right_left']/p[text()='车险服务']    # 定位元素：热点链接（车险服务）
+${xpath_determine}    xpath=//div[@class='gearDate']//div[text()='确定']    #定位元素：确定按钮（商业险或强险上次投保日期）
+${xpath_orderlistCarNumberLink}    xpath=//ol[@class='ordersList']/li/a[@class='ui-link']/p[text()='车牌号：鲁A69666']    # 定位元素：商家登录后的订单列表中，点击车牌号热点链接
+${xpath_submitbtn}    xpath=//*[@id="car"]/div[@class='formInline']/input[@class='submit']    # 定位元素：定位提交按钮（注册新的车辆信息）
+${xpath_AddCarLink}    xpath=//div[@class='chooseBox']/span/a[text()='+添加车辆']    # 定位元素：添加车辆
+${xpath_moneyEdit1}    xpath=//div/p[text()='金额']/input[@class='insurancePremium_10']    # 定位元素：报价订单页面中的交强险金额输入框
+${xpath_moneyEdit2}    xpath=//div/p[text()='金额']/input[@class='insurancePremium_18']    # 定位元素：报价订单页面中的车船税金额输入框
+${xpath_quoted price}    xpath=//div/ul/li[text()='已报价']    # 定位元素：商家登录后，已报价按钮
+
+*** Keywords ***
+切换项目
+    [Arguments]    ${project}
+    Select From List    project_id    ${project}
+
+关闭浏览器
+    Close Browser
+
+检查页面标题
+    [Arguments]    ${title}
+    Title Should Be    ${title}
+
+输入用户名
+    [Arguments]    ${element}    ${username}
+    等待元素出现在当前页面    ${element}
+    Input Text    ${element}    ${username}
+
+输入密码
+    [Arguments]    ${element}    ${password}
+    等待元素出现在当前页面    ${element}
+    Input Password    ${element}    ${password}
+
+输入车牌号
+    [Arguments]    ${element}    ${number}
+    等待元素出现在当前页面    ${element}
+    Input Text    ${element}    ${number}
+
+输入车主姓名
+    [Arguments]    ${element}    ${name}
+    等待元素出现在当前页面    ${element}
+    Input Text    ${element}    ${name}
+
+选择商业险上次投保日期
+    [Arguments]    ${name}
+    等待元素出现在当前页面    ${name}
+    Click Element    ${name}
+
+选择交强险上次投保日期
+    [Arguments]    ${name}
+    等待元素出现在当前页面    ${name}
+    Click Element    ${name}
+
+点击车险服务
+    等待元素出现在当前页面    ${xpath_carinsuranceservices}
+    Click element    ${xpath_carinsuranceservices}
+
+点击询价按钮
+    [Arguments]    ${askPrice_button}
+    等待元素出现在当前页面    ${askPrice_button}
+    Click element    ${askPrice_button}
+    [Teardown]
+
+点击确定(日期框)
+    Click Element    ${xpath_determine}
+
+点击提交按钮(注册车辆信息)
+    等待元素出现在当前页面    ${xpath_submitbtn}
+    Click element    ${xpath_submitbtn}
+
+点击添加车辆热点链接
+    等待元素出现在当前页面    ${xpath_AddCarLink}
+    Click Element    ${xpath_AddCarLink}
+
+点击服务
+    Assign ID to Element    xpath=//*[@id="service"]    servicebtn
+    Click element    id=servicebtn
+
+点击登录按钮
+    [Arguments]    ${loginbt}
+    等待元素出现在当前页面    ${loginbt}
+    Click Element    ${loginbt}
+
+选择图片(身份证)
+    等待元素出现在当前页面    id=idImg
+    Wait Until Keyword Succeeds    2    ${Sleep}    Click element    id=idImg
+
+选择图片(行驶证)
+    等待元素出现在当前页面    id=drivingImg
+    Wait Until Keyword Succeeds    2    ${Sleep}    Click element    id=drivingImg
+
+选择单选按钮(车辆)
+    [Arguments]    ${elementname}
+    等待元素出现在当前页面    ${elementname}
+    Click Element    ${elementname}
+
+选择保险公司_中国人寿
+    等待元素出现在当前页面    xpath=//div[@class='chooseBox']/div/div[5]/label/input[@name='chooseCom']
+    Assign ID to Element    xpath=//div[@class='chooseBox']/div/div[5]/label/input[@name='chooseCom']    chooseComCheckbox
+    Select Checkbox    id=chooseComCheckbox
+    [Teardown]
+
+选择保险公司_永诚保险
+    等待元素出现在当前页面    xpath=//div[@class='chooseBox']/div/div[1]/label/input[@name='chooseCom']
+    Assign ID to Element    xpath=//div[@class='chooseBox']/div/div[1]/label/input[@name='chooseCom']    chooseComCheckbox
+    Select Checkbox    id=chooseComCheckbox
+
+选择保险公司_阳光保险
+    等待元素出现在当前页面    xpath=//div[@class='chooseBox']/div/div[3]/label/input[@name='chooseCom']
+    Assign ID to Element    xpath=//div[@class='chooseBox']/div/div[3]/label/input[@name='chooseCom']    chooseComCheckbox
+    Select Checkbox    id=chooseComCheckbox
+
+点击添加车辆按钮
+    [Arguments]    ${addCar_btn}
+    等待元素出现在当前页面    ${addCar_btn}
+    Click Button    ${addCar_btn}
+
+点击修改车辆信息热点链接
+    等待元素出现在当前页面    xpath=//div[@class="chooseBox"]//div/div[@class='list-group-item']/span[@class='detailInfo']
+    Assign ID to Element    xpath=//div[@class="chooseBox"]//div/div[@class='list-group-item']/span[@class='detailInfo']    detailInfoLink
+    Click element    id=detailInfoLink
+
+点击修改按钮
+    [Arguments]    ${changeInfo_btn}
+    等待元素出现在当前页面    ${changeInfo_btn}
+    Click Button    ${changeInfo_btn}
+
+点击修改提交按钮
+    [Arguments]    ${submitAlter_btn}
+    等待元素出现在当前页面    ${submitAlter_btn}
+    Click Button    ${submitAlter_btn}
+
+点击购买车险按钮
+    [Arguments]    ${gotobuy_btn}
+    等待元素出现在当前页面    ${gotobuy_btn}
+    Click Button    ${gotobuy_btn}
+
+点击申请报价按钮
+    [Arguments]    ${apply_button}
+    等待元素出现在当前页面    ${apply_button}
+    Click element    ${apply_button}
+    [Teardown]
+
+点击删除车辆按钮
+    [Arguments]    ${removeCar_btn}
+    等待元素出现在当前页面    ${removeCar_btn}
+    Click Button    ${removeCar_btn}
+
+点击取消修改按钮
+    [Arguments]    ${changeInfo_btn}
+    等待元素出现在当前页面    ${changeInfo_btn}
+    Click Button    ${changeInfo_btn}
+
+修改交强险和商业险日期
+    [Arguments]    ${ElementById}    ${DateValue}
+    Execute Javascript    document.getElementById('${ElementById}').value='${DateValue}'
+
+点击车牌号热点链接
+    等待元素出现在当前页面    ${xpath_orderlistCarNumberLink}
+    Click Element    ${xpath_orderlistCarNumberLink}
+
+点击返利参数
+    [Arguments]    ${discount_btn}
+    等待元素出现在当前页面    ${discount_btn}
+    Click element    ${discount_btn}
+
+输入保险返利参数
+    [Arguments]    ${element}    ${content}
+    等待元素出现在当前页面    ${element}
+    Input Text    ${element}    ${content}
+
+点击提交修改按钮(返利参数)
+    [Arguments]    ${submit_btn}
+    等待元素出现在当前页面    ${submit_btn}
+    Click Button    ${submit_btn}
+
+选择交强险生效日期
+    [Arguments]    ${name}
+    等待元素出现在当前页面    ${name}
+    Click Element    ${name}
+
+选择订单金额有效期
+    [Arguments]    ${name}
+    等待元素出现在当前页面    ${name}
+    Click Element    ${name}
+
+点击提交报价按钮
+    [Arguments]    ${submitPrice}
+    等待元素出现在当前页面    ${submitPrice}
+    Click Button    ${submitPrice}
+
+输入金额(报价订单页面交强险)
+    [Arguments]    ${content}
+    等待元素出现在当前页面    ${xpath_moneyEdit1}
+    Input Text    ${xpath_moneyEdit1}    ${content}
+
+输入金额(报价订单页面车船税)
+    [Arguments]    ${content}
+    等待元素出现在当前页面    ${xpath_moneyEdit2}
+    Input Text    ${xpath_moneyEdit2}    ${content}
+
+点击已报价
+    等待元素出现在当前页面    ${xpath_quoted price}
+    Click Element    ${xpath_quoted price}

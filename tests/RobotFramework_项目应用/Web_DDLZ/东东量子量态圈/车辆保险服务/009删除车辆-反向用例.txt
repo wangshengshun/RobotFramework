@@ -1,0 +1,25 @@
+*** Settings ***
+Suite Teardown    CloseDriverserver
+Library           Selenium2Library
+Resource          ../../../../BusinessFlow/web/DDLZ/public_business_layer.txt
+Library           AutoItLibrary
+Resource          ../../../../BusinessFlow/web/DDLZ/carinsuranceservices_layer.txt
+Library           DatabaseLibrary
+Resource          ../../../../Resources/ElementLayer/WebResources/基础公共关键字.txt
+
+*** Variables ***
+${url_login}      http://zztruetech:8088/ddlz/login
+
+*** Test Cases ***
+FTC001-执行删除车辆命令，点击取消后，系统应该禁止删除
+    登录系统    id=userName    id=passWord    wss19860323    19860323    id=loginbt    ${url_login}
+    进入圈服务
+    进入车险服务
+    选择单选按钮(车辆)    name=chooseCar
+    点击修改车辆信息热点链接
+    点击删除车辆按钮    id=removeCar
+    Sleep    3s
+    点击取消(页面消息框)
+    ${GetElementText}=    获取元素值    id=number
+    比较字符串    ${GetElementText}    鲁A69688
+    关闭浏览器

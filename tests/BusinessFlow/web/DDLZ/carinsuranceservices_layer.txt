@@ -1,0 +1,59 @@
+*** Settings ***
+Resource          ../../../Resources/ElementLayer/WebResources/基础公共关键字.txt
+Resource          ../../../Resources/ElementLayer/WebResources/基础业务关键字.txt
+Resource          public_business_layer.txt
+
+*** Variables ***
+${Sleep}          2s
+
+*** Keywords ***
+注册新车辆
+    [Arguments]    ${number}    ${name}
+    输入车牌号    id=number    ${number}
+    输入车主姓名    id=name    ${name}
+    Sleep    ${Sleep}
+    选择商业险上次投保日期    id=business_lastDate
+    Sleep    ${Sleep}
+    点击确定(日期框)
+    Sleep    ${Sleep}
+    选择交强险上次投保日期    id=CI_lastDate
+    Sleep    ${Sleep}
+    点击确定(日期框)
+    Sleep    ${Sleep}
+    上传附件(身份证)
+    Sleep    5s
+    上传附件(行驶证)
+    Sleep    8s    #等待所上传的附件上传完成后，再点击提交
+    点击提交按钮(注册车辆信息)
+    Sleep    ${Sleep}
+    点击确定(页面消息框)
+
+进入车险服务
+    Sleep    ${Sleep}
+    点击车险服务
+
+进入圈服务
+    Sleep    ${Sleep}
+    点击服务
+
+上传附件(身份证)
+    选择图片(身份证)
+    上传文件    C:\\RobotFramework\\Extensions\\upload.exe    打开    C:\\RobotFramework\\testdata\\IDcard.png
+
+上传附件(行驶证)
+    选择图片(行驶证)
+    上传文件    C:\\RobotFramework\\Extensions\\upload.exe    打开    C:\\RobotFramework\\testdata\\Drivinglicense.png
+
+选择险种
+    [Arguments]    ${element}    ${Label}
+    选择下拉列表值    ${element}    ${label}
+
+删除车辆
+    选择单选按钮(车辆)    name=chooseCar
+    点击修改车辆信息热点链接
+    点击修改按钮    id=changeInfo
+    点击删除车辆按钮    id=removeCar
+    Sleep    ${Sleep}
+    ${GetPageMessageContents}    获取页面消息框内容
+    比较字符串    ${GetPageMessageContents}    是否删除车辆信息?(注：该车辆的相应订单也会一并删除，请谨慎操作！)
+    点击购买车险按钮    id=gotobuy

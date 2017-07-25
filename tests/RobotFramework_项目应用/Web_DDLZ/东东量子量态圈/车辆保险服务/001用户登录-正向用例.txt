@@ -1,0 +1,26 @@
+*** Settings ***
+Suite Setup
+Suite Teardown    CloseDriverserver
+Library           Selenium2Library
+Resource          ../../../../BusinessFlow/web/DDLZ/public_business_layer.txt
+Resource          ../../../../Resources/ElementLayer/WebResources/基础公共关键字.txt
+
+*** Variables ***
+${url_login}      http://zztruetech:8088/ddlz/login    # 用户登录地址
+
+*** Test Cases ***
+FTC001-页面初始加载检查
+    创建Webdriver    ${url_login}
+    Delete All Cookies
+    页面包含元素    id=userName
+    页面包含元素    id=passWord
+    页面包含按钮    id=loginbt    #检查系统页面中是否包含登录按钮
+    关闭浏览器
+    [Teardown]
+
+FTC002-登录系统检查
+    登录系统    id=userName    id=passWord    wss19860323    19860323    id=loginbt    ${url_login}
+    #检查等待直到页面中显示“圈服务”
+    Wait Until Page Contains Element    xpath=/html/body/div[1]/div[1]/h1    #定位“圈服务”列表元素
+    关闭浏览器
+    [Teardown]

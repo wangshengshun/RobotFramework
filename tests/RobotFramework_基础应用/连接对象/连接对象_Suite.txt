@@ -1,0 +1,11 @@
+*** Test Cases ***
+testcase_连接对象-001
+    #“Catenate”关键字可以连接多个信息
+    ${hi}    Catenate    hello    world
+    Log    ${hi}
+
+testcase_分割连接对象-002
+    #利用SEPARATOR可以对多个连接的信息进行分割
+    ${hi}    Catenate    SEPARATOR=--    hello    world
+    Log    ${hi}
+    #每个字符前面加‘u’,是为了统一编码问题，将字符串转为‘Unicode’编码    例如：u'hello--world'

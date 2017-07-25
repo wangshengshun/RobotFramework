@@ -1,0 +1,13 @@
+*** Settings ***
+Library           MyTestLibrary
+
+*** Test Cases ***
+testcase_自定义关键字库-001
+    #步骤1：在python目录下“..\lib\site-packages”建立文件夹“MyTestLibrary”
+    #步骤2：在文件夹“MyTestLibrary”下建立version.py文件，用于描述自定义测试库的版本信息
+    #步骤3：在文件夹“MyTestLibrary”下建立一个keywords类，起名为“testTemp.py”
+    #步骤4：在文件夹“MyTestLibrary”下新建一个“_init_.py”文件，用于自定义库的相关信息和需要用到的keywords调用继承和声明
+    #步骤5：加载库名“MyTestLibrary”，调用关键字，库文件夹名称一定要和类名称相同
+    Mytest
+
+testcase_关键字开发-002

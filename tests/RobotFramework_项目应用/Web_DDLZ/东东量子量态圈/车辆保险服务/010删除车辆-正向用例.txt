@@ -1,0 +1,20 @@
+*** Settings ***
+Suite Teardown    CloseDriverserver
+Library           Selenium2Library
+Resource          ../../../../BusinessFlow/web/DDLZ/public_business_layer.txt
+Library           AutoItLibrary
+Resource          ../../../../BusinessFlow/web/DDLZ/carinsuranceservices_layer.txt
+Library           DatabaseLibrary
+Resource          ../../../../Resources/ElementLayer/WebResources/基础公共关键字.txt
+
+*** Variables ***
+${url_login}      http://zztruetech:8088/ddlz/login
+
+*** Test Cases ***
+FTC004-删除车辆信息检查
+    登录系统    id=userName    id=passWord    wss19860323    19860323    id=loginbt    ${url_login}
+    进入圈服务
+    进入车险服务
+    : FOR    ${i}    IN RANGE    1
+    \    删除车辆
+    关闭浏览器

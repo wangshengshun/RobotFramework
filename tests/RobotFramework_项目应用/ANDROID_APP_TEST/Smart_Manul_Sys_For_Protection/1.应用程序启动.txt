@@ -1,0 +1,17 @@
+*** Settings ***
+Library           AppiumLibrary
+
+*** Test Cases ***
+运行应用程序-正常_01
+    [Setup]
+    Comment    //从本机目录中获取apk文件，并进行安装
+    Open Application    http://localhost:4723/wd/hub    platformName=Android    platformVersion=4.4.2    deviceName=android_emulator_SDK    app=D:\\Sign\\SmartManulSysForProtection.apk    appPackage=com.example.mylistview
+    ...    appActivity=com.example.mylistview.LogionActivity    unicodeKeyboard=True    resetKeyboard=True
+
+检查界面标题-存在_02
+    [Setup]
+    Wait Until Keyword Succeeds    2min    5sec    Page Should Contain Element    id=com.example.mylistview:id/caption_TextView
+
+检查界面图片-存在_03
+    [Setup]
+    Wait Until Keyword Succeeds    2min    5sec    Page Should Contain Element    id=com.example.mylistview:id/logo_ImageView

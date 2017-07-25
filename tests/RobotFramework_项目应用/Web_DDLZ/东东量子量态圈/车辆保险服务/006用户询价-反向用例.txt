@@ -1,0 +1,64 @@
+*** Settings ***
+Suite Teardown    CloseDriverserver
+Library           Selenium2Library
+Resource          ../../../../BusinessFlow/web/DDLZ/carinsuranceservices_layer.txt
+Resource          ../../../../BusinessFlow/web/DDLZ/public_business_layer.txt
+
+*** Variables ***
+${url_login}      http://zztruetech:8088/ddlz/login
+
+*** Test Cases ***
+FTC001-不选择任何车辆,禁止询价
+    登录系统    id=userName    id=passWord    wss19860323    19860323    id=loginbt    ${url_login}
+    进入圈服务
+    进入车险服务
+    点击询价按钮    id=askPrice
+    ${GetPageMessageContents}    获取页面消息框内容
+    比较字符串    ${GetPageMessageContents}    请选择车辆及保险公司
+    关闭浏览器
+
+FTC002-只选择车辆,不选择保险公司,禁止询价
+    登录系统    id=userName    id=passWord    wss19860323    19860323    id=loginbt    ${url_login}
+    进入圈服务
+    进入车险服务
+    选择单选按钮(车辆)    name=chooseCar
+    点击询价按钮    id=askPrice
+    ${GetPageMessageContents}    获取页面消息框内容
+    比较字符串    ${GetPageMessageContents}    请选择车辆及保险公司
+    关闭浏览器
+
+FTC003-只选择保险公司,不选择车辆,禁止询价
+    登录系统    id=userName    id=passWord    wss19860323    19860323    id=loginbt    ${url_login}
+    进入圈服务
+    进入车险服务
+    选择保险公司_中国人寿
+    点击询价按钮    id=askPrice
+    ${GetPageMessageContents}    获取页面消息框内容
+    比较字符串    ${GetPageMessageContents}    请选择车辆及保险公司
+    关闭浏览器
+
+FTC004-险种都选择不投保，直接申请报价
+    登录系统    id=userName    id=passWord    wss19860323    19860323    id=loginbt    ${url_login}
+    进入圈服务
+    进入车险服务
+    选择单选按钮(车辆)    name=chooseCar
+    选择保险公司_中国人寿
+    点击询价按钮    id=askPrice
+    选择下拉列表值    id=CI    不投保    #去除默认的投保项“交强险及车船税”
+    点击申请报价按钮    id=apply
+    ${GetPageMessageContents}    获取页面消息框内容
+    比较字符串    ${GetPageMessageContents}    请选择险种
+    关闭浏览器
+
+FTC005-险种选择正确，取消申请报价
+    更新数据表记录    car    checkStatus=1    number='鲁A69666'
+    登录系统    id=userName    id=passWord    wss19860323    19860323    id=loginbt    ${url_login}
+    进入圈服务
+    进入车险服务
+    选择单选按钮(车辆)    name=chooseCar
+    选择保险公司_中国人寿
+    点击询价按钮    id=askPrice
+    点击申请报价按钮    id=apply
+    点击取消(页面消息框)
+    页面包含按钮    id=apply
+    关闭浏览器

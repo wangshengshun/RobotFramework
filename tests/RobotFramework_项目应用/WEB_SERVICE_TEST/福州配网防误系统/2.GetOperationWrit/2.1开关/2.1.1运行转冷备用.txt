@@ -1,0 +1,25 @@
+*** Settings ***
+Library           SudsLibrary
+Library           XML
+Library           Collections
+
+*** Variables ***
+${SheetGuidVal}    0a0b391b-de48-4e28-95fc-797fa5043132    # 操作票Guid
+@{OperationStep}    将建中小区2#配电室10kV向2#变侧613开关配电自动化控制防误切换开关切换至就地位置    断开建中小区2#配电室10kV向2#变侧613开关，查确已断开    建中小区2#配电室10kV6132刀闸由合闸转分闸，查确已断开    建中小区2#配电室10kV6131刀闸由合闸转分闸，查确已断开    # 操作票步骤
+
+*** Test Cases ***
+获取操作票项内容-正常_001
+    #Creates a WSDL object of the specified type.Requested type must be defined in the WSDL.
+    ${WsdlObject_GetOperationWrit}=    Create Wsdl Object    GetOperationWrit
+    #Gets the attribute of a WSDL object.
+    ${SheetGuid_AttributeValue}=    Get Wsdl Object Attribute    ${WsdlObject_GetOperationWrit}    SheetGuid
+    #Sets the attribute of a WSDL object.
+    Set Wsdl Object Attribute    ${WsdlObject_GetOperationWrit}    SheetGuid    ${SheetGuidVal}
+    #Calls the SOAP method with the given name and args.    #根据操作票唯一ID获取操作票步骤信息
+    Call Soap Method    GetOperationWrit    ${WsdlObject_GetOperationWrit}
+    #Gets the XML last received.
+    ${receive_xml}=    Get Last Received
+    Should Contain    ${receive_xml}    ${OperationStep[0]}
+    Should Contain    ${receive_xml}    ${OperationStep[1]}
+    Should Contain    ${receive_xml}    ${OperationStep[2]}
+    Should Contain    ${receive_xml}    ${OperationStep[3]}

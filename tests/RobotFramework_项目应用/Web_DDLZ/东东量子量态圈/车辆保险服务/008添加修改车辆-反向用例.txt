@@ -1,0 +1,52 @@
+*** Settings ***
+Suite Teardown    CloseDriverserver
+Library           Selenium2Library
+Resource          ../../../../BusinessFlow/web/DDLZ/public_business_layer.txt
+Library           AutoItLibrary
+Resource          ../../../../BusinessFlow/web/DDLZ/carinsuranceservices_layer.txt
+Library           DatabaseLibrary
+Resource          ../../../../Resources/ElementLayer/WebResources/基础公共关键字.txt
+
+*** Variables ***
+${url_login}      http://zztruetech:8088/ddlz/login
+
+*** Test Cases ***
+FTC001-审核通过的车辆，不允许进行修改
+    #修改car数据表中的审核状态数据字段为1，0：代表未审核，1：代表审核通过
+    更新数据表记录    car    checkStatus=1    number='鲁A69688'
+    登录系统    id=userName    id=passWord    wss19860323    19860323    id=loginbt    ${url_login}
+    进入圈服务
+    进入车险服务
+    选择单选按钮(车辆)    name=chooseCar
+    点击修改车辆信息热点链接
+    点击修改按钮    id=changeInfo
+    等待元素出现在当前页面    id=number
+    等待元素出现在当前页面    id=name
+    ${ElementAttributeValue}=    获取元素属性值    id=number    readonly
+    Log    ${ElementAttributeValue}    level=INFO
+    比较字符串    ${ElementAttributeValue}    true
+    ${ElementAttributeValue}=    获取元素属性值    id=name    readonly
+    Log    ${ElementAttributeValue}    level=INFO
+    比较字符串    ${ElementAttributeValue}    true
+    关闭浏览器
+    [Teardown]
+
+FTC002修改信息后，点击取消修改按钮
+    #修改car数据表中的审核状态数据字段为1，0：代表未审核，1：代表审核通过    目的：为了能够验证其修改功能
+    更新数据表记录    car    checkStatus=0    number='鲁A69688'
+    登录系统    id=userName    id=passWord    wss19860323    19860323    id=loginbt    ${url_login}
+    进入圈服务
+    进入车险服务
+    选择单选按钮(车辆)    name=chooseCar
+    点击修改车辆信息热点链接
+    点击修改按钮    id=changeInfo
+    设置元素焦点    id=number
+    输入车牌号    id=number    鲁A67891
+    设置元素焦点    id=name
+    输入车主姓名    id=name    张三
+    点击取消修改按钮    id=changeInfo
+    点击确定(页面消息框)
+    点击购买车险按钮    id=buyCarInsurance
+    页面包含文本    鲁A69688
+    关闭浏览器
+    [Teardown]

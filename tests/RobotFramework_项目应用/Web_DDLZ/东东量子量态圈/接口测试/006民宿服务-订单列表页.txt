@@ -1,0 +1,39 @@
+*** Settings ***
+Library           RequestsLibrary
+Library           Collections
+
+*** Test Cases ***
+ITC001-查看所有预订的订单
+    ${headers}=    Create Dictionary    Content-Type    application/x-www-form-urlencoded
+    #${cookies}=    Create Dictionary    JSESSIONID    4FC7BFA3E296F6C50CEEACFC4168230E    cookies=${cookies}
+    Create Session    ddlz    http://zztruetech:8088    headers=${headers}
+    ${data}=    Create Dictionary    userName    wss19860323    passWord    19860323
+    ${resp}=    Post Request    ddlz    /ddlz/service/apartment/login    data=${data}    headers=${headers}
+    ${resp}=    Get Request    ddlz    /ddlz/service/apartment/apartmentOrderList    headers=${headers}
+    log    ${resp.content}
+    ${jsondata}=    To Json    ${resp.content}
+    Should Be Equal As Strings    ${jsondata['success']}    True
+    ${data}=    To Json    ${jsondata['data']}
+    ${apartmentArraydata}=    Create List    ${data[0]}
+    #Should Be Equal As Strings    ${apartmentArraydata[0]['orderId']}    30    #订单ID会自动变化，此处不在检查
+    Should Be Equal As Strings    ${apartmentArraydata[0]['orderStatus']}    未支付
+    Should Be Equal As Strings    ${apartmentArraydata[0]['payPrice']}    200.0
+    Should Be Equal As Strings    ${apartmentArraydata[0]['apartmentName']}    公寓111
+
+ITC002-查看民宿订单详情
+    ${headers}=    Create Dictionary    Content-Type    application/x-www-form-urlencoded
+    #${cookies}=    Create Dictionary    JSESSIONID    4FC7BFA3E296F6C50CEEACFC4168230E    cookies=${cookies}
+    Create Session    ddlz    http://zztruetech:8088    headers=${headers}
+    ${data}=    Create Dictionary    userName    wss19860323    passWord    19860323
+    ${resp}=    Post Request    ddlz    /ddlz/service/apartment/login    data=${data}    headers=${headers}
+    ${orderId}=    Convert To Integer    1
+    ${data}=    Create Dictionary    orderId    ${orderId}
+    ${resp}=    Get Request    ddlz    /ddlz/service/apartment/apartmentOrderInfo    headers=${headers}    params=${data}
+    log    ${resp.content}
+    ${jsondata}=    To Json    ${resp.content}
+    Should Be Equal As Strings    ${jsondata['success']}    True
+    ${data}=    To Json    ${jsondata['data']}
+    Should Be Equal As Strings    ${data['checkInPerson']}    张三
+    Should Be Equal As Strings    ${data['phoneNumber']}    123456
+    Should Be Equal As Strings    ${data['stayStartDate']}    2016-02-02 10:02:22
+    Should Be Equal As Strings    ${data['stayEndDate']}    2016-02-03 10:02:22

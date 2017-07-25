@@ -1,0 +1,31 @@
+*** Settings ***
+Library           HttpLibrary.HTTP
+
+*** Variables ***
+${host}           127.0.0.1
+
+*** Test Cases ***
+GET-正常_01
+    [Documentation]    Create Http Context
+    #Sets the HTTP host to use for future requests.
+    Create Http Context    host=${host}    scheme=http
+    #Issues a HTTP GET request.
+    GET    /mantis/my_view_page.php
+
+RESPONSE STATUS-正常_02
+    [Documentation]    Get Response Status
+    #Returns the response status line
+    ${RESPONSE_STATUS}=    Get Response Status
+    Should Start With    ${RESPONSE_STATUS}    302
+    #Logs the response status line
+
+DELETE-正常_03
+    #Get the response header with the name `header_name`
+    Log Response Headers    INFO
+    #Get the response header with the name `content-type`
+    ${delete_before}=    Get Response Header    content-type
+    #Issues a HTTP DELETE request.
+    DELETE    /mantis/my_view_page.php
+    ${delete_after}=    GET    /mantis/my_view_page.php
+    ${delete_after as str}=    Convert To String    ${delete_after}
+    Should Be Equal    ${delete_after as str}    None

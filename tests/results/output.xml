@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20140610 11:19:43.279" generator="Robot 2.8.1 (Python 2.7.2 on win32)">
+<suite source="C:\RobotFramework\tests" id="s1" name="AutoItLibrary Windows Calculator">
+<suite source="C:\RobotFramework\tests\Calculator_Test_Cases.html" id="s1-s1" name="Calculator Test Cases">
+<kw type="setup" name="Start Calculator">
+<doc>Start the Windows Calculator application and set the default settings that the rest of the tests expect.</doc>
+<arguments>
+</arguments>
+<kw type="kw" name="AutoItLibrary.Run">
+<doc>Direct wrapper for AutoIt's Run method.</doc>
+<arguments>
+<arg>calc.exe</arg>
+</arguments>
+<msg timestamp="20140610 11:19:43.576" level="INFO">AutoItLibrary.Run(FileName='calc.exe', WorkingDir='', Flag='')</msg>
+<status status="PASS" endtime="20140610 11:19:43.576" starttime="20140610 11:19:43.529"></status>
+</kw>
+<kw type="kw" name="AutoItLibrary.Wait For Active Window">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional</doc>
+<arguments>
+<arg>Calculator</arg>
+</arguments>
+<msg timestamp="20140610 11:19:53.840" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='Calculator', WindowText='', TimeOut=-1)</msg>
+<msg timestamp="20140610 11:19:53.840" level="INFO">AutoItLibrary.WinWait(WindowTitle='Calculator', WindowText='', TimeOut=10)</msg>
+<msg timestamp="20140610 11:19:53.840" level="INFO">GetScreenImage(FilePath=C:\RobotFramework\tests\results\FAIL_WinWait_1.png)</msg>
+<msg timestamp="20140610 11:19:53.840" html="yes" level="INFO">&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="FAIL_WinWait_1.png"&gt;&lt;img src="FAIL_WinWait_1.png" width="700px"&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;</msg>
+<msg timestamp="20140610 11:19:53.840" level="FAIL">Window 'Calculator' () failed to appear in 10 seconds</msg>
+<status status="FAIL" endtime="20140610 11:19:53.840" starttime="20140610 11:19:43.576"></status>
+</kw>
+<status status="FAIL" endtime="20140610 11:19:53.840" starttime="20140610 11:19:43.529"></status>
+</kw>
+<test id="s1-s1-t1" name="Integer Addition">
+<doc>Get "The Answer" by addition.</doc>
+<tags>
+</tags>
+<status status="FAIL" endtime="20140610 11:19:53.840" critical="yes" starttime="20140610 11:19:53.840">Parent suite setup failed:
+Window 'Calculator' () failed to appear in 10 seconds</status>
+</test>
+<test id="s1-s1-t2" name="Integer Subtraction">
+<doc>Get "The Answer" by subtraction.</doc>
+<tags>
+</tags>
+<status status="FAIL" endtime="20140610 11:19:53.840" critical="yes" starttime="20140610 11:19:53.840">Parent suite setup failed:
+Window 'Calculator' () failed to appear in 10 seconds</status>
+</test>
+<test id="s1-s1-t3" name="Integer Multiplication">
+<doc>Get "The Answer" by multiplication.</doc>
+<tags>
+</tags>
+<status status="FAIL" endtime="20140610 11:19:53.840" critical="yes" starttime="20140610 11:19:53.840">Parent suite setup failed:
+Window 'Calculator' () failed to appear in 10 seconds</status>
+</test>
+<test id="s1-s1-t4" name="Integer Division">
+<doc>Get "The Answer" by division.</doc>
+<tags>
+</tags>
+<status status="FAIL" endtime="20140610 11:19:53.840" critical="yes" starttime="20140610 11:19:53.840">Parent suite setup failed:
+Window 'Calculator' () failed to appear in 10 seconds</status>
+</test>
+<test id="s1-s1-t5" name="Hex Addition">
+<doc>Test Hex addition.</doc>
+<tags>
+</tags>
+<status status="FAIL" endtime="20140610 11:19:53.840" critical="yes" starttime="20140610 11:19:53.840">Parent suite setup failed:
+Window 'Calculator' () failed to appear in 10 seconds</status>
+</test>
+<test id="s1-s1-t6" name="Hex Subtraction">
+<doc>Test Hex subtraction.</doc>
+<tags>
+</tags>
+<status status="FAIL" endtime="20140610 11:19:53.856" critical="yes" starttime="20140610 11:19:53.840">Parent suite setup failed:
+Window 'Calculator' () failed to appear in 10 seconds</status>
+</test>
+<test id="s1-s1-t7" name="Test Screen Capture On FAIL">
+<doc>Test that a screenshot is taken and included in the report file when an AutoItLibrary keyword fails.
+This test will always fail.</doc>
+<tags>
+<tag>ExpectedFAIL</tag>
+</tags>
+<status status="FAIL" endtime="20140610 11:19:53.856" critical="no" starttime="20140610 11:19:53.856">Parent suite setup failed:
+Window 'Calculator' () failed to appear in 10 seconds</status>
+</test>
+<kw type="teardown" name="Stop Calculator">
+<doc>Shut down the Windows Calculator application.</doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Win Activate">
+<doc></doc>
+<arguments>
+<arg>Calculator</arg>
+</arguments>
+<msg timestamp="20140610 11:19:53.856" level="FAIL">No keyword with name 'Win Activate' found.</msg>
+<status status="FAIL" endtime="20140610 11:19:53.856" starttime="20140610 11:19:53.856"></status>
+</kw>
+<kw type="kw" name="Select Calculator Menu Item">
+<doc>The Windows Calculator application doesn't really use a Windows GUI Menu to implement its menus. Therefore AutoIt can't see the menus as menu GUI objects. The only way to access the Calculator menus is via the ALT key sequences. In Win XP the Calculator menu ALT key letters are underlined, and thus available, all the time. Microsoft, in their wisdom, changed this in Win Vista so that you have to press the ALT key and "wait a bit" before the ALT key letters are underlined on the GUI. When they're not underlined, they don't work. Since AutoIt can send ALT key sequences VERY FAST, a sequence such as !VS (ALT+V+S) doesn't work on Win Vista, while it does work on Win XP. To get around this problem, and to make menu item selection more "tester friendly" we provide this keyword. It takes the name of a menu item as defined in the MENUMAP dictionary in the CalculatorGUIMap.py file. The MENUMAP dictionary items translate the application oriented menu name into the sequence of ALT keys to access that menu item. To make this work on Win XP and Win Vista, this keyword sends the ALT key first, waits a bit, then sends the sequence of keys from the MENUMAP. Complicated, but welcome to the wierd world of Windows GUI testing!</doc>
+<arguments>
+<arg>Exit</arg>
+</arguments>
+<kw type="kw" name="${AltKeys} = Collections.Get From Dictionary">
+<doc>Returns a value from the given `dictionary` based on the given `key`.</doc>
+<arguments>
+<arg>${MENUMAP}</arg>
+<arg>${MenuItem}</arg>
+</arguments>
+<msg timestamp="20140610 11:19:53.871" level="FAIL">Non-existing variable '${MENUMAP}'.</msg>
+<msg timestamp="20140610 11:19:53.871" level="INFO">${AltKeys} = None</msg>
+<status status="FAIL" endtime="20140610 11:19:53.871" starttime="20140610 11:19:53.856"></status>
+</kw>
+<kw type="kw" name="Send">
+<doc></doc>
+<arguments>
+<arg>{ALTDOWN}</arg>
+</arguments>
+<msg timestamp="20140610 11:19:53.871" level="FAIL">No keyword with name 'Send' found.</msg>
+<status status="FAIL" endtime="20140610 11:19:53.871" starttime="20140610 11:19:53.871"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Sleep">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20140610 11:19:54.871" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20140610 11:19:54.871" starttime="20140610 11:19:53.871"></status>
+</kw>
+<kw type="kw" name="Send">
+<doc></doc>
+<arguments>
+<arg>${AltKeys}</arg>
+</arguments>
+<msg timestamp="20140610 11:19:54.871" level="FAIL">No keyword with name 'Send' found.</msg>
+<status status="FAIL" endtime="20140610 11:19:54.871" starttime="20140610 11:19:54.871"></status>
+</kw>
+<kw type="kw" name="Send">
+<doc></doc>
+<arguments>
+<arg>{ALTUP}</arg>
+</arguments>
+<msg timestamp="20140610 11:19:54.871" level="FAIL">No keyword with name 'Send' found.</msg>
+<status status="FAIL" endtime="20140610 11:19:54.871" starttime="20140610 11:19:54.871"></status>
+</kw>
+<status status="FAIL" endtime="20140610 11:19:54.871" starttime="20140610 11:19:53.856"></status>
+</kw>
+<status status="FAIL" endtime="20140610 11:19:54.871" starttime="20140610 11:19:53.856">Several failures occurred:
+
+1) No keyword with name 'Win Activate' found.
+
+2) Non-existing variable '${MENUMAP}'.
+
+3) No keyword with name 'Send' found.
+
+4) No keyword with name 'Send' found.
+
+5) No keyword with name 'Send' found.</status>
+</kw>
+<doc>Tests the AutoItLibrary by using various AutoIt keywords on the GUI of the Windows Calculator application.</doc>
+<metadata>
+</metadata>
+<status status="FAIL" endtime="20140610 11:19:54.871" starttime="20140610 11:19:43.326">Suite setup failed:
+Window 'Calculator' () failed to appear in 10 seconds
+
+Also suite teardown failed:
+Several failures occurred:
+
+1) No keyword with name 'Win Activate' found.
+
+2) Non-existing variable '${MENUMAP}'.
+
+3) No keyword with name 'Send' found.
+
+4) No keyword with name 'Send' found.
+
+5) No keyword with name 'Send' found.</status>
+</suite>
+<doc>Post installation self-test for AutoItLibrary. Also serves as an example of some GUI automation techniques that can be used when automation Windows GUI tests.</doc>
+<metadata>
+</metadata>
+<status status="FAIL" endtime="20140610 11:19:54.902" starttime="20140610 11:19:43.279"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="6" pass="0">Critical Tests</stat>
+<stat fail="7" pass="0">All Tests</stat>
+</total>
+<tag>
+<stat info="non-critical" links="" doc="" combined="" pass="0" fail="1">ExpectedFAIL</stat>
+</tag>
+<suite>
+<stat fail="7" pass="0" id="s1" name="AutoItLibrary Windows Calculator">AutoItLibrary Windows Calculator</stat>
+<stat fail="7" pass="0" id="s1-s1" name="Calculator Test Cases">AutoItLibrary Windows Calculator.Calculator Test Cases</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,29 @@
+*** Settings ***
+Library           SudsLibrary
+Library           XML
+Library           Collections
+
+*** Variables ***
+${SheetGuidVal}    8c50e4f8-5aac-434a-b042-fd2c5027c60c    # 操作票Guid
+@{OperationStep}    将融信大卫城66#楼开闭所10kV向融信大卫城环网侧621开关配电自动化控制防误切换开关切换至就地位置    断开融信大卫城66#楼开闭所10kV向融信大卫城环网侧621开关，查确已断开    融信大卫城66#楼开闭所10kV6211刀闸由合闸转分闸，查确已断开    在向融信大卫城环网侧621开关靠线路侧验电确已无电压后即装设 \ \ 接地线    在向融信大卫城环网侧621开关操作机构上悬挂“禁止合闸，线路有人工作”标识牌    # 操作票步骤
+
+*** Test Cases ***
+获取操作票项内容-正常_001
+    [Documentation]    1.GetOperationWrit(int \ IDXID)方法：根据操作票唯一ID获取操作票步骤信息
+    ...    \ 1.1 IDXID：操作票唯一ID
+    ...    1.2 操作步骤信息应包括：所属操作任务唯一ID、操作步骤唯一编号、设备类型 、被操作设备唯一编号
+    ...    \ \ \ \ 设备类型(开关、地刀、小车等)、操作项目、操作类型(1：操作项，0：非操作项)、设备操作前状态、 \ \ \ \ \ \ \ 设备操作后状态
+    #Creates a WSDL object of the specified type.Requested type must be defined in the WSDL.
+    ${WsdlObject_GetOperationWrit}=    Create Wsdl Object    GetOperationWrit
+    #Gets the attribute of a WSDL object.
+    ${SheetGuid_AttributeValue}=    Get Wsdl Object Attribute    ${WsdlObject_GetOperationWrit}    SheetGuid
+    #Sets the attribute of a WSDL object.
+    Set Wsdl Object Attribute    ${WsdlObject_GetOperationWrit}    SheetGuid    ${SheetGuidVal}
+    #Calls the SOAP method with the given name and args.    #根据操作票唯一ID获取操作票步骤信息
+    Call Soap Method    GetOperationWrit    ${WsdlObject_GetOperationWrit}
+    #Gets the XML last received.
+    ${receive_xml}=    Get Last Received
+    Should Contain    ${receive_xml}    ${OperationStep[0]}
+    Should Contain    ${receive_xml}    ${OperationStep[1]}
+    Should Contain    ${receive_xml}    ${OperationStep[2]}
+    Should Contain    ${receive_xml}    ${OperationStep[3]}

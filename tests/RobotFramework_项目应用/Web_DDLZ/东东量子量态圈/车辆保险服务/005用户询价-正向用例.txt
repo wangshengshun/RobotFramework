@@ -1,0 +1,261 @@
+*** Settings ***
+Suite Teardown    CloseDriverserver
+Library           Selenium2Library
+Resource          ../../../../BusinessFlow/web/DDLZ/public_business_layer.txt
+Library           AutoItLibrary
+Resource          ../../../../BusinessFlow/web/DDLZ/carinsuranceservices_layer.txt
+Library           DatabaseLibrary
+Resource          ../../../../Resources/ElementLayer/WebResources/基础公共关键字.txt
+
+*** Variables ***
+@{carInfo}        龙昊天    鲁A69666    # 车辆注册信息（姓名，车牌号）
+${url_login}      http://zztruetech:8088/ddlz/login
+
+*** Test Cases ***
+FTC002-添加新车辆信息
+    #初始化car数据表中的数据，将status字段设置为1
+    更新数据表记录    car    status=1    status=0
+    #更新数据表记录    car    Status=1    number='鲁A69888'
+    登录系统    id=userName    id=passWord    wss19860323    19860323    id=loginbt    ${url_login}
+    进入圈服务
+    进入车险服务
+    点击添加车辆热点链接
+    Sleep    3s
+    注册新车辆    ${carInfo[1]}    ${carInfo[0]}
+    页面包含文本    鲁A69666
+    关闭浏览器
+    [Teardown]
+
+FTC003-投保期前两个月内，禁止询价
+    登录系统    id=userName    id=passWord    wss19860323    19860323    id=loginbt    ${url_login}
+    进入圈服务
+    进入车险服务
+    选择单选按钮(车辆)    name=chooseCar
+    选择保险公司_中国人寿
+    点击询价按钮    id=askPrice
+    ${actelementText}=    获取元素文本    id=dateError
+    比较字符串    ${actelementText}    您的车辆在上次投保到期前两个月内才能询价。
+    关闭浏览器
+
+FTC004-修改车辆信息(日期)功能检查
+    登录系统    id=userName    id=passWord    wss19860323    19860323    id=loginbt    ${url_login}
+    进入圈服务
+    进入车险服务
+    选择单选按钮(车辆)    name=chooseCar
+    点击修改车辆信息热点链接
+    点击修改按钮    id=changeInfo
+    修改交强险和商业险日期    business_lastDate    2016-06-16
+    修改交强险和商业险日期    CI_lastDate    2016-06-16
+    点击修改提交按钮    id=submitAlter
+    点击确定(页面消息框)
+    关闭浏览器
+
+FTC005-车辆未审核通过，禁止询价
+    登录系统    id=userName    id=passWord    wss19860323    19860323    id=loginbt    ${url_login}
+    进入圈服务
+    进入车险服务
+    选择单选按钮(车辆)    name=chooseCar
+    选择保险公司_中国人寿
+    点击询价按钮    id=askPrice
+    ${actelementText}=    获取元素文本    id=statusError
+    比较字符串    ${actelementText}    您的车辆还未审核通过.暂时不可询价.
+    关闭浏览器
+
+FTC006-选择车辆和一家保险公司
+    登录系统    id=userName    id=passWord    wss19860323    19860323    id=loginbt    ${url_login}
+    进入圈服务
+    进入车险服务
+    选择单选按钮(车辆)    name=chooseCar
+    选择保险公司_中国人寿
+    关闭浏览器
+
+FTC007-选择车辆和多家保险公司
+    登录系统    id=userName    id=passWord    wss19860323    19860323    id=loginbt    ${url_login}
+    进入圈服务
+    进入车险服务
+    选择单选按钮(车辆)    name=chooseCar
+    选择保险公司_中国人寿
+    选择保险公司_阳光保险
+    选择保险公司_永诚保险
+    关闭浏览器
+
+FTC008-险种选择页面显示检查
+    登录系统    id=userName    id=passWord    wss19860323    19860323    id=loginbt    ${url_login}
+    进入圈服务
+    进入车险服务
+    选择单选按钮(车辆)    name=chooseCar
+    选择保险公司_中国人寿
+    点击询价按钮    id=askPrice
+    Sleep    3s
+    ${actelementText}=    获取下拉列表值    id=carLossInsurance
+    比较字符串    ${actelementText}    不投保
+    ${actelementText}=    获取下拉列表值    id=thirdPartyInsurance
+    比较字符串    ${actelementText}    不投保
+    ${actelementText}=    获取下拉列表值    id=carStolenInsurance
+    比较字符串    ${actelementText}    不投保
+    ${actelementText}=    获取下拉列表值    id=driverDutyInsurance
+    比较字符串    ${actelementText}    不投保
+    ${actelementText}=    获取下拉列表值    id=passengerDutyInsurance
+    比较字符串    ${actelementText}    不投保
+    ${actelementText}=    获取下拉列表值    id=CI
+    比较字符串    ${actelementText}    投保
+    关闭浏览器
+
+FTC009-险种选择检查_投保机动车损失保险
+    登录系统    id=userName    id=passWord    wss19860323    19860323    id=loginbt    ${url_login}
+    进入圈服务
+    进入车险服务
+    选择单选按钮(车辆)    name=chooseCar
+    选择保险公司_中国人寿
+    点击询价按钮    id=askPrice
+    选择险种    id=carLossInsurance    投保    #机动车损失保险
+    查看元素可见状态    id=glassBrokenInsurance    #玻璃单独破碎险
+    查看元素可见状态    id=fireLossInsurance    #自然损失险
+    查看元素可见状态    id=scratchInsurance    #车身划痕损失险
+    查看元素可见状态    id=repairInsurance    #指定修理厂险
+    查看元素可见状态    id=contributingInsurance    #机动车损失保险无法找到第三方特约险
+    查看元素可见状态    id=carLossInsurance_yes    #不计免赔险下的“车损”
+    勾选页面元素    id=carLossInsurance_yes
+    查看元素不可见状态    id=thirdPartyInsurance_yes    #不计免赔险下的“三者”
+    查看元素不可见状态    id=carStolenInsurance_yes    #不计免赔险下的“盗抢”
+    查看元素不可见状态    id=driverDutyInsurance_yes    #不计免赔险下的“司机”
+    查看元素不可见状态    id=passengerDutyInsurance_yes    #不计免赔险下的“乘客”
+    查看元素不可见状态    id=scratchInsurance_yes    #不计免赔险下的“划痕”
+    查看元素不可见状态    id=fireLossInsurance_yes    #不计免赔险下的“自燃”
+    关闭浏览器
+
+FTC010-险种选择检查_投保全车盗抢保险
+    登录系统    id=userName    id=passWord    wss19860323    19860323    id=loginbt    ${url_login}
+    进入圈服务
+    进入车险服务
+    选择单选按钮(车辆)    name=chooseCar
+    选择保险公司_中国人寿
+    点击询价按钮    id=askPrice
+    选择险种    id=carStolenInsurance    投保    #全车盗抢保险
+    查看元素可见状态    id=glassBrokenInsurance    #玻璃单独破碎险
+    查看元素可见状态    id=fireLossInsurance    #自然损失险
+    查看元素可见状态    id=scratchInsurance    #车身划痕损失险
+    查看元素可见状态    id=repairInsurance    #指定修理厂险
+    查看元素可见状态    id=contributingInsurance    #机动车损失保险无法找到第三方特约险
+    查看元素不可见状态    id=carLossInsurance_yes    #不计免赔险下的“车损”
+    查看元素不可见状态    id=thirdPartyInsurance_yes    #不计免赔险下的“三者”
+    查看元素可见状态    id=carStolenInsurance_yes    #不计免赔险下的“盗抢”
+    勾选页面元素    id=carStolenInsurance_yes
+    查看元素不可见状态    id=driverDutyInsurance_yes    #不计免赔险下的“司机”
+    查看元素不可见状态    id=passengerDutyInsurance_yes    #不计免赔险下的“乘客”
+    查看元素不可见状态    id=scratchInsurance_yes    #不计免赔险下的“划痕”
+    查看元素不可见状态    id=fireLossInsurance_yes    #不计免赔险下的“自燃”
+    关闭浏览器
+
+FTC011-险种选择检查_投保第三者责任险
+    登录系统    id=userName    id=passWord    wss19860323    19860323    id=loginbt    ${url_login}
+    进入圈服务
+    进入车险服务
+    选择单选按钮(车辆)    name=chooseCar
+    选择保险公司_中国人寿
+    点击询价按钮    id=askPrice
+    选择险种    id=thirdPartyInsurance    200万    #第三者责任险
+    查看元素可见状态    id=glassBrokenInsurance    #玻璃单独破碎险
+    查看元素可见状态    id=fireLossInsurance    #自然损失险
+    查看元素可见状态    id=scratchInsurance    #车身划痕损失险
+    查看元素可见状态    id=repairInsurance    #指定修理厂险
+    查看元素可见状态    id=contributingInsurance    #机动车损失保险无法找到第三方特约险
+    查看元素不可见状态    id=carLossInsurance_yes    #不计免赔险下的“车损”
+    查看元素可见状态    id=thirdPartyInsurance_yes    #不计免赔险下的“三者”
+    勾选页面元素    id=thirdPartyInsurance_yes
+    查看元素不可见状态    id=carStolenInsurance_yes    #不计免赔险下的“盗抢”
+    查看元素不可见状态    id=driverDutyInsurance_yes    #不计免赔险下的“司机”
+    查看元素不可见状态    id=passengerDutyInsurance_yes    #不计免赔险下的“乘客”
+    查看元素不可见状态    id=scratchInsurance_yes    #不计免赔险下的“划痕”
+    查看元素不可见状态    id=fireLossInsurance_yes    #不计免赔险下的“自燃”
+    关闭浏览器
+
+FTC012-险种选择检查_投车上人员责任险(司机)
+    登录系统    id=userName    id=passWord    wss19860323    19860323    id=loginbt    ${url_login}
+    进入圈服务
+    进入车险服务
+    选择单选按钮(车辆)    name=chooseCar
+    选择保险公司_中国人寿
+    点击询价按钮    id=askPrice
+    选择险种    id=driverDutyInsurance    20万    #车上人员责任险(司机)
+    查看元素可见状态    id=glassBrokenInsurance    #玻璃单独破碎险
+    查看元素可见状态    id=fireLossInsurance    #自然损失险
+    查看元素可见状态    id=scratchInsurance    #车身划痕损失险
+    查看元素可见状态    id=repairInsurance    #指定修理厂险
+    查看元素可见状态    id=contributingInsurance    #机动车损失保险无法找到第三方特约险
+    查看元素不可见状态    id=carLossInsurance_yes    #不计免赔险下的“车损”
+    查看元素不可见状态    id=thirdPartyInsurance_yes    #不计免赔险下的“三者”
+    查看元素不可见状态    id=carStolenInsurance_yes    #不计免赔险下的“盗抢”
+    查看元素可见状态    id=driverDutyInsurance_yes    #不计免赔险下的“司机”
+    勾选页面元素    id=driverDutyInsurance_yes
+    查看元素不可见状态    id=passengerDutyInsurance_yes    #不计免赔险下的“乘客”
+    查看元素不可见状态    id=scratchInsurance_yes    #不计免赔险下的“划痕”
+    查看元素不可见状态    id=fireLossInsurance_yes    #不计免赔险下的“自燃”
+    关闭浏览器
+
+FTC013-险种选择检查_投车上人员责任险(乘客)
+    登录系统    id=userName    id=passWord    wss19860323    19860323    id=loginbt    ${url_login}
+    进入圈服务
+    进入车险服务
+    选择单选按钮(车辆)    name=chooseCar
+    选择保险公司_中国人寿
+    点击询价按钮    id=askPrice
+    选择险种    id=passengerDutyInsurance    20万    #车上人员责任险(乘客)
+    查看元素可见状态    id=glassBrokenInsurance    #玻璃单独破碎险
+    查看元素可见状态    id=fireLossInsurance    #自然损失险
+    查看元素可见状态    id=scratchInsurance    #车身划痕损失险
+    查看元素可见状态    id=repairInsurance    #指定修理厂险
+    查看元素可见状态    id=contributingInsurance    #机动车损失保险无法找到第三方特约险
+    查看元素不可见状态    id=carLossInsurance_yes    #不计免赔险下的“车损”
+    查看元素不可见状态    id=thirdPartyInsurance_yes    #不计免赔险下的“三者”
+    查看元素不可见状态    id=carStolenInsurance_yes    #不计免赔险下的“盗抢”
+    查看元素不可见状态    id=driverDutyInsurance_yes    #不计免赔险下的“司机”
+    查看元素可见状态    id=passengerDutyInsurance_yes    #不计免赔险下的“乘客”
+    勾选页面元素    id=passengerDutyInsurance_yes
+    查看元素不可见状态    id=scratchInsurance_yes    #不计免赔险下的“划痕”
+    查看元素不可见状态    id=fireLossInsurance_yes    #不计免赔险下的“自燃”
+    关闭浏览器
+
+FTC014-险种选择检查_投保机动车损失保险,车上人员责任险(乘客),自燃损失险,车身划痕损失险
+    登录系统    id=userName    id=passWord    wss19860323    19860323    id=loginbt    ${url_login}
+    进入圈服务
+    进入车险服务
+    选择单选按钮(车辆)    name=chooseCar
+    选择保险公司_中国人寿
+    点击询价按钮    id=askPrice
+    选择险种    id=carLossInsurance    投保    #机动车损失保险
+    选择险种    id=passengerDutyInsurance    20万    #车上人员责任险
+    选择险种    id=fireLossInsurance    投保    #自燃损失险
+    选择险种    id=scratchInsurance    5000    #车身划痕损失险
+    查看元素可见状态    id=glassBrokenInsurance    #玻璃单独破碎险
+    查看元素可见状态    id=fireLossInsurance    #自然损失险
+    查看元素可见状态    id=scratchInsurance    #车身划痕损失险
+    查看元素可见状态    id=repairInsurance    #指定修理厂险
+    查看元素可见状态    id=contributingInsurance    #机动车损失保险无法找到第三方特约险
+    查看元素可见状态    id=carLossInsurance_yes    #不计免赔险下的“车损”
+    勾选页面元素    id=carLossInsurance_yes
+    查看元素不可见状态    id=thirdPartyInsurance_yes    #不计免赔险下的“三者”
+    查看元素不可见状态    id=carStolenInsurance_yes    #不计免赔险下的“盗抢”
+    查看元素不可见状态    id=driverDutyInsurance_yes    #不计免赔险下的“司机”
+    查看元素可见状态    id=passengerDutyInsurance_yes    #不计免赔险下的“乘客”
+    勾选页面元素    id=passengerDutyInsurance_yes
+    查看元素可见状态    id=scratchInsurance_yes    #不计免赔险下的“划痕”
+    勾选页面元素    id=scratchInsurance_yes
+    查看元素可见状态    id=fireLossInsurance_yes    #不计免赔险下的“自燃”
+    勾选页面元素    id=fireLossInsurance_yes
+    关闭浏览器
+
+FTC015-险种选择正确,申请报价
+    更新数据表记录    car    checkStatus=1    number='鲁A69666'
+    登录系统    id=userName    id=passWord    wss19860323    19860323    id=loginbt    ${url_login}
+    进入圈服务
+    进入车险服务
+    选择单选按钮(车辆)    name=chooseCar
+    选择保险公司_中国人寿
+    点击询价按钮    id=askPrice
+    点击申请报价按钮    id=apply
+    Sleep    2s
+    点击确定(页面消息框)
+    ${GetPageMessageContents}    获取页面消息框内容
+    比较字符串    ${GetPageMessageContents}    您的车险订单已申请报价，保险公司会尽快处理，请您留意短信通知，耐心等待。
+    关闭浏览器

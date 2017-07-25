@@ -1,0 +1,5 @@
+*** Settings ***
+
+*** Test Cases ***
+testcase_repeatkeyword-001
+    Repeat Keyword    3    test_repeatkeyword

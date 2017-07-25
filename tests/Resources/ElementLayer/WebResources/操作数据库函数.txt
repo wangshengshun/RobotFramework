@@ -1,0 +1,32 @@
+*** Settings ***
+Library           DatabaseLibrary
+
+*** Variables ***
+
+*** Keywords ***
+连接mysql
+    [Arguments]    ${Databasetype}    ${ConnectDatabaseString}
+    #Connect To Database Using Custom Params    连接mysql数据库：pymysql    数据库连接字符串：host='zztruetech',port=3306, user='root', passwd='root', db='ddlz',charset='utf8'    #增加字符集设置项
+    Connect To Database Using Custom Params    ${Databasetype}    ${ConnectDatabaseString}
+
+断开数据库连接
+    Disconnect From Database
+
+连接sqlserver
+    [Arguments]    ${Databasetype}    ${TableName}    ${ConnectDatabaseString}
+    #Connect To Database Using Custom Params    连接sqlserver数据库：pyodbc    数据库连接字符串："DRIVER={SQL Server};SERVER=wangshengshun;DATABASE=PSWSDB_福州配网WebSerT;UID=sa;PWD=root"
+    Connect To Database Using Custom Params    ${Databasetype}    ${ConnectDatabaseString}
+
+执行update命令
+    [Arguments]    ${tablename}    ${tablefield}    ${condition}    # 数据表名，执行sql语句操作（查询，删除，插入，更新）的条件
+    ${temp}=    Execute Sql String    update ${tablename} set ${tablefield} where \ ${condition}
+
+执行delete命令
+    [Arguments]    ${tablename}    ${condition}    # 数据表名，执行sql语句操作（查询，删除，插入，更新）的条件
+    #${car_namevalue}=    Evaluate    ('${car_name}').decode('utf8')    #转码
+    Execute Sql String    delete from ${tablename} where ${condition}
+
+执行select命令
+    [Arguments]    ${tablename}    ${tablefield}    ${condition}    # 数据表名，执行sql语句操作（查询，删除，插入，更新）的条件
+    @{queryResults}=    Query    select ${tablefield} from ${tablename} where ${condition}
+    [Return]    @{queryResults}

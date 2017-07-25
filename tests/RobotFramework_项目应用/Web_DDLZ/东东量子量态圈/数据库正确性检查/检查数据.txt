@@ -1,0 +1,14 @@
+*** Settings ***
+Resource          ../../../../BusinessFlow/web/DDLZ/public_business_layer.txt
+
+*** Test Cases ***
+ATC001-查询数据表字段值
+    @{expectedValue}=    Create List    0    #0：代表未审核，1：代表审核通过
+    @{actualValue}=    查询数据表记录    car    checkStatus    number='鲁A69666'
+    Run Keyword If    ${actualValue[0][0]}==@{expectedValue}[0]    log    1    ELSE    log    0
+
+ATC001-删除车辆信息数据表记录检查
+    @{actualValue1}=    查询数据表记录    car    status    number='鲁A69666'
+    @{actualValue2}=    查询数据表记录    car    status    number='鲁A69888'
+    @{actualValue3}=    查询数据表记录    car    status    number='京A67331'
+    @{actualValue4}=    查询数据表记录    car    status    number='京A68666'

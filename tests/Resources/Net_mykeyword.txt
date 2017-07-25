@@ -1,0 +1,29 @@
+*** Settings ***
+Library           Dialogs    # Provides means for pausing the test execution and getting input from users.
+Library           String    # Library for generating, modifying and verifying strings.
+Library           OperatingSystem    # Enables various operating system related tasks to be performed in the system where Robot Framework is running.
+Library           Screenshot    # Provides keywords to capture screenshots of the desktop.
+Library           Collections    # Provides a set of keywords for handling Python lists and dictionaries.
+Library           DatabaseLibrary    # Python based library for database testing. Works with any Python interpreter, including Jython.
+Library           Process    # Library for running processes in the system. New in Robot Framework 2.8.
+Library           XML    # Library for generating, modifying and verifying XML files.
+Library           Telnet    # Makes it possible to connect to Telnet servers and execute commands on the opened connections.
+
+*** Keywords ***
+求和
+    [Arguments]    ${num1}    ${num2}
+    ${value3}=    Add Two Numbers    ${num1}    ${num2}
+    [Return]    ${value3}
+
+List参数
+    [Arguments]    ${arg1}    @{arg2}
+    ${temp}    Set Variable    ${arg1}
+    ${arg1}    Set Variable    ${arg2[2]}
+    log    ${arg1}===${arg2}
+    [Teardown]    Set Global Variable    ${arg1}    ${temp}
+    [Return]    @{arg2}    ${arg1}    @{arg2}
+
+FORJ
+    [Arguments]    ${NUM}
+    : FOR    ${j}    IN RANGE    ${NUM}
+    \    Log    ${j}

@@ -1,0 +1,135 @@
+*** Settings ***
+Library           Telnet    # Makes it possible to connect to Telnet servers and execute commands on the opened connections.
+Library           Dialogs    # Provides means for pausing the test execution and getting input from users.
+Library           OperatingSystem    # Enables various operating system related tasks to be performed in the system where Robot Framework is running.
+Library           String    # Library for generating, modifying and verifying strings.
+Library           XML    # Library for generating, modifying and verifying XML files.
+Library           Screenshot    # Provides keywords to capture screenshots of the desktop.
+Library           Collections    # Provides a set of keywords for handling Python lists and dictionaries.
+Library           Process    # Library for running processes in the system. New in Robot Framework 2.8.
+Library           Selenium2Library    # Web testing library that uses Selenium 2. For most parts drop-in-replacement for old SeleniumLibrary.
+Library           AutoItLibrary
+Resource          基础业务关键字.txt
+Library           CustomLibrary
+
+*** Variables ***
+${Sleep}          5s
+
+*** Keywords ***
+CloseDriverserver
+    Close Process    chromedriver    #谷歌
+
+比较字符串
+    [Arguments]    ${DestinationString}    ${SourceString}
+    Should Be Equal    ${DestinationString}    ${SourceString}
+
+获取页面消息框内容
+    Sleep    ${Sleep}
+    #说明：获取当前页面消息框内容，不需要点击页面消息框中弹出的确定按钮
+    ${GetPagemesContent}=    Confirm Action
+    [Return]    ${GetPagemesContent}
+
+创建Webdriver
+    [Arguments]    ${url_login}
+    ${devname}    Create Dictionary    deviceName    Google Nexus 5
+    Create Dictionary    mobileEmulation    ${devname}
+    ${chromeoptions}    Evaluate    sys.modules['selenium.webdriver.chrome.options'].Options()    sys,selenium.webdriver.chrome.options
+    Call Method    ${chromeoptions}    add_experimental_option    mobileEmulation    ${devname}
+    Create Webdriver    Chrome    chrome_options=${chromeoptions}
+    Go To    ${url_login}
+    Maximize Browser Window
+
+点击打开按钮上传
+    [Arguments]    ${title}    ${filename}
+    Sleep    ${Sleep}
+    Win Wait    ${title}    #等待title窗口
+    log    ${title}
+    Win Activate    ${title}    #激活title对应的窗口
+    Control Set Text    \    \    Edit1    ${filename}    #输入文件名
+    Sleep    ${Sleep}
+    Control Click    \    \    Button1    #点击打开按钮，上传
+    Sleep    ${Sleep}
+
+获取下拉列表值
+    [Arguments]    ${element}
+    等待元素出现在当前页面    ${element}
+    ${SelectedListReturnValue}=    Get Selected List Label    ${element}
+    [Return]    ${SelectedListReturnValue}
+
+获取元素文本
+    [Arguments]    ${element}
+    等待元素出现在当前页面    ${element}
+    Sleep    ${Sleep}
+    ${actual_elementtext}=    Get Text    ${element}
+    [Return]    ${actual_elementtext}
+
+页面包含文本
+    [Arguments]    ${text}
+    #Ajax的刷新是异步的，返回文字需要时间，    下面几个关键字该能搞定绝大部分AJAX测试：    Wait For Condition · Wait Until Page Contains · Wait Until Page Contains Element
+    Wait Until Page Contains    ${text}
+
+页面包含元素
+    [Arguments]    ${element}
+    等待元素出现在当前页面    ${element}
+    Page Should Contain Element    ${element}
+
+选择下拉列表值
+    [Arguments]    ${element}    ${Label}
+    等待元素出现在当前页面    ${element}
+    Select From List By Label    ${element}    ${Label}
+
+查看元素可见状态
+    [Arguments]    ${element}
+    等待元素出现在当前页面    ${element}
+    Element Should Be Visible    ${element}
+
+查看元素不可见状态
+    [Arguments]    ${element}
+    等待元素出现在当前页面    ${element}
+    Element Should Be Disabled    ${element}
+
+勾选页面元素
+    [Arguments]    ${element}
+    等待元素出现在当前页面    ${element}
+    Click Element    ${element}
+
+点击确定(页面消息框)
+    #页面消息对话框，点击确定
+    ${mes}    confirm action
+    choose Ok on next confirmation
+    Sleep    ${Sleep}
+
+点击取消(页面消息框)
+    #页面消息对话框，点击取消
+    Sleep    ${Sleep}
+    Choose Cancel On Next Confirmation
+    ${mes}    confirm action
+
+页面包含按钮
+    [Arguments]    ${element}
+    等待元素出现在当前页面    ${element}
+    Page Should Contain Button    ${element}
+
+等待元素出现在当前页面
+    [Arguments]    ${element}
+    Wait Until Page Contains Element    ${element}    180s    元素不能正常显示！
+
+设置元素焦点
+    [Arguments]    ${element}
+    Focus    ${element}
+
+获取元素属性值
+    [Arguments]    ${elementlocator}    ${AttributeValue}    # Get Element Attribute 获取元素属性 \ \ \ \ \ Get Element Attribute \ \ \ id=kw@name \ \ \ \ 先定位元素然后获取@后面的属性的值
+    等待元素出现在当前页面    ${elementlocator}
+    ${GetAttributeValue}=    Selenium2Library.Get Element Attribute    ${elementlocator}@${AttributeValue}
+    [Return]    ${GetAttributeValue}
+
+获取元素值
+    [Arguments]    ${element}
+    等待元素出现在当前页面    ${element}
+    ${GetElementValue}=    Get Value    ${element}
+    [Return]    ${GetElementValue}
+
+上传文件
+    [Arguments]    ${uploadFilePath}    ${title}    ${filePath}
+    Run Process    ${uploadFilePath}    ${title}    ${filePath}

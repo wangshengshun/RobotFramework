@@ -1,0 +1,20 @@
+*** Settings ***
+Suite Setup       uConnect Database
+Suite Teardown    Disconnect From Database
+Library           SudsLibrary
+Library           DatabaseLibrary
+
+*** Variables ***
+${url}            http://localhost:8080/DMSForPhoneServcie/Service1.asmx?wsdl
+
+*** Test Cases ***
+初始化数据-正常_001
+    [Documentation]    WSDL对象(例如：http://../Service1.asmx?wsdl)
+    Execute Sql String    UPDATE \ \ \ OperateStep SET \ \ \ \ \ \ \ \ \ \ \ \ \ ExecuteStatus = 0,ExecuteStatusName='' WHERE \ \ \ \ sheetGuid = '0a0b391b-de48-4e28-95fc-797fa5043132'
+
+创建soap client-正常_002
+    [Documentation]    WSDL对象(例如：http://../Service1.asmx?wsdl)
+    #Loads a WSDL from the given URL/path and creates a Suds SOAP client.
+    Create Soap Client    ${url}
+    #Sets the port to use in future requests. port should be the name or the index of the port as it appears in the WSDL.
+    Set Port    Service1Soap

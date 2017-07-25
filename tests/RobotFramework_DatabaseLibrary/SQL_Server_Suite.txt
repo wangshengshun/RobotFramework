@@ -1,0 +1,13 @@
+*** Settings ***
+Suite Setup       Connect To Database Using Custom Params    pyodbc    "DRIVER={SQL Server};SERVER=wangshengshun;DATABASE=PSWSDB_福州配网T;UID=sa;PWD=root"
+Suite Teardown    Disconnect From Database
+Library           DatabaseLibrary
+
+*** Test Cases ***
+testcase_ConnectTest-001
+    @{queryResults}    Query    select sheetGuid,ExecuteStatus,ExecuteStatusName from OperateStep
+    Log Many    @{queryResults}
+    Log    ${queryResults[0][0]}
+
+testcase_updatetable-002
+    Execute Sql String    UPDATE \ \ \ OperateStep SET \ \ \ \ \ \ \ \ \ \ \ \ \ ExecuteStatus = 0,ExecuteStatusName='' WHERE \ \ \ \ sheetGuid = '0a0b391b-de48-4e28-95fc-797fa5043132'

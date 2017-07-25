@@ -1,0 +1,2 @@
+*** Settings ***
+Documentation     UpdateDeviceCodeList(string DeviceID , string CodeList )方法：上传设备的锁码序列

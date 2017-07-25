@@ -1,0 +1,985 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vg version="700" gridsize="8" range="0,0,1280,800" bordericons="7" borderstyle="1" scrollbars="3" windowstate="0" backcolor="$505050">
+<page name="page" bounds="0,0,793.700787,1122.141732" visible="false" margin="100,100,100,100" paperwidth="2100" paperheight="2969"/>
+<sheet name="sheet1" GraphAppClass="&apos;接线图&apos;" GraphClass="&apos;应用图&apos;" MyLayers="&apos;未命名0,False,True&apos;">
+<line name="line10" origin="-60.2,-285.59001" protect="256" BaseVoltageID="0" DBFlag="false" EleClass="&apos;基元&apos;" GraphAppClass="&apos;模型图&apos;" GraphIDInSvg="&apos;000000009111810500000001CB5F810401210100000&apos;" MyLayerName="&apos;未命名0&apos;" ObjFlag="true" ObjType="&apos;&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="&apos;0&apos;" linkmode="1">
+<points>
+55.4,39.2,6
+66.8,39.2,2
+</points>
+</line>
+<line name="line9" origin="-60.2,-285.59001" protect="256" BaseVoltageID="0" DBFlag="false" EleClass="&apos;基元&apos;" GraphAppClass="&apos;模型图&apos;" GraphIDInSvg="&apos;00000001CB5F8104000000CC025E999901210100000&apos;" MyLayerName="&apos;未命名0&apos;" ObjFlag="true" ObjType="&apos;&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="&apos;0&apos;" linkmode="1">
+<points>
+96,39.2,6
+107.4,39.2,2
+</points>
+</line>
+<line name="line8" origin="-60.2,-285.59001" protect="256" BaseVoltageID="0" DBFlag="false" EleClass="&apos;基元&apos;" GraphAppClass="&apos;模型图&apos;" GraphIDInSvg="&apos;00000002451B8104000000CC025D999901210100000&apos;" MyLayerName="&apos;未命名0&apos;" ObjFlag="true" ObjType="&apos;&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="&apos;0&apos;" linkmode="1">
+<points>
+107.4,46.4,6
+107.4,39.2,2
+</points>
+</line>
+<line name="line7" origin="-60.2,-285.59001" protect="256" BaseVoltageID="0" DBFlag="false" EleClass="&apos;基元&apos;" GraphAppClass="&apos;模型图&apos;" GraphIDInSvg="&apos;000000CC025E9999000000020C52810701210100000&apos;" MyLayerName="&apos;未命名0&apos;" ObjFlag="true" ObjType="&apos;&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="&apos;0&apos;" linkmode="1">
+<points>
+107.4,39.2,6
+120.4,39.2,2
+</points>
+</line>
+<line name="line6" origin="-60.2,-285.59001" protect="256" BaseVoltageID="0" DBFlag="false" EleClass="&apos;基元&apos;" GraphAppClass="&apos;模型图&apos;" GraphIDInSvg="&apos;000000FEB7A599990000000B7DAC810701210100000&apos;" MyLayerName="&apos;未命名0&apos;" ObjFlag="true" ObjType="&apos;&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="&apos;0&apos;" linkmode="1">
+<points>
+379,38.8,6
+372.5,38.8,2
+</points>
+</line>
+<line name="line5" origin="-60.2,-285.59001" protect="256" BaseVoltageID="0" DBFlag="false" EleClass="&apos;基元&apos;" GraphAppClass="&apos;模型图&apos;" GraphIDInSvg="&apos;00000002501F8104000000FEB7A4999901210100000&apos;" MyLayerName="&apos;未命名0&apos;" ObjFlag="true" ObjType="&apos;&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="&apos;0&apos;" linkmode="1">
+<points>
+379,43.4,6
+379,38.8,2
+</points>
+</line>
+<line name="line4" origin="-60.2,-285.59001" protect="256" BaseVoltageID="0" DBFlag="false" EleClass="&apos;基元&apos;" GraphAppClass="&apos;模型图&apos;" GraphIDInSvg="&apos;00000001D2288104000000FEB7A5999901210100000&apos;" MyLayerName="&apos;未命名0&apos;" ObjFlag="true" ObjType="&apos;&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="&apos;0&apos;" linkmode="1">
+<points>
+384.4,38.8,6
+379,38.8,2
+</points>
+</line>
+<line name="line3" origin="-60.2,-285.59001" protect="256" BaseVoltageID="0" DBFlag="false" EleClass="&apos;基元&apos;" GraphAppClass="&apos;模型图&apos;" GraphIDInSvg="&apos;00000001D2288104000000009693810501210100000&apos;" MyLayerName="&apos;未命名0&apos;" ObjFlag="true" ObjType="&apos;&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="&apos;0&apos;" linkmode="1">
+<points>
+412.5,38.8,6
+424.5,38.8,2
+</points>
+</line>
+<line name="line2" origin="-60.2,-285.59001" protect="256" BaseVoltageID="0" DBFlag="false" EleClass="&apos;基元&apos;" GraphAppClass="&apos;模型图&apos;" GraphIDInSvg="&apos;00000001C36651070000002608018107010A0100000&apos;" MyLayerName="&apos;未命名0&apos;" ObjFlag="true" ObjType="&apos;&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="&apos;0&apos;" linkmode="1">
+<points>
+184.1,39.5,6
+158.1,39.5,2
+</points>
+</line>
+<line name="line1" origin="-60.2,-285.59001" protect="256" BaseVoltageID="0" DBFlag="false" EleClass="&apos;基元&apos;" GraphAppClass="&apos;模型图&apos;" GraphIDInSvg="&apos;00000001C36651070000001EC4CC8107010A0100000&apos;" MyLayerName="&apos;未命名0&apos;" ObjFlag="true" ObjType="&apos;&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="&apos;0&apos;" linkmode="1">
+<points>
+308.8,38.4,6
+334.8,38.4,2
+</points>
+</line>
+<text name="text17" bounds="69.9,0,108.9,13" origin="-77.7,-285.59001" autosize="true" border="$0" fontname="宋体" fontsize="13" fontcolor="$FF00FF" borderinterval="0" text="上军线"/>
+<text name="text16" bounds="369.8,2.8,408.8,15.8" origin="-77.7,-285.59001" autosize="true" border="$0" fontname="宋体" fontsize="13" fontcolor="$FF00FF" borderinterval="0" text="观军线"/>
+<text name="text15" bounds="156.6,70.55,216.6,79.55" origin="-77.7,-285.59001" autosize="true" border="$0" fontname="宋体" fontsize="9" fontcolor="$FF00FF" borderinterval="0" text="观海变电站625"/>
+<text name="text14" bounds="156.6,60.8,206.6,69.8" origin="-77.7,-285.59001" autosize="true" border="$0" fontname="宋体" fontsize="9" fontcolor="$FF00FF" borderinterval="0" text="另一电源点:"/>
+<text name="text13" bounds="272.1,72.65,332.1,81.65" origin="-77.7,-285.59001" autosize="true" border="$0" fontname="宋体" fontsize="9" fontcolor="$FF00FF" borderinterval="0" text="上三变电站651"/>
+<text name="text12" bounds="272.1,62.9,322.1,71.9" origin="-77.7,-285.59001" autosize="true" border="$0" fontname="宋体" fontsize="9" fontcolor="$FF00FF" borderinterval="0" text="另一电源点:"/>
+<text name="text11" bounds="73.9,29,88.9,38" origin="-77.7,-285.59001" autosize="true" border="$0" fontname="宋体" fontsize="9" fontcolor="$FFFFFF" borderinterval="0" text="651"/>
+<text name="text10" bounds="112,50.1,132,59.1" origin="-77.7,-285.59001" autosize="true" border="$0" fontname="宋体" fontsize="9" fontcolor="$FFFFFF" borderinterval="0" text="6516"/>
+<text name="text9" bounds="391,44.8,406,53.8" origin="-77.7,-285.59001" autosize="true" border="$0" fontname="宋体" fontsize="9" fontcolor="$FFFFFF" borderinterval="0" text="625"/>
+<text name="text8" bounds="383.6,49.6,403.6,58.6" origin="-77.7,-285.59001" autosize="true" border="$0" fontname="宋体" fontsize="9" fontcolor="$FFFFFF" borderinterval="0" text="6256"/>
+<text name="text7" bounds="263.8,55.8,288.8,64.8" origin="-77.7,-285.59001" autosize="true" border="$0" fontname="宋体" fontsize="9" fontcolor="$FFFFFF" borderinterval="0" text="11175"/>
+<text name="text6" bounds="266.8,46.1,285.8,55.1" origin="-77.7,-285.59001" autosize="true" border="$0" fontname="宋体" fontsize="9" fontcolor="$FFFFFF" borderinterval="0" text="(双)"/>
+<text name="text5" bounds="253.8,36.3,298.8,45.3" origin="-77.7,-285.59001" autosize="true" border="$0" fontname="宋体" fontsize="9" fontcolor="$FFFFFF" borderinterval="0" text="直属工作处"/>
+<text name="text4" bounds="253.8,26.6,298.8,35.6" origin="-77.7,-285.59001" autosize="true" border="$0" fontname="宋体" fontsize="9" fontcolor="$FFFFFF" borderinterval="0" text="部队司令部"/>
+<text name="text3" bounds="263.8,16.8,288.8,25.8" origin="-77.7,-285.59001" autosize="true" border="$0" fontname="宋体" fontsize="9" fontcolor="$FFFFFF" borderinterval="0" text="92403"/>
+<text name="text2" bounds="0,38.1,12,44.1" origin="-77.7,-285.59001" autosize="true" border="$0" fontname="宋体" fontsize="6" fontcolor="$FFFFFF" borderinterval="0" text="上三"/>
+<text name="text1" bounds="462.3,37,474.3,43" origin="-77.7,-285.59001" autosize="true" border="$0" fontname="宋体" fontsize="6" fontcolor="$FFFFFF" borderinterval="0" text="观海"/>
+<Breaker_4100010 name="Breaker_41000103" bounds="366,24.057732,416.257732,42.485567" origin="403.35,41" AreaLock="false" BaseVoltageID="1011001005" CimClass="&apos;Breaker&apos;" DisplayName="&apos;观军线625开关&apos;" EleClass="&apos;库对象图元&apos;" ForbidDel="true" GraphClass="&apos;模型图&apos;" GraphIDInSvg="&apos;BB3E2D4A9DB246DAA70C3348FD5B290881040500001&apos;" MyLayerName="&apos;未命名0&apos;" MyLayers="&apos;未命名0,False,True&apos;" NamingNo="&apos;625开关&apos;" NoInGrp="&apos;&apos;" ObjName="&apos;625开关&apos;" ObjType="&apos;配网.推车开关&apos;" PathName="&apos;观军线625开关&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="1098002307" PSRType="&apos;&apos;" ShortName="&apos;625&apos;" StructType="&apos;&apos;">
+<横推车 name="横推车1" bounds="379.402062,35.114433,416.257732,42.436129" origin="393.392934,27.328375" CimClass="&apos;Disconnector&apos;" EleClass="&apos;库对象图元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" MyLayers="&apos;未命名0,False,True&apos;" ObjType="&apos;刀闸&apos;" PrimLocked="false" PrimVisible="true" PSRType="&apos;推车&apos;" StructType="&apos;推车&apos;">
+<横单推车状态1 name="横单推车状态11" bounds="404.208762,35.114433,416.257732,42.436129" origin="414.960506,32.046653" CimClass="&apos;Discrete&apos;" DBFlag="true" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MeaCategory="&apos;位置&apos;" MeaType="&apos;开关位置&apos;" MyLayerName="&apos;未命名0&apos;" MyLayers="&apos;未命名0,False,True&apos;" ObjFlag="true" ObjType="&apos;离散量&apos;" PartFunction="&apos;采集值&apos;" PrimLocked="false" PrimVisible="true">
+<line name="line1" origin="410.708762,38.114433" MyLayerName="&apos;未命名0&apos;" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00" linkmode="2">
+<points>
+407.752576,35.114433,6
+413.42268,38.775281,2
+407.752576,42.436129,2
+413.42268,38.775281,2
+413.42268,38.775281,2
+413.42268,38.775281,2
+</points>
+</line>
+<line name="line2" origin="405.708762,38.114433" MyLayerName="&apos;未命名0&apos;" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00" linkmode="2">
+<points>
+404.208762,35.114433,6
+409.878866,38.775281,2
+404.208762,42.436129,2
+409.878866,38.775281,2
+409.878866,38.775281,2
+409.878866,38.775281,2
+</points>
+</line>
+<line name="line3" origin="419.208762,42.114433" MyLayerName="&apos;未命名0&apos;" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00" backcolor="$808080" linkmode="3">
+<points>
+413.42268,38.775281,6
+416.257732,38.775281,2
+</points>
+<link>
+line1,p0,p1
+</link>
+</line>
+<line name="line4" origin="412.208762,42.114433" MyLayerName="&apos;未命名0&apos;" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00" backcolor="$808080" linkmode="3">
+<points>
+409.878866,38.775281,6
+</points>
+<link>
+line2,p0,p1
+</link>
+</line>
+</横单推车状态1>
+<横单推车状态1 name="横单推车状态1" bounds="379.402062,35.114433,391.451031,42.436129" origin="379.960506,32.046653" CimClass="&apos;Discrete&apos;" DBFlag="true" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MeaCategory="&apos;位置&apos;" MeaType="&apos;开关位置&apos;" MyLayerName="&apos;未命名0&apos;" MyLayers="&apos;未命名0,False,True&apos;" ObjFlag="true" ObjType="&apos;离散量&apos;" PartFunction="&apos;采集值&apos;" PrimLocked="false" PrimVisible="true">
+<line name="line1" origin="389.902062,38.114433" MyLayerName="&apos;未命名0&apos;" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00" linkmode="2">
+<points>
+387.907218,35.114433,6
+382.237114,38.775281,2
+387.907218,42.436129,2
+382.237114,38.775281,2
+382.237114,38.775281,2
+382.237114,38.775281,2
+</points>
+</line>
+<line name="line2" origin="394.902062,38.114433" MyLayerName="&apos;未命名0&apos;" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00" linkmode="2">
+<points>
+391.451031,35.114433,6
+385.780927,38.775281,2
+391.451031,42.436129,2
+385.780927,38.775281,2
+385.780927,38.775281,2
+385.780927,38.775281,2
+</points>
+</line>
+<line name="line3" origin="381.402062,42.114433" MyLayerName="&apos;未命名0&apos;" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00" backcolor="$808080" linkmode="3">
+<points>
+382.237114,38.775281,6
+379.402062,38.775281,2
+</points>
+<link>
+line1,p0,p1
+</link>
+</line>
+<line name="line4" origin="388.402062,42.114433" MyLayerName="&apos;未命名0&apos;" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00" backcolor="$808080" linkmode="3">
+<points>
+385.780927,38.775281,6
+</points>
+<link>
+line2,p0,p1
+</link>
+</line>
+</横单推车状态1>
+<line name="line1" origin="378.460506,15.046653" CimClass="&apos;Terminal&apos;" DBFlag="true" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" ObjFlag="true" ObjType="&apos;端子&apos;" PrimLocked="false" PrimVisible="true" PSRType="&apos;普通端子&apos;" SideName="&apos;座外侧&apos;" StructType="&apos;设备端子&apos;" linecolor="$FFFF00" linkmode="3">
+<points>
+379.402062,38.775281,6
+</points>
+<link>
+横单推车状态1,p0,line3
+</link>
+</line>
+<line name="line2" origin="378.460506,23.046653" CimClass="&apos;Terminal&apos;" DBFlag="true" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" ObjFlag="true" ObjType="&apos;端子&apos;" PrimLocked="false" PrimVisible="true" PSRType="&apos;普通端子&apos;" SideName="&apos;车外侧&apos;" StructType="&apos;设备端子&apos;" linecolor="$FFFF00" linkmode="3">
+<points>
+385.780927,38.775281,6
+</points>
+<link>
+横单推车状态1,p0,line2
+</link>
+</line>
+<line name="line3" origin="393.460506,57.046653" CimClass="&apos;Terminal&apos;" DBFlag="true" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" ObjFlag="true" ObjType="&apos;端子&apos;" PrimLocked="false" PrimVisible="true" PSRType="&apos;普通端子&apos;" SideName="&apos;车内侧&apos;" StructType="&apos;设备端子&apos;" linecolor="$FFFF00" linkmode="3">
+<points>
+409.878866,38.775281,6
+</points>
+<link>
+横单推车状态11,p0,line2
+</link>
+</line>
+<line name="line4" origin="379.460506,62.046653" CimClass="&apos;Terminal&apos;" DBFlag="true" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" ObjFlag="true" ObjType="&apos;端子&apos;" PrimLocked="false" PrimVisible="true" PSRType="&apos;普通端子&apos;" SideName="&apos;座内侧&apos;" StructType="&apos;设备端子&apos;" linecolor="$FFFF00" linkmode="3">
+<points>
+416.257732,38.775281,6
+</points>
+<link>
+横单推车状态11,p0,line3
+</link>
+</line>
+<link>
+line1,line1,p0
+</link>
+</横推车>
+<line name="line1" origin="361,21.057732" AreaLock="false" AreaName="&apos;&apos;" BaseVoltageID="1011001005" CimClass="&apos;Terminal&apos;" DBFlag="true" DisplayName="&apos;&apos;" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" NamingNo="&apos;&apos;" NoInGrp="&apos;&apos;" ObjFlag="true" ObjName="&apos;&apos;" ObjType="&apos;端子&apos;" PartFunction="&apos;连接端子&apos;" PathName="&apos;&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="1007020404" PSRType="&apos;普通端子&apos;" ShortName="&apos;&apos;" SideName="&apos;起侧&apos;" StructType="&apos;&apos;" linecolor="$FFFF00" linkmode="3">
+<points>
+379.402062,38.775281,6
+</points>
+</line>
+<line name="line2" origin="393.007658,15.767114" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" ObjFlag="true" ObjType="&apos;连接线&apos;" PartFunction="&apos;连接线&apos;" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00" linkmode="3">
+<points>
+385.780927,38.775281,6
+392.804124,38.8,2
+</points>
+<link>
+横推车1,p0,line2
+横开关状态1,p1,line1
+</link>
+</line>
+<line name="line4" origin="424.5,25.557732" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" ObjFlag="true" ObjType="&apos;连接线&apos;" PartFunction="&apos;连接线&apos;" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00" linkmode="3">
+<points>
+409.878866,38.775281,6
+402.85567,38.8,2
+</points>
+<link>
+横开关状态1,p1,line2
+横推车1,p0,line3
+</link>
+</line>
+<横开关状态 name="横开关状态1" bounds="392.804124,35.114433,402.85567,42.485567" origin="384,24.057732" AreaLock="false" AreaName="&apos;&apos;" BaseVoltageID="1011001005" CimClass="&apos;Discrete&apos;" DBFlag="true" DisplayName="&apos;&apos;" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MeaCategory="&apos;位置&apos;" MeaType="&apos;开关位置&apos;" MyLayerName="&apos;未命名0&apos;" MyLayers="&apos;未命名0,False,True&apos;" NamingNo="&apos;开关位置&apos;" NoInGrp="&apos;&apos;" ObjFlag="true" ObjName="&apos;开关位置&apos;" ObjType="&apos;离散量&apos;" OwnerResourceID="1098002307" PartFunction="&apos;采集值&apos;" PathName="&apos;625开关开关位置&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="1029002307" PSRType="&apos;&apos;" ShortName="&apos;开关位置&apos;" SpecialPropertyFlag="false" StructType="&apos;&apos;">
+<rect name="rect2" bounds="392.804124,35.114433,402.85567,42.485567" origin="409.804124,34.636446" MyLayerLock="false" MyLayerName="&apos;未命名0&apos;" MyLayerVisible="true" PrimLineWidth="1" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00" backcolor="$FF00" pattern="1"/>
+<line name="line1" origin="393.804124,32.114433" MyLayerName="&apos;未命名0&apos;" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00" linkmode="2">
+<points>
+392.804124,38.8,6
+</points>
+</line>
+<line name="line2" origin="411.804124,32.114433" MyLayerName="&apos;未命名0&apos;" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00" linkmode="2">
+<points>
+402.85567,38.8,6
+</points>
+</line>
+</横开关状态>
+<line name="line5" origin="369,28.557732" AreaLock="false" AreaName="&apos;&apos;" BaseVoltageID="1011001005" CimClass="&apos;Terminal&apos;" DBFlag="true" DisplayName="&apos;&apos;" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" NamingNo="&apos;&apos;" NoInGrp="&apos;&apos;" ObjFlag="true" ObjName="&apos;&apos;" ObjType="&apos;端子&apos;" PathName="&apos;&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="1007020405" PSRType="&apos;普通端子&apos;" ShortName="&apos;&apos;" SideName="&apos;末侧&apos;" StructType="&apos;设备端子&apos;" linecolor="$FFFF00" linkmode="3">
+<points>
+392.804124,38.8,6
+</points>
+<link>
+横开关状态1,p0,line1
+</link>
+</line>
+<line name="line7" origin="370,25.557732" AreaLock="false" AreaName="&apos;&apos;" BaseVoltageID="1011001005" CimClass="&apos;Terminal&apos;" DBFlag="true" DisplayName="&apos;&apos;" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" NamingNo="&apos;&apos;" NoInGrp="&apos;&apos;" ObjFlag="true" ObjName="&apos;&apos;" ObjType="&apos;端子&apos;" PathName="&apos;&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="1007020405" PSRType="&apos;普通端子&apos;" ShortName="&apos;&apos;" SideName="&apos;座外侧&apos;" StructType="&apos;设备端子&apos;" linecolor="$FFFF00" linkmode="3">
+<points>
+379.402062,38.775281,6
+</points>
+<link>
+line1,p0,p0
+</link>
+</line>
+<line name="line8" origin="401,25.557732" AreaLock="false" AreaName="&apos;&apos;" BaseVoltageID="1011001005" CimClass="&apos;Terminal&apos;" DBFlag="true" DisplayName="&apos;&apos;" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" NamingNo="&apos;&apos;" NoInGrp="&apos;&apos;" ObjFlag="true" ObjName="&apos;&apos;" ObjType="&apos;端子&apos;" PathName="&apos;&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="1007020405" PSRType="&apos;普通端子&apos;" ShortName="&apos;&apos;" SideName="&apos;座内侧&apos;" StructType="&apos;设备端子&apos;" linecolor="$FFFF00" linkmode="3">
+<points>
+416.257732,38.775281,6
+</points>
+<link>
+横推车1,p0,line4
+</link>
+</line>
+<line name="line3" origin="401,26.564439" AreaLock="false" AreaName="&apos;&apos;" BaseVoltageID="1011001005" CimClass="&apos;Terminal&apos;" DBFlag="true" DisplayName="&apos;&apos;" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" NamingNo="&apos;&apos;" NoInGrp="&apos;&apos;" ObjFlag="true" ObjName="&apos;&apos;" ObjType="&apos;端子&apos;" PathName="&apos;&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="1007020405" PSRType="&apos;普通端子&apos;" ShortName="&apos;&apos;" SideName="&apos;车内侧&apos;" StructType="&apos;设备端子&apos;" linecolor="$FFFF00" linkmode="3">
+<points>
+409.878866,38.775281,6
+</points>
+<link>
+横推车1,p0,line3
+</link>
+</line>
+<line name="line9" origin="381,23.564439" AreaLock="false" AreaName="&apos;&apos;" BaseVoltageID="1011001005" CimClass="&apos;Terminal&apos;" DBFlag="true" DisplayName="&apos;&apos;" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" NamingNo="&apos;&apos;" NoInGrp="&apos;&apos;" ObjFlag="true" ObjName="&apos;&apos;" ObjType="&apos;端子&apos;" PathName="&apos;&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="1007020405" PSRType="&apos;普通端子&apos;" ShortName="&apos;&apos;" SideName="&apos;车外侧&apos;" StructType="&apos;设备端子&apos;" linecolor="$FFFF00" linkmode="3">
+<points>
+385.780927,38.775281,6
+</points>
+<link>
+横推车1,p0,line2
+</link>
+</line>
+<rect name="rect2" bounds="366,24.057732,398.5,38.8" origin="370.85,25.257732" visible="false" viewbox="1" linecolor="$FFFF00"/>
+</Breaker_4100010>
+<Breaker_4100010 name="Breaker_41000104" bounds="-269.3,-625.122288,-219.042268,-606.694453" origin="-77.7,-285.59001" angle="180" AreaLock="false" BaseVoltageID="1011001005" CimClass="&apos;Breaker&apos;" DisplayName="&apos;上军线651开关&apos;" EleClass="&apos;库对象图元&apos;" ForbidDel="true" GraphClass="&apos;模型图&apos;" GraphIDInSvg="&apos;20374680E90840EEA2A7D06A6CBF99BD81040500001&apos;" MyLayerName="&apos;未命名0&apos;" MyLayers="&apos;未命名0,False,True&apos;" NamingNo="&apos;651开关&apos;" NoInGrp="&apos;&apos;" ObjName="&apos;651开关&apos;" ObjType="&apos;配网.推车开关&apos;" PathName="&apos;上军线651开关&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="1098001227" PSRType="&apos;&apos;" ShortName="&apos;651&apos;" StructType="&apos;&apos;">
+<横推车 name="横推车1" bounds="-255.897938,-614.065587,-219.042268,-606.743891" origin="-241.907066,-621.851645" CimClass="&apos;Disconnector&apos;" EleClass="&apos;库对象图元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" MyLayers="&apos;未命名0,False,True&apos;" ObjType="&apos;刀闸&apos;" PrimLocked="false" PrimVisible="true" PSRType="&apos;推车&apos;" StructType="&apos;推车&apos;">
+<横单推车状态1 name="横单推车状态11" bounds="-231.091238,-614.065587,-219.042268,-606.743891" origin="-220.339494,-617.133367" CimClass="&apos;Discrete&apos;" DBFlag="true" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MeaCategory="&apos;位置&apos;" MeaType="&apos;开关位置&apos;" MyLayerName="&apos;未命名0&apos;" MyLayers="&apos;未命名0,False,True&apos;" ObjFlag="true" ObjType="&apos;离散量&apos;" PartFunction="&apos;采集值&apos;" PrimLocked="false" PrimVisible="true">
+<line name="line1" origin="-224.591238,-611.065587" MyLayerName="&apos;未命名0&apos;" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00" linkmode="2">
+<points>
+-227.547424,-614.065587,6
+-221.87732,-610.404739,2
+-227.547424,-606.743891,2
+-221.87732,-610.404739,2
+-221.87732,-610.404739,2
+-221.87732,-610.404739,2
+</points>
+</line>
+<line name="line2" origin="-229.591238,-611.065587" MyLayerName="&apos;未命名0&apos;" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00" linkmode="2">
+<points>
+-231.091238,-614.065587,6
+-225.421134,-610.404739,2
+-231.091238,-606.743891,2
+-225.421134,-610.404739,2
+-225.421134,-610.404739,2
+-225.421134,-610.404739,2
+</points>
+</line>
+<line name="line3" origin="-216.091238,-607.065587" MyLayerName="&apos;未命名0&apos;" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00" backcolor="$808080" linkmode="3">
+<points>
+-221.87732,-610.404739,6
+-219.042268,-610.404739,2
+</points>
+<link>
+line1,p0,p1
+</link>
+</line>
+<line name="line4" origin="-223.091238,-607.065587" MyLayerName="&apos;未命名0&apos;" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00" backcolor="$808080" linkmode="3">
+<points>
+-225.421134,-610.404739,6
+</points>
+<link>
+line2,p0,p1
+</link>
+</line>
+</横单推车状态1>
+<横单推车状态1 name="横单推车状态1" bounds="-255.897938,-614.065587,-243.848969,-606.743891" origin="-255.339494,-617.133367" CimClass="&apos;Discrete&apos;" DBFlag="true" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MeaCategory="&apos;位置&apos;" MeaType="&apos;开关位置&apos;" MyLayerName="&apos;未命名0&apos;" MyLayers="&apos;未命名0,False,True&apos;" ObjFlag="true" ObjType="&apos;离散量&apos;" PartFunction="&apos;采集值&apos;" PrimLocked="false" PrimVisible="true">
+<line name="line1" origin="-245.397938,-611.065587" MyLayerName="&apos;未命名0&apos;" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00" linkmode="2">
+<points>
+-247.392782,-614.065587,6
+-253.062886,-610.404739,2
+-247.392782,-606.743891,2
+-253.062886,-610.404739,2
+-253.062886,-610.404739,2
+-253.062886,-610.404739,2
+</points>
+</line>
+<line name="line2" origin="-240.397938,-611.065587" MyLayerName="&apos;未命名0&apos;" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00" linkmode="2">
+<points>
+-243.848969,-614.065587,6
+-249.519073,-610.404739,2
+-243.848969,-606.743891,2
+-249.519073,-610.404739,2
+-249.519073,-610.404739,2
+-249.519073,-610.404739,2
+</points>
+</line>
+<line name="line3" origin="-253.897938,-607.065587" MyLayerName="&apos;未命名0&apos;" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00" backcolor="$808080" linkmode="3">
+<points>
+-253.062886,-610.404739,6
+-255.897938,-610.404739,2
+</points>
+<link>
+line1,p0,p1
+</link>
+</line>
+<line name="line4" origin="-246.897938,-607.065587" MyLayerName="&apos;未命名0&apos;" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00" backcolor="$808080" linkmode="3">
+<points>
+-249.519073,-610.404739,6
+</points>
+<link>
+line2,p0,p1
+</link>
+</line>
+</横单推车状态1>
+<line name="line1" origin="-256.839494,-634.133367" CimClass="&apos;Terminal&apos;" DBFlag="true" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" ObjFlag="true" ObjType="&apos;端子&apos;" PrimLocked="false" PrimVisible="true" PSRType="&apos;普通端子&apos;" SideName="&apos;座外侧&apos;" StructType="&apos;设备端子&apos;" linecolor="$FFFF00" linkmode="3">
+<points>
+-255.897938,-610.404739,6
+</points>
+<link>
+横单推车状态1,p0,line3
+</link>
+</line>
+<line name="line2" origin="-256.839494,-626.133367" CimClass="&apos;Terminal&apos;" DBFlag="true" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" ObjFlag="true" ObjType="&apos;端子&apos;" PrimLocked="false" PrimVisible="true" PSRType="&apos;普通端子&apos;" SideName="&apos;车外侧&apos;" StructType="&apos;设备端子&apos;" linecolor="$FFFF00" linkmode="3">
+<points>
+-249.519073,-610.404739,6
+</points>
+<link>
+横单推车状态1,p0,line2
+</link>
+</line>
+<line name="line3" origin="-241.839494,-592.133367" CimClass="&apos;Terminal&apos;" DBFlag="true" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" ObjFlag="true" ObjType="&apos;端子&apos;" PrimLocked="false" PrimVisible="true" PSRType="&apos;普通端子&apos;" SideName="&apos;车内侧&apos;" StructType="&apos;设备端子&apos;" linecolor="$FFFF00" linkmode="3">
+<points>
+-225.421134,-610.404739,6
+</points>
+<link>
+横单推车状态11,p0,line2
+</link>
+</line>
+<line name="line4" origin="-255.839494,-587.133367" CimClass="&apos;Terminal&apos;" DBFlag="true" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" ObjFlag="true" ObjType="&apos;端子&apos;" PrimLocked="false" PrimVisible="true" PSRType="&apos;普通端子&apos;" SideName="&apos;座内侧&apos;" StructType="&apos;设备端子&apos;" linecolor="$FFFF00" linkmode="3">
+<points>
+-219.042268,-610.404739,6
+</points>
+<link>
+横单推车状态11,p0,line3
+</link>
+</line>
+<link>
+line1,line1,p0
+</link>
+</横推车>
+<line name="line1" origin="-274.3,-628.122288" AreaLock="false" AreaName="&apos;&apos;" BaseVoltageID="1011001005" CimClass="&apos;Terminal&apos;" DBFlag="true" DisplayName="&apos;&apos;" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" NamingNo="&apos;&apos;" NoInGrp="&apos;&apos;" ObjFlag="true" ObjName="&apos;&apos;" ObjType="&apos;端子&apos;" PartFunction="&apos;连接端子&apos;" PathName="&apos;&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="1007018840" PSRType="&apos;普通端子&apos;" ShortName="&apos;&apos;" SideName="&apos;起侧&apos;" StructType="&apos;&apos;" linecolor="$FFFF00" linkmode="3">
+<points>
+-255.897938,-610.404739,6
+</points>
+</line>
+<line name="line2" origin="-242.292342,-633.412906" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" ObjFlag="true" ObjType="&apos;连接线&apos;" PartFunction="&apos;连接线&apos;" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00" linkmode="3">
+<points>
+-249.519073,-610.404739,6
+-242.495876,-610.38002,2
+</points>
+<link>
+横推车1,p0,line2
+横开关状态1,p1,line1
+</link>
+</line>
+<line name="line4" origin="-210.8,-623.622288" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" ObjFlag="true" ObjType="&apos;连接线&apos;" PartFunction="&apos;连接线&apos;" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00" linkmode="3">
+<points>
+-225.421134,-610.404739,6
+-232.44433,-610.38002,2
+</points>
+<link>
+横开关状态1,p1,line2
+横推车1,p0,line3
+</link>
+</line>
+<横开关状态 name="横开关状态1" bounds="-242.495876,-614.065587,-232.44433,-606.694453" origin="-251.3,-625.122288" AreaLock="false" AreaName="&apos;&apos;" BaseVoltageID="1011001005" CimClass="&apos;Discrete&apos;" DBFlag="true" DisplayName="&apos;&apos;" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MeaCategory="&apos;位置&apos;" MeaType="&apos;开关位置&apos;" MyLayerName="&apos;未命名0&apos;" MyLayers="&apos;未命名0,False,True&apos;" NamingNo="&apos;开关位置&apos;" NoInGrp="&apos;&apos;" ObjFlag="true" ObjName="&apos;开关位置&apos;" ObjType="&apos;离散量&apos;" OwnerResourceID="1098001227" PartFunction="&apos;采集值&apos;" PathName="&apos;651开关开关位置&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="1029001227" PSRType="&apos;&apos;" ShortName="&apos;开关位置&apos;" SpecialPropertyFlag="false" StructType="&apos;&apos;">
+<rect name="rect2" bounds="-242.495876,-614.065587,-232.44433,-606.694453" origin="-225.495876,-614.543574" MyLayerLock="false" MyLayerName="&apos;未命名0&apos;" MyLayerVisible="true" PrimLineWidth="1" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00" backcolor="$FF00" pattern="1"/>
+<line name="line1" origin="-241.495876,-617.065587" MyLayerName="&apos;未命名0&apos;" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00" linkmode="2">
+<points>
+-242.495876,-610.38002,6
+</points>
+</line>
+<line name="line2" origin="-223.495876,-617.065587" MyLayerName="&apos;未命名0&apos;" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00" linkmode="2">
+<points>
+-232.44433,-610.38002,6
+</points>
+</line>
+</横开关状态>
+<line name="line5" origin="-266.3,-620.622288" AreaLock="false" AreaName="&apos;&apos;" BaseVoltageID="1011001005" CimClass="&apos;Terminal&apos;" DBFlag="true" DisplayName="&apos;&apos;" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" NamingNo="&apos;&apos;" NoInGrp="&apos;&apos;" ObjFlag="true" ObjName="&apos;&apos;" ObjType="&apos;端子&apos;" PathName="&apos;&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="1007018841" PSRType="&apos;普通端子&apos;" ShortName="&apos;&apos;" SideName="&apos;末侧&apos;" StructType="&apos;设备端子&apos;" linecolor="$FFFF00" linkmode="3">
+<points>
+-242.495876,-610.38002,6
+</points>
+<link>
+横开关状态1,p0,line1
+</link>
+</line>
+<line name="line7" origin="-265.3,-623.622288" AreaLock="false" AreaName="&apos;&apos;" BaseVoltageID="1011001005" CimClass="&apos;Terminal&apos;" DBFlag="true" DisplayName="&apos;&apos;" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" NamingNo="&apos;&apos;" NoInGrp="&apos;&apos;" ObjFlag="true" ObjName="&apos;&apos;" ObjType="&apos;端子&apos;" PathName="&apos;&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="1007018841" PSRType="&apos;普通端子&apos;" ShortName="&apos;&apos;" SideName="&apos;座外侧&apos;" StructType="&apos;设备端子&apos;" linecolor="$FFFF00" linkmode="3">
+<points>
+-255.897938,-610.404739,6
+</points>
+<link>
+line1,p0,p0
+</link>
+</line>
+<line name="line8" origin="-234.3,-623.622288" AreaLock="false" AreaName="&apos;&apos;" BaseVoltageID="1011001005" CimClass="&apos;Terminal&apos;" DBFlag="true" DisplayName="&apos;&apos;" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" NamingNo="&apos;&apos;" NoInGrp="&apos;&apos;" ObjFlag="true" ObjName="&apos;&apos;" ObjType="&apos;端子&apos;" PathName="&apos;&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="1007018841" PSRType="&apos;普通端子&apos;" ShortName="&apos;&apos;" SideName="&apos;座内侧&apos;" StructType="&apos;设备端子&apos;" linecolor="$FFFF00" linkmode="3">
+<points>
+-219.042268,-610.404739,6
+</points>
+<link>
+横推车1,p0,line4
+</link>
+</line>
+<line name="line3" origin="-234.3,-622.615581" AreaLock="false" AreaName="&apos;&apos;" BaseVoltageID="1011001005" CimClass="&apos;Terminal&apos;" DBFlag="true" DisplayName="&apos;&apos;" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" NamingNo="&apos;&apos;" NoInGrp="&apos;&apos;" ObjFlag="true" ObjName="&apos;&apos;" ObjType="&apos;端子&apos;" PathName="&apos;&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="1007018841" PSRType="&apos;普通端子&apos;" ShortName="&apos;&apos;" SideName="&apos;车内侧&apos;" StructType="&apos;设备端子&apos;" linecolor="$FFFF00" linkmode="3">
+<points>
+-225.421134,-610.404739,6
+</points>
+<link>
+横推车1,p0,line3
+</link>
+</line>
+<line name="line9" origin="-254.3,-625.615581" AreaLock="false" AreaName="&apos;&apos;" BaseVoltageID="1011001005" CimClass="&apos;Terminal&apos;" DBFlag="true" DisplayName="&apos;&apos;" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" NamingNo="&apos;&apos;" NoInGrp="&apos;&apos;" ObjFlag="true" ObjName="&apos;&apos;" ObjType="&apos;端子&apos;" PathName="&apos;&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="1007018841" PSRType="&apos;普通端子&apos;" ShortName="&apos;&apos;" SideName="&apos;车外侧&apos;" StructType="&apos;设备端子&apos;" linecolor="$FFFF00" linkmode="3">
+<points>
+-249.519073,-610.404739,6
+</points>
+<link>
+横推车1,p0,line2
+</link>
+</line>
+<rect name="rect2" bounds="-269.3,-625.122288,-236.8,-610.38002" origin="-264.45,-623.922288" visible="false" viewbox="1" linecolor="$FFFF00"/>
+</Breaker_4100010>
+<GroundDisconnector_42200100 name="GroundDisconnector_422001003" bounds="-434.59001,161.774883,-403.472989,176.360915" origin="-77.7,-285.59001" angle="90" AreaLock="false" BaseVoltageID="1011001005" CimClass="&apos;GroundDisconnector&apos;" DisplayName="&apos;观军线6256接地刀闸&apos;" EleClass="&apos;库对象图元&apos;" ForbidDel="true" GraphClass="&apos;模型图&apos;" GraphIDInSvg="&apos;7ACCE4EB96C7412CA2D0A7F5276C1D0B81041700001&apos;" MyLayerName="&apos;未命名0&apos;" MyLayers="&apos;未命名0,False,True&apos;" NamingNo="&apos;6256接地刀闸&apos;" NoInGrp="&apos;&apos;" ObjName="&apos;6256接地刀闸&apos;" ObjType="&apos;配网.接地刀闸&apos;" PathName="&apos;观军线6256接地刀闸&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="1099001118" PSRType="&apos;&apos;" ShortName="&apos;6256&apos;" StructType="&apos;&apos;">
+<横接地 name="横接地1" bounds="-426.292138,165.275621,-422.143202,176.360915" origin="-522.09001,163.274852" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" MyLayers="&apos;未命名0,False,True&apos;" ObjFlag="true" ObjType="&apos;接地&apos;" PartFunction="&apos;接地&apos;" PrimLocked="false" PrimVisible="true">
+<line name="line6" origin="-425.292138,166.025559" MyLayerLock="false" MyLayerName="&apos;未命名0&apos;" MyLayerVisible="true" PrimLineWidth="1" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00">
+<points>
+-422.604194,165.275621,6
+-422.604194,176.360915,2
+</points>
+</line>
+<line name="line7" origin="-429.292138,166.025559" MyLayerLock="false" MyLayerName="&apos;未命名0&apos;" MyLayerVisible="true" PrimLineWidth="1" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00">
+<points>
+-424.448166,168.046943,6
+-424.448166,173.589593,2
+</points>
+</line>
+<line name="line8" origin="-433.292138,166.025559" MyLayerLock="false" MyLayerName="&apos;未命名0&apos;" MyLayerVisible="true" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00">
+<points>
+-426.292138,169.432607,6
+-426.292138,172.203929,2
+</points>
+</line>
+<line name="line1" origin="-425.292138,166.025559" MyLayerLock="false" MyLayerName="&apos;未命名0&apos;" MyLayerVisible="true" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00" linkmode="3">
+<points>
+-422.604194,170.818268,6
+-422.143202,170.818268,2
+</points>
+</line>
+<link>
+横刀闸状态1,line1,line4
+</link>
+</横接地>
+<横刀闸状态 name="横刀闸状态1" bounds="-422.143202,166.442437,-403.472989,173.443766" origin="-429.18883,164.010871" AreaLock="false" AreaName="&apos;&apos;" BaseVoltageID="1011001005" CimClass="&apos;Discrete&apos;" DBFlag="true" DisplayName="&apos;&apos;" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MeaCategory="&apos;位置&apos;" MeaType="&apos;开关位置&apos;" MyLayerName="&apos;未命名0&apos;" MyLayers="&apos;未命名0,False,True&apos;" NamingNo="&apos;开关位置&apos;" NoInGrp="&apos;&apos;" ObjFlag="true" ObjName="&apos;开关位置&apos;" ObjType="&apos;离散量&apos;" OwnerResourceID="1099001118" PartFunction="&apos;采集值&apos;" PathName="&apos;6256接地刀闸开关位置&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="1029003568" PSRType="&apos;&apos;" ShortName="&apos;开关位置&apos;" StructType="&apos;&apos;">
+<line name="Openline" origin="-425.143202,163.942437" MyLayerLock="false" MyLayerName="&apos;未命名0&apos;" MyLayerVisible="true" PrimLineWidth="1" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00" backcolor="$FFC0C0" pattern="1" linkmode="1">
+<points>
+-409.004904,166.442437,6
+-417.302777,170.818268,2
+</points>
+<link>
+circle2,p1,center
+</link>
+</line>
+<circle name="circle2" bounds="-418.685754,169.067935,-415.919797,172.5686" origin="-430.143202,165.442437" MyLayerLock="false" MyLayerName="&apos;未命名0&apos;" MyLayerVisible="true" PrimLineWidth="1" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00"/>
+<line name="line3" origin="-415.143202,160.942437" MyLayerLock="false" MyLayerName="&apos;未命名0&apos;" MyLayerVisible="true" PrimLineWidth="1" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00" linkmode="3">
+<points>
+-406.930436,173.443766,6
+-406.930436,170.818268,2
+-406.930436,168.192769,2
+-406.930436,170.818268,2
+-406.930436,170.818268,2
+-403.472989,170.818268,2
+</points>
+<programe>
+published function OnNodeChange(Sender)
+end function
+</programe>
+</line>
+<line name="line4" origin="-432.643202,157.442437" MyLayerLock="false" MyLayerName="&apos;未命名0&apos;" MyLayerVisible="true" PrimLineWidth="1" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00" backcolor="$0" frontcolor="$FFFFFF" linkmode="3">
+<points>
+-418.685754,170.818268,6
+-422.143202,170.818268,2
+</points>
+<programe>
+published function OnNodeChange(Sender)
+end function
+</programe>
+</line>
+<line name="CloseLine" origin="-423.643202,166.442437" visible="false" MyLayerName="&apos;未命名0&apos;" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00" linkmode="1">
+<points>
+-406.930436,170.818268,6
+-417.302777,170.818268,2
+</points>
+<link>
+line3,p0,p1
+circle2,p1,center
+</link>
+</line>
+</横刀闸状态>
+<rect name="rect1" bounds="-434.59001,161.774883,-415.09001,171.10999" origin="-429.89001,163.024883" visible="false" viewbox="1" linecolor="$FFFF00"/>
+<line name="line6" origin="-430.59001,169.274883" AreaLock="false" AreaName="&apos;&apos;" BaseVoltageID="1011001005" CimClass="&apos;Terminal&apos;" DBFlag="true" DisplayName="&apos;&apos;" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" NamingNo="&apos;&apos;" NoInGrp="&apos;&apos;" ObjFlag="true" ObjName="&apos;&apos;" ObjType="&apos;端子&apos;" PathName="&apos;&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="1007023247" PSRType="&apos;普通端子&apos;" ShortName="&apos;&apos;" SideName="&apos;起侧&apos;" StructType="&apos;设备端子&apos;" linecolor="$FFFF00" linkmode="3">
+<points>
+-403.472989,170.818268,6
+</points>
+<link>
+横刀闸状态1,p0,line3
+</link>
+</line>
+<line name="line1" origin="-433.59001,170.274883" AreaLock="false" AreaName="&apos;&apos;" BaseVoltageID="1011001005" CimClass="&apos;Terminal&apos;" DBFlag="true" DisplayName="&apos;&apos;" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" NamingNo="&apos;&apos;" NoInGrp="&apos;&apos;" ObjFlag="true" ObjName="&apos;&apos;" ObjType="&apos;端子&apos;" PathName="&apos;&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="1007023247" PSRType="&apos;普通端子&apos;" ShortName="&apos;&apos;" SideName="&apos;末侧&apos;" StructType="&apos;设备端子&apos;" linecolor="$FFFF00" linkmode="3">
+<points>
+-422.143202,170.818268,6
+</points>
+<link>
+横刀闸状态1,p0,line4
+</link>
+</line>
+</GroundDisconnector_42200100>
+<GroundDisconnector_42200100 name="GroundDisconnector_422001004" bounds="-434.99001,-109.825117,-403.872989,-95.239085" origin="-77.7,-285.59001" angle="90" AreaLock="false" BaseVoltageID="1011001005" CimClass="&apos;GroundDisconnector&apos;" DisplayName="&apos;上军线6516接地刀闸&apos;" EleClass="&apos;库对象图元&apos;" ForbidDel="true" GraphClass="&apos;模型图&apos;" GraphIDInSvg="&apos;302FEF35FD684A59A87CFAEE0D2AAD2081041700001&apos;" MyLayerName="&apos;未命名0&apos;" MyLayers="&apos;未命名0,False,True&apos;" NamingNo="&apos;6516接地刀闸&apos;" NoInGrp="&apos;&apos;" ObjName="&apos;6516接地刀闸&apos;" ObjType="&apos;配网.接地刀闸&apos;" PathName="&apos;上军线6516接地刀闸&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="1099001045" PSRType="&apos;&apos;" ShortName="&apos;6516&apos;" StructType="&apos;&apos;">
+<横接地 name="横接地1" bounds="-426.692138,-106.324379,-422.543202,-95.239085" origin="-522.49001,-108.325148" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" MyLayers="&apos;未命名0,False,True&apos;" ObjFlag="true" ObjType="&apos;接地&apos;" PartFunction="&apos;接地&apos;" PrimLocked="false" PrimVisible="true">
+<line name="line6" origin="-425.692138,-105.574441" MyLayerLock="false" MyLayerName="&apos;未命名0&apos;" MyLayerVisible="true" PrimLineWidth="1" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00">
+<points>
+-423.004194,-106.324379,6
+-423.004194,-95.239085,2
+</points>
+</line>
+<line name="line7" origin="-429.692138,-105.574441" MyLayerLock="false" MyLayerName="&apos;未命名0&apos;" MyLayerVisible="true" PrimLineWidth="1" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00">
+<points>
+-424.848166,-103.553057,6
+-424.848166,-98.010407,2
+</points>
+</line>
+<line name="line8" origin="-433.692138,-105.574441" MyLayerLock="false" MyLayerName="&apos;未命名0&apos;" MyLayerVisible="true" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00">
+<points>
+-426.692138,-102.167393,6
+-426.692138,-99.396071,2
+</points>
+</line>
+<line name="line1" origin="-425.692138,-105.574441" MyLayerLock="false" MyLayerName="&apos;未命名0&apos;" MyLayerVisible="true" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00" linkmode="3">
+<points>
+-423.004194,-100.781732,6
+-422.543202,-100.781732,2
+</points>
+</line>
+<link>
+横刀闸状态1,line1,line4
+</link>
+</横接地>
+<横刀闸状态 name="横刀闸状态1" bounds="-422.543202,-105.157563,-403.872989,-98.156234" origin="-429.58883,-107.589129" AreaLock="false" AreaName="&apos;&apos;" BaseVoltageID="1011001005" CimClass="&apos;Discrete&apos;" DBFlag="true" DisplayName="&apos;&apos;" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MeaCategory="&apos;位置&apos;" MeaType="&apos;开关位置&apos;" MyLayerName="&apos;未命名0&apos;" MyLayers="&apos;未命名0,False,True&apos;" NamingNo="&apos;开关位置&apos;" NoInGrp="&apos;&apos;" ObjFlag="true" ObjName="&apos;开关位置&apos;" ObjType="&apos;离散量&apos;" OwnerResourceID="1099001045" PartFunction="&apos;采集值&apos;" PathName="&apos;6516接地刀闸开关位置&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="1029003495" PSRType="&apos;&apos;" ShortName="&apos;开关位置&apos;" StructType="&apos;&apos;">
+<line name="Openline" origin="-425.543202,-107.657563" MyLayerLock="false" MyLayerName="&apos;未命名0&apos;" MyLayerVisible="true" PrimLineWidth="1" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00" backcolor="$FFC0C0" pattern="1" linkmode="1">
+<points>
+-409.404904,-105.157563,6
+-417.702777,-100.781732,2
+</points>
+<link>
+circle2,p1,center
+</link>
+</line>
+<circle name="circle2" bounds="-419.085754,-102.532065,-416.319797,-99.0314" origin="-430.543202,-106.157563" MyLayerLock="false" MyLayerName="&apos;未命名0&apos;" MyLayerVisible="true" PrimLineWidth="1" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00"/>
+<line name="line3" origin="-415.543202,-110.657563" MyLayerLock="false" MyLayerName="&apos;未命名0&apos;" MyLayerVisible="true" PrimLineWidth="1" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00" linkmode="3">
+<points>
+-407.330436,-98.156234,6
+-407.330436,-100.781732,2
+-407.330436,-103.407231,2
+-407.330436,-100.781732,2
+-407.330436,-100.781732,2
+-403.872989,-100.781732,2
+</points>
+<programe>
+published function OnNodeChange(Sender)
+end function
+</programe>
+</line>
+<line name="line4" origin="-433.043202,-114.157563" MyLayerLock="false" MyLayerName="&apos;未命名0&apos;" MyLayerVisible="true" PrimLineWidth="1" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00" backcolor="$0" frontcolor="$FFFFFF" linkmode="3">
+<points>
+-419.085754,-100.781732,6
+-422.543202,-100.781732,2
+</points>
+<programe>
+published function OnNodeChange(Sender)
+end function
+</programe>
+</line>
+<line name="CloseLine" origin="-424.043202,-105.157563" visible="false" MyLayerName="&apos;未命名0&apos;" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00" linkmode="1">
+<points>
+-407.330436,-100.781732,6
+-417.702777,-100.781732,2
+</points>
+<link>
+line3,p0,p1
+circle2,p1,center
+</link>
+</line>
+</横刀闸状态>
+<rect name="rect1" bounds="-434.99001,-109.825117,-415.49001,-100.49001" origin="-430.29001,-108.575117" visible="false" viewbox="1" linecolor="$FFFF00"/>
+<line name="line6" origin="-430.99001,-102.325117" AreaLock="false" AreaName="&apos;&apos;" BaseVoltageID="1011001005" CimClass="&apos;Terminal&apos;" DBFlag="true" DisplayName="&apos;&apos;" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" NamingNo="&apos;&apos;" NoInGrp="&apos;&apos;" ObjFlag="true" ObjName="&apos;&apos;" ObjType="&apos;端子&apos;" PathName="&apos;&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="1007023291" PSRType="&apos;普通端子&apos;" ShortName="&apos;&apos;" SideName="&apos;起侧&apos;" StructType="&apos;设备端子&apos;" linecolor="$FFFF00" linkmode="3">
+<points>
+-403.872989,-100.781732,6
+</points>
+<link>
+横刀闸状态1,p0,line3
+</link>
+</line>
+<line name="line1" origin="-433.99001,-101.325117" AreaLock="false" AreaName="&apos;&apos;" BaseVoltageID="1011001005" CimClass="&apos;Terminal&apos;" DBFlag="true" DisplayName="&apos;&apos;" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" NamingNo="&apos;&apos;" NoInGrp="&apos;&apos;" ObjFlag="true" ObjName="&apos;&apos;" ObjType="&apos;端子&apos;" PathName="&apos;&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="1007023291" PSRType="&apos;普通端子&apos;" ShortName="&apos;&apos;" SideName="&apos;末侧&apos;" StructType="&apos;设备端子&apos;" linecolor="$FFFF00" linkmode="3">
+<points>
+-422.543202,-100.781732,6
+</points>
+<link>
+横刀闸状态1,p0,line4
+</link>
+</line>
+</GroundDisconnector_42200100>
+<纵母线 name="纵母线3" bounds="424.5,18.3,424.5,60.5" origin="424.5,39.4" AreaLock="false" BaseVoltageID="1011001005" CimClass="&apos;BusbarSection&apos;" DisplayName="&apos;10kVⅡ段母线&apos;" EleClass="&apos;库对象图元&apos;" ForbidDel="true" GraphClass="&apos;模型图&apos;" GraphIDInSvg="&apos;E41F1D0EE3984858A71C9E25B75E1C2381050200001&apos;" MyLayerName="&apos;未命名0&apos;" MyLayers="&apos;未命名0,False,True&apos;" NamingNo="&apos;Ⅱ段母线&apos;" NoInGrp="&apos;&apos;" ObjName="&apos;Ⅱ段母线&apos;" ObjType="&apos;母线&apos;" PathName="&apos;10kVⅡ段母线&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="1121001580" PSRType="&apos;&apos;" ShortName="&apos;Ⅱ段&apos;" StructType="&apos;&apos;">
+<linkline name="linkline1" origin="424.5,44.3" AreaLock="false" AreaName="&apos;&apos;" BaseVoltageID="1011001005" CimClass="&apos;Terminal&apos;" DBFlag="true" DisplayName="&apos;&apos;" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" NamingNo="&apos;&apos;" NoInGrp="&apos;&apos;" ObjFlag="true" ObjName="&apos;&apos;" ObjType="&apos;端子&apos;" PartFunction="&apos;连接端子&apos;" PathName="&apos;&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="1007018738" PSRType="&apos;普通端子&apos;" ShortName="&apos;&apos;" StructType="&apos;&apos;" linewidth="3" linecolor="$FFFF00" linkmode="3">
+<points>
+424.5,18.3,6
+424.5,60.5,2
+</points>
+</linkline>
+<line name="line1" origin="424.5,26.3" linecolor="$FFFF00">
+<points>
+424.5,24.493825,6
+</points>
+</line>
+</纵母线>
+<纵母线 name="纵母线4" bounds="55.4,20.9,55.4,58.3" origin="55.4,39.6" AreaLock="false" BaseVoltageID="1011001005" CimClass="&apos;BusbarSection&apos;" DisplayName="&apos;10kVⅠ段母线&apos;" EleClass="&apos;库对象图元&apos;" ForbidDel="true" GraphClass="&apos;模型图&apos;" GraphIDInSvg="&apos;93FA8BC057C941F7B970CC81AA04612F81050200001&apos;" MyLayerName="&apos;未命名0&apos;" MyLayers="&apos;未命名0,False,True&apos;" NamingNo="&apos;Ⅰ段母线&apos;" NoInGrp="&apos;&apos;" ObjName="&apos;Ⅰ段母线&apos;" ObjType="&apos;母线&apos;" PathName="&apos;10kVⅠ段母线&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="1121001368" PSRType="&apos;&apos;" ShortName="&apos;Ⅰ段&apos;" StructType="&apos;&apos;">
+<linkline name="linkline1" origin="55.4,46.9" AreaLock="false" AreaName="&apos;&apos;" BaseVoltageID="1011001005" CimClass="&apos;Terminal&apos;" DBFlag="true" DisplayName="&apos;&apos;" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" NamingNo="&apos;&apos;" NoInGrp="&apos;&apos;" ObjFlag="true" ObjName="&apos;&apos;" ObjType="&apos;端子&apos;" PartFunction="&apos;连接端子&apos;" PathName="&apos;&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="1007018712" PSRType="&apos;普通端子&apos;" ShortName="&apos;&apos;" StructType="&apos;&apos;" linewidth="3" linecolor="$FFFF00" linkmode="3">
+<points>
+55.4,20.9,6
+55.4,58.3,2
+</points>
+</linkline>
+<line name="line1" origin="55.4,28.9" linecolor="$FFFF00">
+<points>
+55.4,26.389314,6
+</points>
+</line>
+</纵母线>
+<element name="element1" bounds="334.8,38.4,372.5,38.8" origin="353.65,38.6" AreaLock="false" BaseVoltageID="1011001005" CimClass="&apos;ACLineSegment&apos;" DisplayName="&apos;观海变电站625-92403部队司令部直属工作处（双）终端头&apos;" EleClass="&apos;库对象图元&apos;" ForbidDel="true" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" MyLayers="&apos;未命名0,False,True&apos;" NamingNo="&apos;观海变电站625-92403部队司令部直属工作处（双）终端头&apos;" NoInGrp="&apos;&apos;" ObjName="&apos;观海变电站625-92403部队司令部直属工作处（双）终端头&apos;" ObjType="&apos;交流线&apos;" PathName="&apos;观海变电站625-92403部队司令部直属工作处（双）终端头&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="1111001145" PSRType="&apos;&apos;" ShortName="&apos;观海变电站625-92403部队司令部直属工作处（双）终端头&apos;" StructType="&apos;&apos;">
+<line name="line2线路3线路3" origin="372,51.4" CimClass="&apos;ACLineSegment&apos;" DBFlag="false" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" ObjFlag="true" ObjType="&apos;方向图元&apos;" PartFunction="&apos;方向图元&apos;" PrimLocked="false" PrimVisible="true" Ward="&apos;上&apos;" linetype="10" linecolor="$FFFF00">
+<points>
+372.5,38.8,6
+372.5,38.4,2
+334.8,38.4,2
+</points>
+</line>
+<line name="line1线路3" origin="372.5,38.4" AreaLock="false" AreaName="&apos;&apos;" BaseVoltageID="1011001005" CimClass="&apos;Terminal&apos;" DBFlag="true" DisplayName="&apos;&apos;" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" NamingNo="&apos;&apos;" NoInGrp="&apos;&apos;" ObjFlag="true" ObjName="&apos;&apos;" ObjType="&apos;端子&apos;" PathName="&apos;&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="1007007324" PSRType="&apos;普通端子&apos;" ShortName="&apos;&apos;" SideName="&apos;始侧&apos;" StructType="&apos;&apos;" linetype="10" linecolor="$FFFF00" linkmode="3"/>
+<line name="line3线路3" origin="372.5,69.4" AreaLock="false" AreaName="&apos;&apos;" BaseVoltageID="1011001005" CimClass="&apos;Terminal&apos;" DBFlag="true" DisplayName="&apos;&apos;" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" NamingNo="&apos;&apos;" NoInGrp="&apos;&apos;" ObjFlag="true" ObjName="&apos;&apos;" ObjType="&apos;端子&apos;" PathName="&apos;&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="1007007323" PSRType="&apos;普通端子&apos;" ShortName="&apos;&apos;" SideName="&apos;末侧&apos;" StructType="&apos;&apos;" linetype="10" linecolor="$FFFF00" linkmode="3">
+<points>
+372.5,38.8,6
+</points>
+</line>
+</element>
+<element name="element2" bounds="120.4,39.2,158.1,39.5" origin="139.25,39.35" AreaLock="false" BaseVoltageID="1011001005" CimClass="&apos;ACLineSegment&apos;" DisplayName="&apos;&apos;" EleClass="&apos;库对象图元&apos;" ForbidDel="true" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" MyLayers="&apos;未命名0,False,True&apos;" NamingNo="&apos;&apos;" NoInGrp="&apos;&apos;" ObjName="&apos;&apos;" ObjType="&apos;交流线&apos;" PathName="&apos;&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="1111001023" PSRType="&apos;&apos;" ShortName="&apos;&apos;" StructType="&apos;&apos;">
+<line name="line2线路33线路33" origin="119.9,22.2" CimClass="&apos;ACLineSegment&apos;" DBFlag="false" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" ObjFlag="true" ObjType="&apos;方向图元&apos;" PartFunction="&apos;方向图元&apos;" PrimLocked="false" PrimVisible="true" Ward="&apos;上&apos;" linetype="10" linecolor="$FFFF00">
+<points>
+120.4,39.2,6
+158.1,39.2,2
+158.1,39.5,2
+</points>
+</line>
+<line name="line1线路33" origin="120.4,9.2" AreaLock="false" AreaName="&apos;&apos;" BaseVoltageID="1011001005" CimClass="&apos;Terminal&apos;" DBFlag="true" DisplayName="&apos;&apos;" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" NamingNo="&apos;&apos;" NoInGrp="&apos;&apos;" ObjFlag="true" ObjName="&apos;&apos;" ObjType="&apos;端子&apos;" PathName="&apos;&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="1007007318" PSRType="&apos;普通端子&apos;" ShortName="&apos;&apos;" SideName="&apos;始侧&apos;" StructType="&apos;&apos;" linetype="10" linecolor="$FFFF00" linkmode="3">
+<points>
+158.1,39.2,6
+</points>
+</line>
+<line name="line3线路33" origin="120.4,40.2" AreaLock="false" AreaName="&apos;&apos;" BaseVoltageID="1011001005" CimClass="&apos;Terminal&apos;" DBFlag="true" DisplayName="&apos;&apos;" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" NamingNo="&apos;&apos;" NoInGrp="&apos;&apos;" ObjFlag="true" ObjName="&apos;&apos;" ObjType="&apos;端子&apos;" PathName="&apos;&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="1007007317" PSRType="&apos;普通端子&apos;" ShortName="&apos;&apos;" SideName="&apos;末侧&apos;" StructType="&apos;&apos;" linetype="10" linecolor="$FFFF00" linkmode="3">
+<points>
+120.4,39.2,6
+</points>
+</line>
+</element>
+<EnergyConsumer_50100100034545 name="EnergyConsumer_501001000345453" bounds="221.373343,-704.59001,259.29001,-655.623343" origin="-77.7,-285.59001" angle="270" AreaLock="false" CimClass="&apos;CustomerLoad&apos;" DisplayName="&apos;92403部队司令部直属工作处（双）&apos;" EleClass="&apos;库对象图元&apos;" ForbidDel="true" GraphClass="&apos;模型图&apos;" GraphIDInSvg="&apos;B800E99708044475BDCAE0DCE7F20BA751070100002&apos;" MyLayerName="&apos;未命名0&apos;" MyLayers="&apos;未命名0,False,True&apos;" NamingNo="&apos;92403部队司令部直属工作处（双）&apos;" NoInGrp="&apos;&apos;" ObjName="&apos;92403部队司令部直属工作处（双）&apos;" ObjType="&apos;用户负荷&apos;" PathName="&apos;92403部队司令部直属工作处（双）&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="1006001562" PSRType="&apos;&apos;" ShortName="&apos;92403部队司令部直属工作处&apos;" StructType="&apos;&apos;">
+<上绕组1 name="上绕组11" bounds="239.79001,-685.09001,253.322533,-669.475627" origin="245.873343,-678.09001" CimClass="&apos;TransformerWinding&apos;" ConnectType="2" EleClass="&apos;库对象图元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" MyLayers="&apos;未命名0,False,True&apos;" ObjType="&apos;绕组&apos;" PrimLocked="false" PrimVisible="true" PSRType="&apos;高压绕组&apos;">
+<上绕组 name="上绕组1" bounds="239.79001,-685.09001,253.322533,-669.475627" origin="232.358165,-665.09001" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" MyLayers="&apos;未命名0,False,True&apos;" PartFunction="&apos;&apos;" PrimLocked="false" PrimVisible="true">
+<line name="line1" origin="254.79001,-680.09001" MyLayerLock="false" MyLayerName="&apos;未命名0&apos;" MyLayerVisible="true" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00" backcolor="$80000005" linkmode="2">
+<points>
+246.556272,-682.624582,6
+246.556272,-685.09001,2
+</points>
+</line>
+<circle name="绕组圈" bounds="239.79001,-682.624582,253.322533,-669.475627" origin="248.29001,-670.59001" MyLayerLock="false" MyLayerName="&apos;未命名0&apos;" MyLayerVisible="true" PrimLineWidth="1" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00"/>
+</上绕组>
+<line name="line2" origin="214.358165,-699.09001" CimClass="&apos;Terminal&apos;" DBFlag="true" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" ObjFlag="true" ObjType="&apos;端子&apos;" PrimLocked="false" PrimVisible="true" PSRType="&apos;普通端子&apos;" StructType="&apos;&apos;" linecolor="$FFFF00" linkmode="3">
+<points>
+246.556272,-684.679105,6
+</points>
+</line>
+<line name="line3" origin="236.558165,-667.39001" CimClass="&apos;Terminal&apos;" DBFlag="true" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" ObjFlag="true" ObjType="&apos;端子&apos;" PrimLocked="false" PrimVisible="true" PSRType="&apos;中性点&apos;" StructType="&apos;&apos;" UseFlag="true" linecolor="$FFFF00" linkmode="3">
+<points>
+246.640851,-677.816994,6
+</points>
+</line>
+</上绕组1>
+<line name="line1" origin="244.373343,-696.59001" CimClass="&apos;Terminal&apos;" DBFlag="true" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" ObjFlag="true" ObjType="&apos;端子&apos;" PrimLocked="false" PrimVisible="true" PSRType="&apos;普通端子&apos;" SideName="&apos;高压侧&apos;" StructType="&apos;&apos;" linecolor="$FFFF00" linkmode="3">
+<points>
+246.921741,-684.454394,6
+</points>
+</line>
+<line name="line2" origin="244.573343,-679.89001" CimClass="&apos;Terminal&apos;" DBFlag="true" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" ObjFlag="true" ObjType="&apos;端子&apos;" PrimLocked="false" PrimVisible="true" PSRType="&apos;中性点&apos;" SideName="&apos;高压侧&apos;" StructType="&apos;&apos;" linecolor="$FFFF00" linkmode="3">
+<points>
+247.00632,-677.592283,6
+</points>
+</line>
+<sheet name="上绕组21" bounds="239.79001,-672.09001,253.844064,-657.962549" origin="232.083578,-659.186137" CimClass="&apos;TransformerWinding&apos;" ConnectType="2" EleClass="&apos;库对象图元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" MyLayers="&apos;未命名0,False,True&apos;" ObjType="&apos;绕组&apos;" PrimLocked="false" PrimVisible="true" PSRType="&apos;低压绕组&apos;">
+<sheet name="上绕组21" bounds="239.79001,-672.09001,253.844064,-657.962549" origin="231.79001,-653.282264" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" MyLayers="&apos;未命名0,False,True&apos;" PrimLocked="false" PrimVisible="true">
+<circle name="绕组圈" bounds="239.79001,-672.09001,253.844064,-657.962549" origin="248.29001,-663.59001" MyLayerLock="false" MyLayerName="&apos;未命名0&apos;" MyLayerVisible="true" PrimLineWidth="1" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00"/>
+</sheet>
+</sheet>
+<rect name="rect2" bounds="234.373343,-682.923343,259.29001,-655.623343" origin="206.373343,-693.59001" linecolor="$FFFF00"/>
+<rect name="rect1" bounds="221.373343,-704.59001,246.29001,-672.09001" origin="232.873343,-689.59001" visible="false" viewbox="1" linecolor="$FFFF00"/>
+</EnergyConsumer_50100100034545>
+<EnergyConsumer_10010036 name="EnergyConsumer_100100363" bounds="231.89001,-686.49001,246.29001,-661.95601" origin="-77.7,-285.59001" angle="270" AreaLock="false" CimClass="&apos;CustomerLoad&apos;" DisplayName="&apos;92403部队司令部直属工作处（双）&apos;" EleClass="&apos;库对象图元&apos;" ForbidDel="true" GraphClass="&apos;模型图&apos;" GraphIDInSvg="&apos;B800E99708044475BDCAE0DCE7F20BA751070100002&apos;" MyLayerName="&apos;未命名0&apos;" MyLayers="&apos;未命名0,False,True&apos;" NamingNo="&apos;92403部队司令部直属工作处（双）&apos;" NoInGrp="&apos;&apos;" ObjName="&apos;92403部队司令部直属工作处（双）&apos;" ObjType="&apos;用户负荷&apos;" PathName="&apos;92403部队司令部直属工作处（双）&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="1006001562" PSRType="&apos;&apos;" ShortName="&apos;92403部队司令部直属工作处&apos;" StructType="&apos;&apos;">
+<rect name="rect1" bounds="231.89001,-686.49001,246.29001,-672.09001" origin="-218.10999,-769.49001" visible="false" viewbox="1" linecolor="$FFFF00"/>
+<text name="text1" bounds="243.831117,-678.55201,245.991117,-671.35201" origin="-218.10999,-769.49001" linecolor="$FFFF00" autosize="true" border="$0" fontname="宋体" fontsize="1" fontcolor="$FFFF00" borderinterval="0" text=" 自双 "/>
+<text name="text2" bounds="243.097782,-669.15601,245.257782,-661.95601" origin="-218.10999,-769.49001" linecolor="$FFFF00" autosize="true" border="$0" fontname="宋体" fontsize="1" fontcolor="$FFFF00" borderinterval="0" text=" 二 "/>
+</EnergyConsumer_10010036>
+<EnergyConsumer_50100100034545 name="EnergyConsumer_501001000345454" bounds="-427.706677,-56.29001,-389.79001,-7.323343" origin="-77.7,-285.59001" angle="90" AreaLock="false" CimClass="&apos;CustomerLoad&apos;" DisplayName="&apos;92403部队司令部直属工作处（双）&apos;" EleClass="&apos;库对象图元&apos;" ForbidDel="true" GraphClass="&apos;模型图&apos;" GraphIDInSvg="&apos;B800E99708044475BDCAE0DCE7F20BA751070100002&apos;" MyLayerName="&apos;未命名0&apos;" MyLayers="&apos;未命名0,False,True&apos;" NamingNo="&apos;92403部队司令部直属工作处（双）&apos;" NoInGrp="&apos;&apos;" ObjName="&apos;92403部队司令部直属工作处（双）&apos;" ObjType="&apos;用户负荷&apos;" PathName="&apos;92403部队司令部直属工作处（双）&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="1006001562" PSRType="&apos;&apos;" ShortName="&apos;92403部队司令部直属工作处&apos;" StructType="&apos;&apos;">
+<上绕组1 name="上绕组11" bounds="-409.29001,-36.79001,-395.757487,-21.175627" origin="-403.206677,-29.79001" CimClass="&apos;TransformerWinding&apos;" ConnectType="2" EleClass="&apos;库对象图元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" MyLayers="&apos;未命名0,False,True&apos;" ObjType="&apos;绕组&apos;" PrimLocked="false" PrimVisible="true" PSRType="&apos;高压绕组&apos;">
+<上绕组 name="上绕组1" bounds="-409.29001,-36.79001,-395.757487,-21.175627" origin="-416.721855,-16.79001" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" MyLayers="&apos;未命名0,False,True&apos;" PartFunction="&apos;&apos;" PrimLocked="false" PrimVisible="true">
+<line name="line1" origin="-394.29001,-31.79001" MyLayerLock="false" MyLayerName="&apos;未命名0&apos;" MyLayerVisible="true" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00" backcolor="$80000005" linkmode="2">
+<points>
+-402.523748,-34.324582,6
+-402.523748,-36.79001,2
+</points>
+</line>
+<circle name="绕组圈" bounds="-409.29001,-34.324582,-395.757487,-21.175627" origin="-400.79001,-22.29001" MyLayerLock="false" MyLayerName="&apos;未命名0&apos;" MyLayerVisible="true" PrimLineWidth="1" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00"/>
+</上绕组>
+<line name="line2" origin="-434.721855,-50.79001" CimClass="&apos;Terminal&apos;" DBFlag="true" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" ObjFlag="true" ObjType="&apos;端子&apos;" PrimLocked="false" PrimVisible="true" PSRType="&apos;普通端子&apos;" StructType="&apos;&apos;" linecolor="$FFFF00" linkmode="3">
+<points>
+-402.523748,-36.379105,6
+</points>
+</line>
+<line name="line3" origin="-412.521855,-19.09001" CimClass="&apos;Terminal&apos;" DBFlag="true" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" ObjFlag="true" ObjType="&apos;端子&apos;" PrimLocked="false" PrimVisible="true" PSRType="&apos;中性点&apos;" StructType="&apos;&apos;" UseFlag="true" linecolor="$FFFF00" linkmode="3">
+<points>
+-402.439169,-29.516994,6
+</points>
+</line>
+</上绕组1>
+<line name="line1" origin="-404.706677,-48.29001" CimClass="&apos;Terminal&apos;" DBFlag="true" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" ObjFlag="true" ObjType="&apos;端子&apos;" PrimLocked="false" PrimVisible="true" PSRType="&apos;普通端子&apos;" SideName="&apos;高压侧&apos;" StructType="&apos;&apos;" linecolor="$FFFF00" linkmode="3">
+<points>
+-402.158279,-36.154394,6
+</points>
+</line>
+<line name="line2" origin="-404.506677,-31.59001" CimClass="&apos;Terminal&apos;" DBFlag="true" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" ObjFlag="true" ObjType="&apos;端子&apos;" PrimLocked="false" PrimVisible="true" PSRType="&apos;中性点&apos;" SideName="&apos;高压侧&apos;" StructType="&apos;&apos;" linecolor="$FFFF00" linkmode="3">
+<points>
+-402.0737,-29.292283,6
+</points>
+</line>
+<sheet name="上绕组21" bounds="-409.29001,-23.79001,-395.235956,-9.662549" origin="-416.996442,-10.886137" CimClass="&apos;TransformerWinding&apos;" ConnectType="2" EleClass="&apos;库对象图元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" MyLayers="&apos;未命名0,False,True&apos;" ObjType="&apos;绕组&apos;" PrimLocked="false" PrimVisible="true" PSRType="&apos;低压绕组&apos;">
+<sheet name="上绕组21" bounds="-409.29001,-23.79001,-395.235956,-9.662549" origin="-417.29001,-4.982264" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" MyLayers="&apos;未命名0,False,True&apos;" PrimLocked="false" PrimVisible="true">
+<circle name="绕组圈" bounds="-409.29001,-23.79001,-395.235956,-9.662549" origin="-400.79001,-15.29001" MyLayerLock="false" MyLayerName="&apos;未命名0&apos;" MyLayerVisible="true" PrimLineWidth="1" PrimLocked="false" PrimVisible="true" linecolor="$FFFF00"/>
+</sheet>
+</sheet>
+<rect name="rect2" bounds="-414.706677,-34.623343,-389.79001,-7.323343" origin="-442.706677,-45.29001" linecolor="$FFFF00"/>
+<rect name="rect1" bounds="-427.706677,-56.29001,-402.79001,-23.79001" origin="-416.206677,-41.29001" visible="false" viewbox="1" linecolor="$FFFF00"/>
+</EnergyConsumer_50100100034545>
+<EnergyConsumer_10010036 name="EnergyConsumer_100100364" bounds="-417.19001,-38.19001,-402.79001,-13.65601" origin="-77.7,-285.59001" angle="90" AreaLock="false" CimClass="&apos;CustomerLoad&apos;" DisplayName="&apos;92403部队司令部直属工作处（双）&apos;" EleClass="&apos;库对象图元&apos;" ForbidDel="true" GraphClass="&apos;模型图&apos;" GraphIDInSvg="&apos;B800E99708044475BDCAE0DCE7F20BA751070100002&apos;" MyLayerName="&apos;未命名0&apos;" MyLayers="&apos;未命名0,False,True&apos;" NamingNo="&apos;92403部队司令部直属工作处（双）&apos;" NoInGrp="&apos;&apos;" ObjName="&apos;92403部队司令部直属工作处（双）&apos;" ObjType="&apos;用户负荷&apos;" PathName="&apos;92403部队司令部直属工作处（双）&apos;" PrimLocked="false" PrimVisible="true" PSResourceID="1006001562" PSRType="&apos;&apos;" ShortName="&apos;92403部队司令部直属工作处&apos;" StructType="&apos;&apos;">
+<rect name="rect1" bounds="-417.19001,-38.19001,-402.79001,-23.79001" origin="-867.19001,-121.19001" visible="false" viewbox="1" linecolor="$FFFF00"/>
+<text name="text1" bounds="-405.248903,-30.25201,-403.088903,-23.05201" origin="-867.19001,-121.19001" linecolor="$FFFF00" autosize="true" border="$0" fontname="宋体" fontsize="1" fontcolor="$FFFF00" borderinterval="0" text=" 自双 "/>
+<text name="text2" bounds="-405.982238,-20.85601,-403.822238,-13.65601" origin="-867.19001,-121.19001" linecolor="$FFFF00" autosize="true" border="$0" fontname="宋体" fontsize="1" fontcolor="$FFFF00" borderinterval="0" text=" 二 "/>
+</EnergyConsumer_10010036>
+<Junction_44500100014545 name="Junction_445001000145453" bounds="-509.7,-616.362629,-480.873913,-609.58002" origin="-77.7,-285.59001" angle="180" CimClass="&apos;Junction&apos;" EleClass="&apos;库对象图元&apos;" GraphClass="&apos;模型图&apos;" GraphIDInSvg="&apos;B800E99708044475BDCAE0DCE7F20BA781070200027&apos;" MyLayers="&apos;未命名0,False,True&apos;" ObjType="&apos;结点&apos;" PSRType="&apos;&apos;">
+<rect name="rect1" bounds="-504.613043,-616.362629,-485.113043,-609.58002" origin="-500.95,-614.362629" visible="false" viewbox="1" linecolor="$FFFF00"/>
+<line name="line1" origin="-1028.7,-761.362629" linecolor="$FFFF00">
+<points>
+-509.7,-610.427846,6
+-509.7,-610.427846,2
+</points>
+</line>
+<element name="element1" bounds="-485.96087,-609.58002,-480.873913,-609.58002" origin="-494.2,-612.362629">
+<line name="line2" origin="-1013.46087,-757.58002" linecolor="$FFFF00">
+<points>
+-485.96087,-609.58002,6
+-480.873913,-609.58002,2
+</points>
+</line>
+<line name="line3" origin="-491.96087,-620.58002" linecolor="$FFFF00" linkmode="2">
+<points>
+-485.96087,-609.58002,6
+</points>
+</line>
+<line name="line4" origin="-482.96087,-619.58002" linecolor="$FFFF00" linkmode="2">
+<points>
+-480.873913,-609.58002,6
+</points>
+</line>
+</element>
+<line name="line2" origin="-505.7,-621.862629" CimClass="&apos;Terminal&apos;" DBFlag="true" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" ObjFlag="true" ObjType="&apos;端子&apos;" PrimLocked="false" PrimVisible="true" PSRType="&apos;普通端子&apos;" SideName="&apos;起侧&apos;" StructType="&apos;设备端子&apos;" linecolor="$FFFF00" linkmode="3">
+<points>
+-485.96087,-609.58002,6
+</points>
+<link>
+element1,p0,line3
+</link>
+</line>
+<line name="line3" origin="-502.7,-621.862629" CimClass="&apos;Terminal&apos;" DBFlag="true" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" ObjFlag="true" ObjType="&apos;端子&apos;" PrimLocked="false" PrimVisible="true" PSRType="&apos;普通端子&apos;" SideName="&apos;末侧&apos;" StructType="&apos;设备端子&apos;" linecolor="$FFFF00" linkmode="3">
+<points>
+-480.873913,-609.58002,6
+</points>
+<link>
+element1,p0,line4
+</link>
+</line>
+</Junction_44500100014545>
+<Junction_44500100014545 name="Junction_445001000145454" bounds="353,32.017391,381.826087,38.8" origin="378.25,40.8" CimClass="&apos;Junction&apos;" EleClass="&apos;库对象图元&apos;" GraphClass="&apos;模型图&apos;" GraphIDInSvg="&apos;936F1DD635BC4124824BCC049E14CDDA81070200056&apos;" MyLayers="&apos;未命名0,False,True&apos;" ObjType="&apos;结点&apos;" PSRType="&apos;&apos;">
+<rect name="rect1" bounds="358.086957,32.017391,377.586957,38.8" origin="361.75,34.017391" visible="false" viewbox="1" linecolor="$FFFF00"/>
+<line name="line1" origin="-166,-112.982609" linecolor="$FFFF00">
+<points>
+353,37.952174,6
+353,37.952174,2
+</points>
+</line>
+<element name="element1" bounds="376.73913,38.8,381.826087,38.8" origin="368.5,36.017391">
+<line name="line2" origin="-150.76087,-109.2" linecolor="$FFFF00">
+<points>
+376.73913,38.8,6
+381.826087,38.8,2
+</points>
+</line>
+<line name="line3" origin="370.73913,27.8" linecolor="$FFFF00" linkmode="2">
+<points>
+376.73913,38.8,6
+</points>
+</line>
+<line name="line4" origin="379.73913,28.8" linecolor="$FFFF00" linkmode="2">
+<points>
+381.826087,38.8,6
+</points>
+</line>
+</element>
+<line name="line2" origin="357,26.517391" CimClass="&apos;Terminal&apos;" DBFlag="true" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" ObjFlag="true" ObjType="&apos;端子&apos;" PrimLocked="false" PrimVisible="true" PSRType="&apos;普通端子&apos;" SideName="&apos;起侧&apos;" StructType="&apos;设备端子&apos;" linecolor="$FFFF00" linkmode="3">
+<points>
+376.73913,38.8,6
+</points>
+<link>
+element1,p0,line3
+</link>
+</line>
+<line name="line3" origin="360,26.517391" CimClass="&apos;Terminal&apos;" DBFlag="true" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" ObjFlag="true" ObjType="&apos;端子&apos;" PrimLocked="false" PrimVisible="true" PSRType="&apos;普通端子&apos;" SideName="&apos;末侧&apos;" StructType="&apos;设备端子&apos;" linecolor="$FFFF00" linkmode="3">
+<points>
+381.826087,38.8,6
+</points>
+<link>
+element1,p0,line4
+</link>
+</line>
+</Junction_44500100014545>
+<Junction_44500100014545 name="Junction_445001000145455" bounds="138.6,32.717391,167.426087,39.5" origin="163.85,41.5" CimClass="&apos;Junction&apos;" EleClass="&apos;库对象图元&apos;" GraphClass="&apos;模型图&apos;" GraphIDInSvg="&apos;9853D382FDC54804BDCB2D6FC9C1498081070200008&apos;" MyLayers="&apos;未命名0,False,True&apos;" ObjType="&apos;结点&apos;" PSRType="&apos;&apos;">
+<rect name="rect1" bounds="143.686957,32.717391,163.186957,39.5" origin="147.35,34.717391" visible="false" viewbox="1" linecolor="$FFFF00"/>
+<line name="line1" origin="-380.4,-112.282609" linecolor="$FFFF00">
+<points>
+138.6,38.652174,6
+138.6,38.652174,2
+</points>
+</line>
+<element name="element1" bounds="162.33913,39.5,167.426087,39.5" origin="154.1,36.717391">
+<line name="line2" origin="-365.16087,-108.5" linecolor="$FFFF00">
+<points>
+162.33913,39.5,6
+167.426087,39.5,2
+</points>
+</line>
+<line name="line3" origin="156.33913,28.5" linecolor="$FFFF00" linkmode="2">
+<points>
+162.33913,39.5,6
+</points>
+</line>
+<line name="line4" origin="165.33913,29.5" linecolor="$FFFF00" linkmode="2">
+<points>
+167.426087,39.5,6
+</points>
+</line>
+</element>
+<line name="line2" origin="142.6,27.217391" CimClass="&apos;Terminal&apos;" DBFlag="true" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" ObjFlag="true" ObjType="&apos;端子&apos;" PrimLocked="false" PrimVisible="true" PSRType="&apos;普通端子&apos;" SideName="&apos;起侧&apos;" StructType="&apos;设备端子&apos;" linecolor="$FFFF00" linkmode="3">
+<points>
+162.33913,39.5,6
+</points>
+<link>
+element1,p0,line3
+</link>
+</line>
+<line name="line3" origin="145.6,27.217391" CimClass="&apos;Terminal&apos;" DBFlag="true" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" ObjFlag="true" ObjType="&apos;端子&apos;" PrimLocked="false" PrimVisible="true" PSRType="&apos;普通端子&apos;" SideName="&apos;末侧&apos;" StructType="&apos;设备端子&apos;" linecolor="$FFFF00" linkmode="3">
+<points>
+167.426087,39.5,6
+</points>
+<link>
+element1,p0,line4
+</link>
+</line>
+</Junction_44500100014545>
+<Junction_44500100014545 name="Junction_445001000145456" bounds="-295.3,-617.162629,-266.473913,-610.38002" origin="-77.7,-285.59001" angle="180" CimClass="&apos;Junction&apos;" EleClass="&apos;库对象图元&apos;" GraphClass="&apos;模型图&apos;" GraphIDInSvg="&apos;1060271DB5B244259BF43DBD690263A881070200001&apos;" MyLayers="&apos;未命名0,False,True&apos;" ObjType="&apos;结点&apos;" PSRType="&apos;&apos;">
+<rect name="rect1" bounds="-290.213043,-617.162629,-270.713043,-610.38002" origin="-286.55,-615.162629" visible="false" viewbox="1" linecolor="$FFFF00"/>
+<line name="line1" origin="-814.3,-762.162629" linecolor="$FFFF00">
+<points>
+-295.3,-611.227846,6
+-295.3,-611.227846,2
+</points>
+</line>
+<element name="element1" bounds="-271.56087,-610.38002,-266.473913,-610.38002" origin="-279.8,-613.162629">
+<line name="line2" origin="-799.06087,-758.38002" linecolor="$FFFF00">
+<points>
+-271.56087,-610.38002,6
+-266.473913,-610.38002,2
+</points>
+</line>
+<line name="line3" origin="-277.56087,-621.38002" linecolor="$FFFF00" linkmode="2">
+<points>
+-271.56087,-610.38002,6
+</points>
+</line>
+<line name="line4" origin="-268.56087,-620.38002" linecolor="$FFFF00" linkmode="2">
+<points>
+-266.473913,-610.38002,6
+</points>
+</line>
+</element>
+<line name="line2" origin="-291.3,-622.662629" CimClass="&apos;Terminal&apos;" DBFlag="true" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" ObjFlag="true" ObjType="&apos;端子&apos;" PrimLocked="false" PrimVisible="true" PSRType="&apos;普通端子&apos;" SideName="&apos;起侧&apos;" StructType="&apos;设备端子&apos;" linecolor="$FFFF00" linkmode="3">
+<points>
+-271.56087,-610.38002,6
+</points>
+<link>
+element1,p0,line3
+</link>
+</line>
+<line name="line3" origin="-288.3,-622.662629" CimClass="&apos;Terminal&apos;" DBFlag="true" EleClass="&apos;基元&apos;" GraphClass="&apos;模型图&apos;" MyLayerName="&apos;未命名0&apos;" ObjFlag="true" ObjType="&apos;端子&apos;" PrimLocked="false" PrimVisible="true" PSRType="&apos;普通端子&apos;" SideName="&apos;末侧&apos;" StructType="&apos;设备端子&apos;" linecolor="$FFFF00" linkmode="3">
+<points>
+-266.473913,-610.38002,6
+</points>
+<link>
+element1,p0,line4
+</link>
+</line>
+</Junction_44500100014545>
+</sheet>
+</vg>

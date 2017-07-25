@@ -1,0 +1,7 @@
+*** Settings ***
+Suite Teardown    Close All Applications
+Library           AppiumLibrary
+
+*** Test Cases ***
+检查调度正令页面-正常_01
+    Wait Until Keyword Succeeds    2min    5sec    Page Should Contain Element    id=android:id/action_bar_title

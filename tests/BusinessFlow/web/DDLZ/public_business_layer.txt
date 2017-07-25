@@ -1,0 +1,31 @@
+*** Settings ***
+Resource          ../../../Resources/ElementLayer/WebResources/基础业务关键字.txt
+Resource          ../../../Resources/ElementLayer/WebResources/基础公共关键字.txt
+Resource          ../../../Resources/ElementLayer/WebResources/操作数据库函数.txt
+
+*** Variables ***
+
+*** Keywords ***
+登录系统
+    [Arguments]    ${userName_element}    ${passWord_element}    ${name}    ${password}    ${login_btn}    ${url_login}
+    创建Webdriver    ${url_login}
+    Delete All Cookies
+    输入用户名    ${userName_element}    ${name}
+    输入密码    ${passWord_element}    ${password}
+    点击登录按钮    ${login_btn}
+
+删除数据表记录
+    [Arguments]    ${tablename}    ${condition}    # 数据表名，条件
+    连接mysql    pymysql    host='zztruetech',port=3306, user='root', passwd='root', db='ddlz_test',charset='utf8'
+    执行delete命令    ${tablename}    ${condition}
+
+查询数据表记录
+    [Arguments]    ${tablename}    ${tablefield}    ${condition}
+    连接mysql    pymysql    host='zztruetech',port=3306, user='root', passwd='root', db='ddlz_test',charset='utf8'
+    @{actualreturn}=    执行select命令    ${tablename}    ${tablefield}    ${condition}
+    [Return]    @{actualreturn}
+
+更新数据表记录
+    [Arguments]    ${tablename}    ${tablefield}    ${condition}    # 数据表名，执行sql语句操作（查询，删除，插入，更新）的条件
+    连接mysql    pymysql    host='zztruetech',port=3306, user='root', passwd='root', db='ddlz_test',charset='utf8'
+    执行update命令    ${tablename}    ${tablefield}    ${condition}

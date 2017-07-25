@@ -1,0 +1,46 @@
+*** Settings ***
+Library           Collections
+
+*** Test Cases ***
+testcase_数字变量-001
+    ${int}    Set Variable    ${3}    #int
+    ${float1}    Set Variable    ${3.14}    #float
+    ${float2}    Set Variable    ${-1e-4}    #float
+
+testcase_布尔变量和None/null-002
+    #布尔型
+    ${true}    Set Variable    ${true}
+    ${false}    Set Variable    ${false}
+    #None和null
+    ${none}    Set Variable    ${None}
+    ${null}    Set Variable    ${null}
+
+testcase_字符串、元组、list、字典-003
+    #string
+    ${string}    Set Variable    test
+    #tuple
+    ${tuple}    Set Variable    ${1,2,3}
+    #list
+    @{list}    Create List    1    yy
+    #如果利用‘@{}’定义列表的话，通过关键字“Log Many”进行打印
+    Log Many    @{list}
+    #Dictionary    创建字典，需要导入Collections库,Collections 库为 Robot Framework 标准类库,它所提供的关键字主要用于列表、索引、字典的 处理    字典也是一种数据存放形式，字典的存放形式是key:value成对儿存放
+    ${Dictionary}    Create Dictionary    a    1    b    2
+    #获取字典中的 key 和 value
+    ${itmes}    Get Dictionary Items    ${Dictionary}
+    #获取字典中的 key
+    ${keys}    Get Dictionary Keys    ${Dictionary}
+    #获取字典中的 value
+    ${values}    Get Dictionary Values    ${Dictionary}
+    Log    ${keys[1]}
+    #获取字典中的 key 对应的 value
+    ${values}    Get From Dictionary    ${Dictionary}    a
+
+testcase_space和empty-004
+    #space
+    ${test_space}    Set Variable    ${SPACE}
+    ${test_引号空格}    Set Variable    '${SPACE}'
+    ${test_4个space}    Set Variable    ${SPACE*4}
+    ${test_space}    Set Variable    "${SPACE}"
+    #empty
+    ${test_empty}    Set Variable    ${EMPTY}

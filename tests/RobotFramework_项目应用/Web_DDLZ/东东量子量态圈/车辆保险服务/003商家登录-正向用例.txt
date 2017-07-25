@@ -1,0 +1,26 @@
+*** Settings ***
+Suite Setup
+Suite Teardown    CloseDriverserver
+Library           Selenium2Library
+Resource          ../../../../BusinessFlow/web/DDLZ/public_business_layer.txt
+Resource          ../../../../Resources/ElementLayer/WebResources/基础公共关键字.txt
+
+*** Variables ***
+${sj_url_login}    http://zztruetech:8088/ddlz/company/index    # 商家登录地址
+
+*** Test Cases ***
+FTC001-页面初始加载检查
+    创建Webdriver    ${sj_url_login}
+    Delete All Cookies
+    页面包含元素    id=sj_userName
+    页面包含元素    id=sj_passWord
+    页面包含按钮    id=sj_loginbt    #检查系统页面中是否包含"商家登录"按钮
+    关闭浏览器
+    [Teardown]
+
+FTC002-登录系统检查
+    登录系统    id=sj_userName    id=sj_passWord    wss1986    shun1986    id=sj_loginbt    ${sj_url_login}
+    #检查等待直到页面中显示“圈服务”
+    等待元素出现在当前页面    xpath=//*[@id="listPage"]/div[1]/h1    #定位“订单列表”元素xpath
+    关闭浏览器
+    [Teardown]

@@ -1,0 +1,8 @@
+*** Settings ***
+Resource          ../../Resources/Net_mykeyword.txt
+
+*** Keywords ***
+运算求和
+    [Arguments]    ${num1}    ${num2}
+    ${value4}=    求和    ${num1}    ${num2}
+    [Return]    ${value4}

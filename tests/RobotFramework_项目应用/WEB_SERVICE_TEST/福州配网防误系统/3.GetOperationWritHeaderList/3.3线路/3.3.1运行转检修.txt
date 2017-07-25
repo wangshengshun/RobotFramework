@@ -1,0 +1,23 @@
+*** Settings ***
+Library           SudsLibrary
+Library           XML
+Library           Collections
+
+*** Variables ***
+${OperationTask}    10kV向融信大卫城环网侧621线路由运行转检修    # 操作票任务
+
+*** Test Cases ***
+获取操作票任务内容-正常_001
+    [Documentation]    验证GetOperationWritHeaderList()方法
+    #Creates a WSDL object of the specified type.Requested type must be defined in the WSDL.
+    ${WsdlObject_GetOperationWritHeaderList}=    Create Wsdl Object    GetOperationWritHeaderList
+    #Gets the attribute of a WSDL object.
+    ${StationID_AttributeValue}=    Get Wsdl Object Attribute    ${WsdlObject_GetOperationWritHeaderList}    StationId
+    ${ClassId_AttributeValue}=    Get Wsdl Object Attribute    ${WsdlObject_GetOperationWritHeaderList}    ClassId
+    #Sets the attribute of a WSDL object.
+    Set Wsdl Object Attribute    ${WsdlObject_GetOperationWritHeaderList}    StationId    1
+    Set Wsdl Object Attribute    ${WsdlObject_GetOperationWritHeaderList}    ClassId    1
+    #Calls the SOAP method with the given name and args.
+    Call Soap Method    GetOperationWritHeaderList    ${WsdlObject_GetOperationWritHeaderList}
+    ${receive_xml}=    Get Last Received
+    Should Contain    ${receive_xml}    ${OperationTask}

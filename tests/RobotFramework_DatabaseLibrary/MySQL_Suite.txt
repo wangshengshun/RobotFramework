@@ -1,0 +1,8 @@
+*** Settings ***
+Library           DatabaseLibrary
+
+*** Test Cases ***
+testcase_ConnectTest-001
+    Connect To Database Using Custom Params    pyodbc    "Driver={MySQL ODBC 5.2w Driver};Server=127.0.0.1;Port=3306;Database=test;User=root; "
+    ${a}    Query    select * from OperateStep
+    Disconnect From Database

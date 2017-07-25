@@ -1,0 +1,125 @@
+*** Settings ***
+Library           RequestsLibrary
+Library           Collections
+Library           DatabaseLibrary
+Resource          ../../../../BusinessFlow/web/DDLZ/public_business_layer.txt
+
+*** Test Cases ***
+ITC001-商家注册时获取所有服务
+    ${headers}=    Create Dictionary    Accept    application/json,text/javascript,*/*
+    Create Session    ddlz    http://zztruetech:8088    headers=${headers}
+    ${resp}=    Get Request    ddlz    /ddlz/company/listOServices    headers=${headers}
+    log    ${resp.content}
+    ${jsondata}=    To Json    ${resp.content}
+    log    ${jsondata[0]['name']}
+    List Should Contain Value    ${jsondata[0]['name']}    车险服务
+    log    ${jsondata[1]['name']}
+    List Should Contain Value    ${jsondata[1]['name']}    班车服务
+
+ITC002-根据服务类型选择公司
+    ${headers}=    Create Dictionary    Content-Type    application/x-www-form-urlencoded
+    ${data}=    Create Dictionary    serviceId    1
+    Create Session    ddlz    http://zztruetech:8088    headers=${headers}
+    ${resp}=    Post Request    ddlz    /ddlz/company/listOServiceCompanys    data=${data}    headers=${headers}
+    log    ${resp.content}
+    ${jsondata}=    To Json    ${resp.content}
+    log    ${jsondata[0]['name']}
+    List Should Contain Value    ${jsondata[0]['name']}    阳光车险
+    log    ${jsondata[1]['name']}
+    List Should Contain Value    ${jsondata[1]['name']}    永诚财保
+    log    ${jsondata[2]['name']}
+    List Should Contain Value    ${jsondata[2]['name']}    中国人寿
+
+ITC003-商家注册
+    #删除数据表问题
+    删除数据表记录    companyuser    name='wss19860323'
+    ${headers}=    Create Dictionary    Content-Type    application/x-www-form-urlencoded
+    ${data}=    Create Dictionary    companyId    4    name    wss19860323    password
+    ...    shun1986    phoneNumber    15508652195    serviceId    1
+    Create Session    ddlz    http://zztruetech:8088    headers=${headers}
+    ${resp}=    Post Request    ddlz    /ddlz/company/register    data=${data}    headers=${headers}
+    log    ${resp.content}
+    ${jsondata}=    To Json    ${resp.content}
+    log    ${jsondata[0]['success']}
+    List Should Contain Value    ${jsondata[0]['success']}    注册成功
+    #删除数据表问题
+    删除数据表记录    companyuser    name='wss19860323'
+
+ITC004-检查用户名是否存在
+    ${headers}=    Create Dictionary    Content-Type    application/x-www-form-urlencoded
+    ${data}=    Create Dictionary    name    wss1986
+    Create Session    ddlz    http://zztruetech:8088    headers=${headers}
+    ${resp}=    Post Request    ddlz    /ddlz/company/companyUserExist    data=${data}    headers=${headers}
+    log    ${resp.content}
+    ${jsondata}=    To Json    ${resp.content}
+    log    ${jsondata['code']}
+    Should Be Equal As Strings    ${jsondata['code']}    True
+
+ITC005-检查手机号是否存在
+    ${headers}=    Create Dictionary    Content-Type    application/x-www-form-urlencoded
+    ${data}=    Create Dictionary    phoneNumber    15508652195
+    Create Session    ddlz    http://zztruetech:8088    headers=${headers}
+    ${resp}=    Post Request    ddlz    /ddlz/company/companyPhoneExist    data=${data}    headers=${headers}
+    log    ${resp.content}
+    ${jsondata}=    To Json    ${resp.content}
+    log    ${jsondata['code']}
+    Should Be Equal As Strings    ${jsondata['code']}    True
+
+ITC006-系统登录
+    ${headers}=    Create Dictionary    Content-Type    application/x-www-form-urlencoded
+    ${data}=    Create Dictionary    loginName    wss1986    password    shun1986
+    Create Session    ddlz    http://zztruetech:8088    headers=${headers}
+    ${resp}=    Post Request    ddlz    /ddlz/company/login    data=${data}    headers=${headers}
+    log    ${resp.content}
+    ${jsondata}=    To Json    ${resp.content}
+    log    ${jsondata['success']}
+    Should Be Equal As Strings    ${jsondata['success']}    True
+
+ITC007-显示订单详情
+    ${headers}=    Create Dictionary    Content-Type    application/x-www-form-urlencoded
+    ${data}=    Create Dictionary    orderId    114
+    Create Session    ddlz    http://zztruetech:8088    headers=${headers}
+    ${resp}=    Post Request    ddlz    /ddlz/company/orderDetail    data=${data}    headers=${headers}
+    log    ${resp.content}
+    ${jsondata}=    To Json    ${resp.content}
+    log    ${jsondata['car']}
+    Should Be Equal As Strings    ${jsondata['car']}    鲁A69666
+    log    ${jsondata['company']}
+    Should Be Equal As Strings    ${jsondata['company']}    中国人寿
+
+ITC008-商家报价
+    ${headers}=    Create Dictionary    Content-Type    application/x-www-form-urlencoded
+    ${data}=    Create Dictionary    quoteDetails    {"orderId":"114","totalPrice":0,"businessStartDate":"","CIStartDate":"2017-07-14","validDate":"2017-07-14","remark":"","onlyCI":"45","onlyBusiness":"32","mixCI":"35","mixBusiness":"35","orderItem":[{"typeId":"1","itemId":"2139","subTypeId":"2","itemPrice":"0"},{"typeId":"2","itemId":"2147","subTypeId":"4","itemPrice":"0"}]}
+    Create Session    ddlz    http://zztruetech:8088    headers=${headers}
+    ${resp}=    Post Request    ddlz    /ddlz/company/receiveQuote    data=${data}    headers=${headers}
+    log    ${resp.content}
+    ${jsondata}=    To Json    ${resp.content}
+    log    ${jsondata['success']}
+    Should Be Equal As Strings    ${jsondata['success']}    True
+
+ITC009-商家添加车险折扣
+    ${headers}=    Create Dictionary    Content-Type    application/x-www-form-urlencoded
+    ${data}=    Create Dictionary    loginName    wss1986    password    shun1986
+    Create Session    ddlz    http://zztruetech:8088    headers=${headers}
+    ${resp}=    Post Request    ddlz    /ddlz/company/login    data=${data}    headers=${headers}
+    log    ${resp.content}
+    ${jsondata}=    To Json    ${resp.content}
+    log    ${jsondata['success']}
+    Should Be Equal As Strings    ${jsondata['success']}    True
+    ${data}=    Create Dictionary    discountStr    {"onlyBusiness":"32","onlyCI":"45","mixBusiness":"22","mixCI":"30"}
+    log    ${data}
+    ${resp}=    Post Request    ddlz    /ddlz/company/addCarDiscount    data=${data}
+    log    ${resp.content}
+    ${jsondata}=    To Json    ${resp.content}
+    log    ${jsondata['success']}
+    Should Be Equal As Strings    ${jsondata['success']}    True
+
+ITC010-商家添加特惠险
+    ${headers}=    Create Dictionary    Content-Type    application/x-www-form-urlencoded
+    ${data}=    Create Dictionary    saleInsurances    {"companyId":4,"typeArray":[{"id":"3"},{"id":"4"},{"id":"6"},{"id":"8"}]}
+    Create Session    ddlz    http://zztruetech:8088    headers=${headers}
+    ${resp}=    Post Request    ddlz    /ddlz/company/addSaleInsurance    data=${data}    headers=${headers}
+    log    ${resp.content}
+    ${jsondata}=    To Json    ${resp.content}
+    log    ${jsondata['success']}
+    Should Be Equal As Strings    ${jsondata['success']}    True

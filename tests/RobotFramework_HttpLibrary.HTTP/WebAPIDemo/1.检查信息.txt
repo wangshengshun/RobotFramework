@@ -1,0 +1,48 @@
+*** Settings ***
+Library           HttpLibrary.HTTP
+
+*** Variables ***
+${host}           127.0.0.1:8080
+
+*** Test Cases ***
+GET-正常_01
+    [Documentation]    Create Http Context
+    #Sets the HTTP host to use for future requests.
+    Create Http Context    host=${host}    scheme=http
+    #Issues a HTTP GET request.
+    GET    /api/products
+
+RESPONSE STATUS-正常_02
+    [Documentation]    Get Response Status
+    #Returns the response status line
+    ${RESPONSE_STATUS}=    Get Response Status
+    Should Start With    ${RESPONSE_STATUS}    200
+    #Logs the response status line
+    Log Response Status    INFO
+
+Response Header-正常_03
+    [Documentation]    Get Response Header
+    #Logs the response headers, line by line.
+    Log Response Headers    INFO
+    #Get the response header with the name `header_name`
+    ${content-type}=    Get Response Header    content-type
+    ${content-type as str}=    Convert To String    ${content-type}
+    Should Be Equal    ${content-type as str}    ['application/json; charset=utf-8']
+    ${content-length}=    Get Response Header    content-length
+    ${content-length as str}=    Convert To String    ${content-length}
+    Should Be Equal    ${content-length as str}    ['182']
+
+Response Body-正常_04
+    [Documentation]    Get Response Body
+    #Logs the response body.
+    Log Response Body    INFO
+    #Get the response body.
+    ${body}=    Get Response Body
+
+GET JSON Value-正常_05
+    [Documentation]    Get Response Body
+    #Get the target node of the JSON document json_string specified by json_pointer.
+    ${result}=    Get Json Value    ${body}    /2/Price
+    Should Be Equal    ${result}    16.99
+    ${result1}=    Get Json Value     \ {"foo": {"bar": [1,2,3]}}	\ \     /foo/bar
+    Should Be Equal    ${result1}    [1,2,3]

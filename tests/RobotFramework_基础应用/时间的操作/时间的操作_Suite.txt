@@ -1,0 +1,10 @@
+*** Test Cases ***
+testcase_获取当前时间-001
+    ${time}    Get Time    helloword
+    Log    ${time}
+
+testcase_设置休眠时间-002
+    ${time}    Get Time    helloword
+    #sleep关键字默认以“秒”为单位
+    Sleep    5
+    ${time}    Get Time    helloword

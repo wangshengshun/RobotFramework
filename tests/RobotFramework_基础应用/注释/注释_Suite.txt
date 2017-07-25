@@ -1,0 +1,6 @@
+*** Test Cases ***
+testcase_注释-001
+    #用“Comment”关键字用于设置脚本中的注释
+    Comment    注释1
+    #像python一样使用“#”号进行注释
+    #    注释2
